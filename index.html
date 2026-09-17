@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHINH DENXE | Gian Hàng TikTok Shop Độ Đèn Ô Tô & Xe Máy</title>
+    <title>CHINH DENXE | Xưởng Độ Đèn Ô Tô & Xe Máy - TikTok Shop @chinh0966</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,7 +25,6 @@
                         amberGold: '#F59E0B',
                         amberGlow: '#D97706',
                         tiktokRed: '#FE2C55',
-                        tiktokCyan: '#25F4EE'
                     },
                     fontFamily: {
                         heading: ['"Barlow Condensed"', 'sans-serif'],
@@ -57,7 +56,7 @@
         }
         .card-hover:hover {
             border-color: #FE2C55;
-            box-shadow: 0 10px 30px -10px rgba(254, 44, 85, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(254, 44, 85, 0.35);
             transform: translateY(-4px);
         }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -68,15 +67,15 @@
 </head>
 <body class="bg-obsidian text-slate-200 antialiased selection:bg-amberGold selection:text-black">
 
-    <!-- THANH QUẢN TRỊ ADMIN -->
+    <!-- THANH QUẢN TRỊ ADMIN (Chỉ xuất hiện sau khi đăng nhập) -->
     <div id="adminTopBar" class="hidden bg-amberGold text-black px-4 sm:px-6 py-2.5 sticky top-0 z-50 shadow-xl flex justify-between items-center text-sm font-bold">
         <div class="flex items-center gap-2">
-            <span class="bg-black text-amberGold px-2.5 py-0.5 rounded text-xs uppercase tracking-wider">Admin</span>
+            <span class="bg-black text-amberGold px-2.5 py-0.5 rounded text-xs uppercase tracking-wider">Admin Session</span>
             <span class="hidden sm:inline">ANH CHINH (0868 770 966)</span>
         </div>
         <div class="flex items-center gap-2">
             <button onclick="toggleAdminDashboard()" class="bg-black text-white hover:bg-slate-900 px-3.5 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
-                ⚙️ Bảng Quản Trị Kho & Video
+                ⚙️ Mở Bảng Thêm Thẻ Hàng & Video
             </button>
             <button onclick="logoutAdmin()" class="bg-red-700 text-white hover:bg-red-800 px-3 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
                 Đăng Xuất
@@ -87,8 +86,8 @@
     <!-- THANH ĐIỀU HƯỚNG CÔNG KHAI -->
     <nav class="bg-panel/95 backdrop-blur-md border-b border-borderSubtle sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
-            <!-- Logo: Bấm 3 lần nhanh vào đây để mở khung đăng nhập bí mật -->
-            <div onclick="handleLogoTripleClick()" class="flex items-center gap-3 cursor-pointer select-none group" title="Bấm 3 lần để mở Admin">
+            <!-- Logo: Nhấp 3 lần nhanh vào tia sét để mở đăng nhập Admin -->
+            <div onclick="handleLogoTripleClick()" class="flex items-center gap-3 cursor-pointer select-none group" title="Bấm 3 lần để vào Admin">
                 <div class="w-12 h-12 rounded-xl bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-amberGold text-2xl group-hover:scale-105 transition">
                     ⚡
                 </div>
@@ -103,7 +102,7 @@
             </div>
 
             <div class="hidden md:flex items-center gap-8 font-heading text-sm uppercase tracking-wider font-semibold text-slate-300">
-                <a href="#products-section" class="hover:text-amberGold transition">Sản Phẩm</a>
+                <a href="#products-section" class="hover:text-amberGold transition">Thẻ Hàng TikTok Shop</a>
                 <a href="#video-section" class="hover:text-amberGold transition text-amber-400 flex items-center gap-1.5">
                     <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> Video Test Xe
                 </a>
@@ -112,7 +111,6 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <!-- NÚT SHOP DẪN THẲNG VÀO TAB CỬA HÀNG TIKTOK SHOP -->
                 <a id="navShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black hover:bg-slate-900 border border-red-500/80 text-white font-heading font-extrabold px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition shadow-lg shadow-red-500/20 active:scale-95 flex items-center gap-2">
                     <span class="text-red-500 font-extrabold text-base">♪</span>
                     <span>VÀO TIKTOK SHOP</span>
@@ -122,7 +120,7 @@
         </div>
     </nav>
 
-    <!-- GIAO DIỆN CHÍNH -->
+    <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
         <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center">
             <div class="max-w-4xl mx-auto">
@@ -136,16 +134,15 @@
                 </h1>
 
                 <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Chuyên đèn nóc Future Eyes Laser, bi gầm phá sương 3000K, bi cầu mini trợ sáng xe máy, mâm đĩa tản nhiệt. Mua sắm dễ dàng, giao hàng toàn quốc trực tiếp qua TikTok Shop.
+                    Chuyên đèn nóc Future Eyes Laser, bi gầm phá sương 3000K, bi cầu mini trợ sáng xe máy, mâm đĩa tản nhiệt. Bấm vào bất kỳ thẻ hàng nào để mua trực tiếp trên TikTok Shop.
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <!-- Nút bấm chính ở Banner dẫn thẳng vào Gian Hàng TikTok Shop -->
                     <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-red-500/25 transition uppercase tracking-wide flex items-center gap-2.5">
-                        <span class="text-red-500 text-2xl font-extrabold">♪</span> VÀO THẲNG GIAN HÀNG TIKTOK SHOP
+                        <span class="text-red-500 text-2xl font-extrabold">♪</span> VÀO GIAN HÀNG TIKTOK SHOP
                     </a>
                     <a href="#products-section" class="bg-card hover:bg-slate-800 border border-borderSubtle text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide">
-                        Xem Danh Sách Đồ Độ
+                        Xem Các Thẻ Sản Phẩm
                     </a>
                 </div>
             </div>
@@ -175,13 +172,13 @@
             </div>
         </section>
 
-        <!-- KHO SẢN PHẨM -->
+        <!-- KHO THẺ SẢN PHẨM (MỖI THẺ DẪN VÀO LINK TIKTOK SHOP RIÊNG) -->
         <section id="products-section" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-6 border-b border-borderSubtle">
                 <div>
-                    <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Gian Hàng Phụ Tùng</span>
+                    <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Danh Mục Thẻ Hàng</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold font-heading uppercase text-white mt-1">
-                        Sản Phẩm Đang Bán Tại <span class="text-red-500">TikTok Shop</span>
+                        Thẻ Sản Phẩm <span class="text-red-500">TikTok Shop</span>
                     </h2>
                 </div>
 
@@ -213,18 +210,18 @@
                 <form onsubmit="handleCustomOrder(event)" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Dòng xe & Đời xe (Ô tô hoặc Xe máy)</label>
+                            <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Dòng xe & Đời xe</label>
                             <input type="text" id="orderCarModel" required placeholder="VD: Winner X, SH 150i, Hilux, Ranger..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none">
                         </div>
                         <div>
-                            <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Món đồ / Phụ tùng cần tìm</label>
+                            <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Món đồ cần tìm</label>
                             <input type="text" id="orderItemName" required placeholder="VD: Bi cầu mini 2 màu, Đèn nóc Laser..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Mô tả thêm yêu cầu</label>
-                        <textarea id="orderNote" rows="2" placeholder="Ghi chú thêm thông số hoặc nhu cầu đặc biệt..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none"></textarea>
+                        <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Ghi chú thêm</label>
+                        <textarea id="orderNote" rows="2" placeholder="Ghi chú vị trí bắt đèn (chân gương, phuộc, mặt nạ)..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none"></textarea>
                     </div>
 
                     <div class="pt-2">
@@ -236,7 +233,7 @@
             </div>
         </section>
 
-        <!-- DỰ ÁN THỰC TẾ -->
+        <!-- DỰ ÁN ĐÃ LÊN -->
         <section id="showcase-section" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Thực Tế Thi Công</span>
@@ -320,24 +317,20 @@
                             <span class="w-6 h-6 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-[10px]">Z</span>
                             Zalo: 0868 770 966 (Tư vấn kỹ thuật trực tiếp)
                         </a>
-                        <a href="https://wa.me/84868770966" target="_blank" class="text-xs text-slate-300 hover:text-amberGold flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-full bg-green-600/20 text-green-400 flex items-center justify-center font-bold text-[10px]">W</span>
-                            WhatsApp: +84 868 770 966
-                        </a>
                     </div>
                 </div>
             </div>
         </footer>
     </main>
 
-    <!-- ================= BẢNG QUẢN TRỊ ADMIN (CÓ Ô DÁN LINK SHOP TỔNG) ================= -->
+    <!-- ================= BẢNG QUẢN TRỊ ADMIN (CHỖ GẮN THẺ SẢN PHẨM SIÊU TỐC) ================= -->
     <div id="adminDashboardView" class="hidden min-h-screen bg-obsidian py-10 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto space-y-10">
             
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-borderSubtle">
                 <div>
                     <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Trung Tâm Quản Lý Hệ Thống</span>
-                    <h2 class="text-3xl font-heading font-extrabold uppercase text-white">Bảng Quản Trị Kho & Video</h2>
+                    <h2 class="text-3xl font-heading font-extrabold uppercase text-white">Bảng Gắn Thẻ Hàng & Video</h2>
                 </div>
                 
                 <button onclick="toggleAdminDashboard()" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-xl text-xs font-heading font-bold uppercase transition">
@@ -345,161 +338,107 @@
                 </button>
             </div>
 
-            <!-- CÀI ĐẶT LINK TIKTOK SHOP TỔNG CỦA XƯỞNG (ĐẶT LÊN ĐẦU) -->
-            <section class="bg-panel border-2 border-red-500/40 p-6 rounded-3xl shadow-xl">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl text-red-500">♪</span>
-                    <h3 class="text-lg font-heading font-extrabold uppercase text-white">Cài Đặt Link Gian Hàng TikTok Shop Tổng</h3>
-                </div>
-                <p class="text-xs text-slate-400 mb-4">
-                    Vào app TikTok của anh -> bấm vào tab <strong>Giỏ hàng (Cửa hàng)</strong> -> bấm nút <strong>Chia sẻ (Mũi tên)</strong> ở góc trên bên phải -> chọn <strong>Sao chép liên kết</strong> rồi dán vào ô bên dưới:
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <input type="url" id="globalShopUrlInput" placeholder="VD: https://vt.tiktok.com/ZSxxxxxxx/..." class="flex-grow bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-red-500">
-                    <button onclick="saveGlobalShopUrl()" class="bg-red-600 hover:bg-red-500 text-white font-heading font-extrabold px-6 py-3 rounded-xl uppercase tracking-wider text-xs transition active:scale-95">
-                        Lưu Link Gian Hàng
-                    </button>
-                </div>
-            </section>
-
-            <!-- QUẢN LÝ VIDEO -->
-            <section class="bg-panel border border-borderSubtle p-6 sm:p-8 rounded-3xl shadow-xl">
+            <!-- MỤC 1: CHỖ GẮN THẺ SẢN PHẨM TIKTOK SHOP SIÊU TỐC (CHỈ CẦN 2 DÒNG) -->
+            <section class="bg-panel border-2 border-red-500/50 p-6 sm:p-8 rounded-3xl shadow-xl">
                 <div class="flex items-center gap-3 mb-6 pb-3 border-b border-borderSubtle">
-                    <span class="text-2xl">🎬</span>
+                    <span class="text-3xl text-red-500">🏷️</span>
                     <div>
-                        <h3 class="text-xl font-heading font-bold uppercase text-white">Quản Lý Video Clip</h3>
-                        <p class="text-xs text-slate-400">Dán link video TikTok hoặc MP4 để hiển thị lên mục Video Test.</p>
+                        <h3 class="text-xl font-heading font-extrabold uppercase text-white">CHỖ GẮN THẺ HÀNG TIKTOK SHOP (SIÊU TỐC)</h3>
+                        <p class="text-xs text-slate-400">Chỉ cần gõ tên món đồ và dán link TikTok Shop, web sẽ tự tạo thẻ hàng hiển thị ra trang chủ ngay lập tức!</p>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Form gắn thẻ chỉ 2 dòng cốt lõi -->
                     <div class="bg-obsidian border border-borderSubtle p-6 rounded-2xl h-fit">
-                        <h4 id="videoFormTitle" class="text-base font-heading font-bold uppercase text-amberGold mb-4 flex items-center gap-2">
-                            <span>➕</span> Thêm Video Mới
+                        <h4 id="cardFormTitle" class="text-base font-heading font-bold uppercase text-amberGold mb-4 flex items-center gap-2">
+                            <span>➕</span> Gắn Thẻ Hàng Mới
                         </h4>
-                        <form onsubmit="handleSaveVideo(event)" class="space-y-4">
-                            <input type="hidden" id="editVideoId" value="">
-                            <input type="hidden" id="videoThumbInput" value="">
-                            
+                        <form onsubmit="handleQuickAddCard(event)" class="space-y-4">
+                            <input type="hidden" id="editCardId" value="">
+
+                            <!-- DÒNG 1: TÊN / TIÊU ĐỀ -->
                             <div>
-                                <label class="block text-xs font-heading uppercase text-amberGold font-bold mb-1">Link Video TikTok hoặc MP4 *</label>
-                                <input type="text" id="videoUrlInput" required placeholder="https://www.tiktok.com/@chinh0966/video/..." class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
-                                <button type="button" onclick="autoFetchTikTokInfo()" id="fetchTikTokBtn" class="mt-2 w-full bg-card hover:bg-slate-800 border border-amberGold/50 text-amberGold font-heading font-bold text-xs py-2 rounded-xl uppercase tracking-wider transition flex items-center justify-center gap-1.5 shadow-sm">
-                                    ⚡ Tự Động Lấy Ảnh Bìa & Tên Từ TikTok
-                                </button>
+                                <label class="block text-xs font-heading uppercase text-amberGold font-bold mb-1">
+                                    1. Tiêu Đề / Tên Món Đồ *
+                                </label>
+                                <input type="text" id="quickCardName" required placeholder="VD: Bi cầu mini 2 màu xe máy..." class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                             </div>
 
-                            <div id="thumbPreviewContainer" class="hidden p-3 bg-panel rounded-xl border border-borderSubtle flex items-center gap-3">
-                                <img id="thumbPreviewImg" src="" class="w-14 h-20 object-cover rounded-lg border border-borderSubtle">
-                                <div class="text-xs">
-                                    <span class="text-emerald-400 font-bold block mb-1">✓ Đã lấy ảnh bìa TikTok!</span>
-                                    <span class="text-slate-400 text-[11px]">Hệ thống đã lưu ảnh bìa này cho video.</span>
-                                </div>
-                            </div>
-
+                            <!-- DÒNG 2: LINK TIKTOK SHOP -->
                             <div>
-                                <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Tên / Tiêu Đề Video</label>
-                                <input type="text" id="videoTitleInput" placeholder="Tự động điền sau khi quét..." class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                                <label class="block text-xs font-heading uppercase text-red-400 font-bold mb-1">
+                                    2. Dán Link Sản Phẩm TikTok Shop *
+                                </label>
+                                <input type="url" id="quickCardUrl" required placeholder="Dán link sản phẩm (VD: https://vt.tiktok.com/...)" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-red-400">
+                                <p class="text-[11px] text-slate-400 mt-1">Khách bấm vào thẻ này trên web sẽ nhảy thẳng vào mua món này.</p>
                             </div>
 
+                            <!-- PHÂN LOẠI NHANH -->
                             <div>
-                                <label class="block text-xs font-heading uppercase text-red-400 font-bold mb-1">Link Sản Phẩm Của Clip (Tùy chọn)</label>
-                                <input type="url" id="videoTiktokShopInput" placeholder="Dán link sản phẩm (để trống sẽ mở gian hàng chính)" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-red-400">
-                            </div>
-
-                            <div class="flex gap-2 pt-2">
-                                <button type="submit" id="videoSubmitBtn" class="flex-grow bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-sm transition">
-                                    Lưu Video
-                                </button>
-                                <button type="button" onclick="resetVideoForm()" id="videoCancelBtn" class="hidden bg-slate-800 hover:bg-slate-700 text-slate-300 font-heading font-bold px-4 rounded-xl uppercase text-xs transition">
-                                    Hủy
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="lg:col-span-2 bg-obsidian border border-borderSubtle p-6 rounded-2xl">
-                        <h4 class="text-base font-heading font-bold uppercase text-white mb-4">Danh Sách Video Đang Chạy</h4>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm">
-                                <thead>
-                                    <tr class="text-xs uppercase font-heading text-slate-400 border-b border-borderSubtle">
-                                        <th class="pb-3">Ảnh Bìa</th>
-                                        <th class="pb-3">Tên Video</th>
-                                        <th class="pb-3 text-right">Thao Tác</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="adminVideoTableBody" class="divide-y divide-borderSubtle/60"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- QUẢN LÝ SẢN PHẨM -->
-            <section class="bg-panel border border-borderSubtle p-6 sm:p-8 rounded-3xl shadow-xl">
-                <div class="flex items-center gap-3 mb-6 pb-3 border-b border-borderSubtle">
-                    <span class="text-2xl">📦</span>
-                    <div>
-                        <h3 class="text-xl font-heading font-bold uppercase text-white">Quản Lý Sản Phẩm & Link TikTok Shop</h3>
-                        <p class="text-xs text-slate-400">Dán link sản phẩm riêng hoặc để trống để tự lấy theo link gian hàng tổng.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="bg-obsidian border border-borderSubtle p-6 rounded-2xl h-fit">
-                        <h4 class="text-base font-heading font-bold uppercase text-amberGold mb-4 flex items-center gap-2">
-                            <span>➕</span> Thêm Món Đồ Mới
-                        </h4>
-                        <form onsubmit="handleAddNewProduct(event)" class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Tên món đồ *</label>
-                                <input type="text" id="newProdName" required placeholder="VD: Bi cầu mini trợ sáng xe máy" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Phân loại *</label>
-                                <select id="newProdCat" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                                <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Phân Loại Món Này</label>
+                                <select id="quickCardCat" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                                     <option value="moto-lighting">🏍️ Đèn Xe Máy</option>
                                     <option value="lighting">🚗 Đèn Ô Tô</option>
                                     <option value="wheels">Vành Mâm Thể Thao</option>
                                     <option value="brakes">Đĩa Phanh & Spacer</option>
                                 </select>
                             </div>
-                            <div>
-                                <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Giá bán (VNĐ) *</label>
-                                <input type="number" id="newProdPrice" required placeholder="VD: 650000" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Link ảnh sản phẩm *</label>
-                                <input type="url" id="newProdImg" required placeholder="https://..." class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-heading uppercase text-red-400 font-bold mb-1">Link Riêng Trên TikTok Shop (Tùy chọn)</label>
-                                <input type="url" id="newProdTiktokShop" placeholder="https://vt.tiktok.com/... (để trống sẽ mở gian hàng tổng)" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-red-400">
-                            </div>
 
-                            <button type="submit" class="w-full bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold py-3 rounded-xl uppercase tracking-wider text-sm transition">
-                                Lưu Sản Phẩm
-                            </button>
+                            <!-- TÙY CHỌN KHÔNG BẮT BUỘC (ẢNH & GIÁ) -->
+                            <details class="bg-panel p-3 rounded-xl border border-borderSubtle text-xs">
+                                <summary class="cursor-pointer text-slate-400 hover:text-amberGold font-semibold">Tùy chọn thêm ảnh / giá (nếu thích)</summary>
+                                <div class="mt-3 space-y-3">
+                                    <div>
+                                        <label class="block text-slate-400 mb-1">Giá bán hiển thị (để trống tự hiện Xem giá trên TikTok)</label>
+                                        <input type="number" id="quickCardPrice" placeholder="VD: 650000" class="w-full bg-obsidian border border-borderSubtle rounded-lg p-2.5 text-white text-xs outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-400 mb-1">Link ảnh món đồ (để trống tự gắn ảnh mặc định đẹp)</label>
+                                        <input type="url" id="quickCardImg" placeholder="https://..." class="w-full bg-obsidian border border-borderSubtle rounded-lg p-2.5 text-white text-xs outline-none">
+                                    </div>
+                                </div>
+                            </details>
+
+                            <div class="flex gap-2 pt-2">
+                                <button type="submit" id="cardSubmitBtn" class="flex-grow bg-red-600 hover:bg-red-500 text-white font-heading font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-sm transition shadow-lg shadow-red-600/20 active:scale-95">
+                                    Tạo & Gắn Thẻ Hàng Lên Web
+                                </button>
+                                <button type="button" onclick="resetCardForm()" id="cardCancelBtn" class="hidden bg-slate-800 hover:bg-slate-700 text-slate-300 font-heading font-bold px-4 rounded-xl uppercase text-xs transition">
+                                    Hủy Sửa
+                                </button>
+                            </div>
                         </form>
                     </div>
 
+                    <!-- Bảng Danh Sách Thẻ Hàng Đang Hiển Thị Ngoài Web -->
                     <div class="lg:col-span-2 bg-obsidian border border-borderSubtle p-6 rounded-2xl">
-                        <h4 class="text-base font-heading font-bold uppercase text-white mb-4">Danh Sách Sản Phẩm Đang Bán</h4>
+                        <h4 class="text-base font-heading font-bold uppercase text-white mb-4">Danh Sách Thẻ Hàng Đang Hiển Thị</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-sm">
                                 <thead>
                                     <tr class="text-xs uppercase font-heading text-slate-400 border-b border-borderSubtle">
-                                        <th class="pb-3">Hình ảnh</th>
-                                        <th class="pb-3">Tên sản phẩm</th>
-                                        <th class="pb-3">Giá bán</th>
-                                        <th class="pb-3 text-right">Hành động</th>
+                                        <th class="pb-3">Hình Ảnh</th>
+                                        <th class="pb-3">Tên Món Đồ</th>
+                                        <th class="pb-3">Phân Loại</th>
+                                        <th class="pb-3 text-right">Thao Tác</th>
                                     </tr>
                                 </thead>
                                 <tbody id="adminTableBody" class="divide-y border-borderSubtle/60"></tbody>
                             </table>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- MỤC 2: CÀI ĐẶT LINK GIAN HÀNG TỔNG -->
+            <section class="bg-panel border border-borderSubtle p-6 rounded-3xl">
+                <h4 class="text-sm font-heading font-bold uppercase text-amberGold mb-2">Link Gian Hàng TikTok Shop Tổng (Dành cho nút bấm to ở Menu & Banner)</h4>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input type="url" id="globalShopUrlInput" placeholder="VD: https://www.tiktok.com/@chinh0966" class="flex-grow bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                    <button onclick="saveGlobalShopUrl()" class="bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold px-6 py-3 rounded-xl uppercase tracking-wider text-xs transition">
+                        Lưu Link Tổng
+                    </button>
                 </div>
             </section>
 
@@ -535,7 +474,7 @@
 
     <!-- JAVASCRIPT HỆ THỐNG -->
     <script>
-        // Link gian hàng TikTok Shop mặc định hoặc do anh cài đặt
+        const DEFAULT_IMG = "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800";
         let globalShopUrl = localStorage.getItem('chinhGlobalShopUrl') || "https://www.tiktok.com/@chinh0966";
 
         function updateGlobalShopLinks() {
@@ -552,281 +491,15 @@
 
         function saveGlobalShopUrl() {
             const val = document.getElementById('globalShopUrlInput').value.trim();
-            if (!val) {
-                alert("Vui lòng nhập đường link gian hàng TikTok Shop!");
-                return;
-            }
-            globalShopUrl = val;
-            localStorage.setItem('chinhGlobalShopUrl', val);
-            updateGlobalShopLinks();
-            renderProducts();
-            renderVideos();
-            alert("✓ Đã lưu link Gian Hàng TikTok Shop! Bây giờ mọi nút Shop trên web sẽ dẫn thẳng vào đây.");
-        }
-
-        // ================= 1. DỮ LIỆU VIDEO =================
-        const defaultVideos = [
-            {
-                id: 1,
-                title: "Test Bi Cầu Mini 2 Màu Xe Máy (Cos Vàng Pha Trắng)",
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 2,
-                title: "Đèn Nóc Future Eyes Laser Gom Xa 800m",
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1549646849-c12b1c7fc017?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 3,
-                title: "Lên Mâm KMC 17 Inch & Lốp Gai Off-Road",
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 4,
-                title: "Nâng Cấp Đĩa Phanh Vát Rãnh & Spacer 35mm",
-                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-                thumbnail: "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            }
-        ];
-
-        let storedVideos = JSON.parse(localStorage.getItem('chinhVideos')) || defaultVideos;
-        let videos = storedVideos;
-
-        function saveVideos() {
-            localStorage.setItem('chinhVideos', JSON.stringify(videos));
-        }
-
-        async function autoFetchTikTokInfo() {
-            const urlInput = document.getElementById('videoUrlInput').value.trim();
-            const btn = document.getElementById('fetchTikTokBtn');
-
-            if (!urlInput) {
-                alert("Vui lòng dán link video TikTok vào ô trước khi quét!");
-                return;
-            }
-
-            btn.disabled = true;
-            btn.innerHTML = '⏳ Đang quét TikTok...';
-
-            try {
-                let data = null;
-                try {
-                    const res = await fetch(`https://www.tiktok.com/oembed?url=${encodeURIComponent(urlInput)}`);
-                    if (res.ok) data = await res.json();
-                } catch (e) {
-                    console.warn("Direct oEmbed failed, trying proxy...");
-                }
-
-                if (!data) {
-                    const proxyRes = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent('https://www.tiktok.com/oembed?url=' + urlInput)}`);
-                    if (proxyRes.ok) data = await proxyRes.json();
-                }
-
-                if (data) {
-                    if (data.title) {
-                        document.getElementById('videoTitleInput').value = data.title;
-                    }
-                    if (data.thumbnail_url) {
-                        document.getElementById('videoThumbInput').value = data.thumbnail_url;
-                        document.getElementById('thumbPreviewImg').src = data.thumbnail_url;
-                        document.getElementById('thumbPreviewContainer').classList.remove('hidden');
-                    }
-                    alert("✓ Đã tự động lấy thành công Ảnh Bìa và Tiêu Đề từ TikTok!");
-                } else {
-                    alert("Không thể tải tự động từ TikTok. Bạn vẫn có thể lưu video bình thường!");
-                }
-            } catch (err) {
-                console.error(err);
-                alert("Có lỗi khi kết nối TikTok. Vui lòng kiểm tra lại đường link!");
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = '⚡ Tự Động Lấy Ảnh Bìa & Tên Từ TikTok';
+            if (val) {
+                globalShopUrl = val;
+                localStorage.setItem('chinhGlobalShopUrl', val);
+                updateGlobalShopLinks();
+                alert("✓ Đã lưu link gian hàng tổng thành công!");
             }
         }
 
-        function parseVideoSource(rawUrl) {
-            const trimmed = rawUrl.trim();
-            const tiktokMatch = trimmed.match(/\/video\/(\d+)/) || trimmed.match(/^(\d{15,22})$/);
-            if (tiktokMatch) {
-                return {
-                    type: 'tiktok',
-                    embedUrl: `https://www.tiktok.com/player/v1/${tiktokMatch[1]}?description=0&music_info=0`
-                };
-            }
-            return { type: 'direct', url: trimmed };
-        }
-
-        function renderVideos() {
-            const grid = document.getElementById('videoGrid');
-            grid.innerHTML = '';
-
-            videos.forEach(v => {
-                const parsed = parseVideoSource(v.videoUrl);
-                const title = v.title || "Video Test Đèn & Xe Thực Tế";
-                const targetShop = v.tiktokShopUrl || globalShopUrl;
-                let mediaHtml = '';
-
-                if (parsed.type === 'tiktok') {
-                    mediaHtml = `
-                        <div class="relative w-full h-[440px] bg-black overflow-hidden">
-                            <iframe src="${parsed.embedUrl}" class="w-full h-full border-0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
-                        </div>
-                    `;
-                } else {
-                    mediaHtml = `
-                        <div class="relative w-full h-[380px] bg-black overflow-hidden">
-                            <video id="vid_${v.id}" autoplay loop muted playsinline poster="${v.thumbnail || ''}" class="w-full h-full object-cover">
-                                <source src="${parsed.url}" type="video/mp4">
-                            </video>
-                            <button onclick="toggleAudio('vid_${v.id}', this)" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white text-xs hover:bg-amberGold hover:text-black transition">🔇</button>
-                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/60 to-transparent p-4">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-amberGold">Test Thực Tế</span>
-                                <h3 class="text-base font-bold font-heading text-white line-clamp-1">${title}</h3>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                grid.innerHTML += `
-                    <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle shadow-xl flex flex-col group relative">
-                        ${mediaHtml}
-                        <div class="p-4 bg-card flex flex-col gap-2.5 flex-grow justify-between">
-                            <p class="text-xs text-slate-400 line-clamp-2">${title}</p>
-                            <div class="pt-2 border-t border-borderSubtle/60">
-                                <a href="${targetShop}" target="_blank" class="w-full bg-black hover:bg-slate-900 border border-red-500/60 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-md active:scale-95">
-                                    <span class="text-red-500 font-extrabold text-sm">♪</span> Mua Món Này Trên TikTok Shop ↗
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            setTimeout(() => {
-                document.querySelectorAll('video').forEach(v => {
-                    v.muted = true;
-                    v.play().catch(e => console.log(e));
-                });
-            }, 300);
-        }
-
-        function toggleAudio(videoId, btnElement) {
-            const vid = document.getElementById(videoId);
-            if (vid) {
-                vid.muted = !vid.muted;
-                btnElement.textContent = vid.muted ? '🔇' : '🔊';
-            }
-        }
-
-        function renderAdminVideos() {
-            const tbody = document.getElementById('adminVideoTableBody');
-            tbody.innerHTML = '';
-
-            videos.forEach(v => {
-                const thumbImg = v.thumbnail 
-                    ? `<img src="${v.thumbnail}" class="w-10 h-14 object-cover rounded border border-borderSubtle">`
-                    : `<div class="w-10 h-14 bg-slate-800 rounded flex items-center justify-center text-xs">🎬</div>`;
-
-                tbody.innerHTML += `
-                    <tr class="hover:bg-slate-900/50">
-                        <td class="py-3">${thumbImg}</td>
-                        <td class="py-3 font-semibold text-white max-w-xs truncate">${v.title || 'Video Test'}</td>
-                        <td class="py-3 text-right space-x-1">
-                            <button onclick="editVideo(${v.id})" class="bg-amberGold/20 text-amberGold hover:bg-amberGold/30 px-2.5 py-1 rounded text-xs font-bold">Sửa</button>
-                            <button onclick="deleteVideo(${v.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2.5 py-1 rounded text-xs">Xóa</button>
-                        </td>
-                    </tr>
-                `;
-            });
-        }
-
-        function handleSaveVideo(e) {
-            e.preventDefault();
-            const editId = document.getElementById('editVideoId').value;
-            let title = document.getElementById('videoTitleInput').value.trim();
-            const videoUrl = document.getElementById('videoUrlInput').value.trim();
-            const thumbnail = document.getElementById('videoThumbInput').value.trim();
-            const tiktokShopUrl = document.getElementById('videoTiktokShopInput').value.trim();
-
-            if (!title) title = "Video Test Đèn & Xe Độ";
-
-            if (editId) {
-                const idNum = parseInt(editId);
-                const target = videos.find(v => v.id === idNum);
-                if (target) {
-                    target.title = title;
-                    target.videoUrl = videoUrl;
-                    if (thumbnail) target.thumbnail = thumbnail;
-                    target.tiktokShopUrl = tiktokShopUrl;
-                }
-                alert("Đã cập nhật video thành công!");
-            } else {
-                videos.push({
-                    id: Date.now(),
-                    title: title,
-                    videoUrl: videoUrl,
-                    thumbnail: thumbnail,
-                    tiktokShopUrl: tiktokShopUrl
-                });
-                alert("Đã thêm video mới thành công!");
-            }
-
-            saveVideos();
-            renderVideos();
-            renderAdminVideos();
-            resetVideoForm();
-        }
-
-        function editVideo(id) {
-            const v = videos.find(item => item.id === id);
-            if (!v) return;
-
-            document.getElementById('editVideoId').value = v.id;
-            document.getElementById('videoTitleInput').value = v.title || '';
-            document.getElementById('videoUrlInput').value = v.videoUrl;
-            document.getElementById('videoThumbInput').value = v.thumbnail || '';
-            document.getElementById('videoTiktokShopInput').value = v.tiktokShopUrl || '';
-
-            if (v.thumbnail) {
-                document.getElementById('thumbPreviewImg').src = v.thumbnail;
-                document.getElementById('thumbPreviewContainer').classList.remove('hidden');
-            }
-
-            document.getElementById('videoFormTitle').innerHTML = '<span>✏️</span> Sửa Video & Link Shop';
-            document.getElementById('videoSubmitBtn').textContent = 'Cập Nhật Video';
-            document.getElementById('videoCancelBtn').classList.remove('hidden');
-        }
-
-        function resetVideoForm() {
-            document.getElementById('editVideoId').value = '';
-            document.getElementById('videoTitleInput').value = '';
-            document.getElementById('videoUrlInput').value = '';
-            document.getElementById('videoThumbInput').value = '';
-            document.getElementById('videoTiktokShopInput').value = '';
-            document.getElementById('thumbPreviewContainer').classList.add('hidden');
-
-            document.getElementById('videoFormTitle').innerHTML = '<span>➕</span> Thêm Video Mới';
-            document.getElementById('videoSubmitBtn').textContent = 'Lưu Video';
-            document.getElementById('videoCancelBtn').classList.add('hidden');
-        }
-
-        function deleteVideo(id) {
-            if (confirm("Anh có chắc muốn xóa video này?")) {
-                videos = videos.filter(v => v.id !== id);
-                saveVideos();
-                renderVideos();
-                renderAdminVideos();
-            }
-        }
-
-        // ================= 2. DỮ LIỆU SẢN PHẨM =================
+        // Dữ liệu mẫu ban đầu
         const initialProducts = [
             {
                 id: 101,
@@ -834,7 +507,7 @@
                 category: "moto-lighting",
                 price: 650000,
                 image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
+                tiktokShopUrl: "https://www.tiktok.com/@chinh0966"
             },
             {
                 id: 102,
@@ -842,7 +515,7 @@
                 category: "moto-lighting",
                 price: 1850000,
                 image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
+                tiktokShopUrl: "https://www.tiktok.com/@chinh0966"
             },
             {
                 id: 1,
@@ -850,7 +523,7 @@
                 category: "lighting",
                 price: 4800000,
                 image: "https://images.unsplash.com/photo-1549646849-c12b1c7fc017?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
+                tiktokShopUrl: "https://www.tiktok.com/@chinh0966"
             },
             {
                 id: 2,
@@ -858,50 +531,18 @@
                 category: "lighting",
                 price: 2400000,
                 image: "https://images.unsplash.com/photo-1629853909789-705a60c0422c?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 3,
-                name: "Bộ Mâm KMC 17 Inch PCD 6x139.7 Cho Bán Tải",
-                category: "wheels",
-                price: 18500000,
-                image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 4,
-                name: "Vành Mâm Thể Thao Fuel 18 Inch Đúc Hợp Kim",
-                category: "wheels",
-                price: 21000000,
-                image: "https://images.unsplash.com/photo-1611821064430-0d40291d0f0d?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 5,
-                name: "Đĩa Phanh Vát Rãnh Tản Nhiệt Bán Tải",
-                category: "brakes",
-                price: 3600000,
-                image: "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
-            },
-            {
-                id: 6,
-                name: "Bộ Spacer Bánh Xe 35mm Nhôm CNC Có Gờ Định Tâm",
-                category: "brakes",
-                price: 2800000,
-                image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=800",
-                tiktokShopUrl: ""
+                tiktokShopUrl: "https://www.tiktok.com/@chinh0966"
             }
         ];
 
-        let storedProducts = JSON.parse(localStorage.getItem('chinhProducts')) || initialProducts;
-        let products = storedProducts;
+        let products = JSON.parse(localStorage.getItem('chinhProducts')) || initialProducts;
 
         function saveProducts() {
             localStorage.setItem('chinhProducts', JSON.stringify(products));
         }
 
         function formatMoney(amount) {
+            if (!amount) return "Xem giá trên TikTok";
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
         }
 
@@ -919,14 +560,13 @@
                     ? '<span class="absolute top-3 left-3 bg-blue-600 text-white font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase">Xe Máy</span>'
                     : '<span class="absolute top-3 left-3 bg-slate-800 text-amberGold font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase">Ô Tô</span>';
 
-                // Nếu sản phẩm có link riêng thì mở link riêng, nếu không mở gian hàng TikTok Shop tổng
                 const targetLink = p.tiktokShopUrl || globalShopUrl;
                 const zaloLink = `https://zalo.me/0868770966?text=${encodeURIComponent('Chào anh Chinh, tôi muốn hỏi kỹ thuật món: ' + p.name)}`;
 
                 grid.innerHTML += `
                     <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle card-hover flex flex-col justify-between group">
                         <div class="relative h-52 overflow-hidden bg-black cursor-pointer" onclick="window.open('${targetLink}', '_blank')">
-                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="${p.image || DEFAULT_IMG}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             ${tagBadge}
                             <span class="absolute top-3 right-3 bg-red-600 text-white font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase flex items-center gap-1">
                                 <span>♪</span> TikTok Shop
@@ -938,13 +578,13 @@
                                 <p class="text-amberGold font-heading font-extrabold text-xl mt-1 mb-4">${formatMoney(p.price)}</p>
                             </div>
                             
-                            <!-- NÚT MUA HÀNG DẪN THẲNG VÀO TIKTOK SHOP -->
+                            <!-- NÚT CHUYỂN SANG TIKTOK SHOP -->
                             <div class="space-y-2">
                                 <a href="${targetLink}" target="_blank" class="w-full bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-lg shadow-red-500/20 active:scale-95">
-                                    <span class="text-red-500 font-extrabold text-sm">♪</span> MUA NGAY TRÊN TIKTOK SHOP ↗
+                                    <span class="text-red-500 font-extrabold text-sm">♪</span> MUA TRÊN TIKTOK SHOP ↗
                                 </a>
                                 <a href="${zaloLink}" target="_blank" class="w-full block bg-card hover:bg-slate-800 border border-borderSubtle text-slate-300 font-heading font-bold text-xs py-2 rounded-xl uppercase tracking-wider text-center transition">
-                                    💬 Tư Vấn Kỹ Thuật Lắp Đặt (Zalo)
+                                    💬 Tư Vấn Lắp Đặt (Zalo)
                                 </a>
                             </div>
                         </div>
@@ -964,59 +604,147 @@
             renderProducts();
         }
 
-        function handleCustomOrder(e) {
+        // ================= GẮN THẺ SẢN PHẨM SIÊU TỐC TRONG ADMIN =================
+        function handleQuickAddCard(e) {
             e.preventDefault();
-            const car = document.getElementById('orderCarModel').value;
-            const item = document.getElementById('orderItemName').value;
-            const note = document.getElementById('orderNote').value;
+            const editId = document.getElementById('editCardId').value;
+            const name = document.getElementById('quickCardName').value.trim();
+            const url = document.getElementById('quickCardUrl').value.trim();
+            const cat = document.getElementById('quickCardCat').value;
+            const price = parseInt(document.getElementById('quickCardPrice').value) || 0;
+            const img = document.getElementById('quickCardImg').value.trim() || DEFAULT_IMG;
 
-            const text = `Chào anh Chinh, tôi muốn ORDER phụ tùng theo yêu cầu:\n- Loại xe & Đời xe: ${car}\n- Đồ cần tìm: ${item}\n- Ghi chú: ${note}`;
-            window.open(`https://zalo.me/0868770966?text=${encodeURIComponent(text)}`, '_blank');
+            if (editId) {
+                const target = products.find(p => p.id === parseInt(editId));
+                if (target) {
+                    target.name = name;
+                    target.tiktokShopUrl = url;
+                    target.category = cat;
+                    if (price) target.price = price;
+                    if (img) target.image = img;
+                }
+                alert("✓ Đã cập nhật thẻ hàng thành công!");
+            } else {
+                const newCard = {
+                    id: Date.now(),
+                    name: name,
+                    category: cat,
+                    price: price,
+                    image: img,
+                    tiktokShopUrl: url
+                };
+                products.unshift(newCard);
+                alert("✓ Đã gắn thẻ hàng thành công lên trang web!");
+            }
+
+            saveProducts();
+            renderAdminCardsTable();
+            resetCardForm();
         }
 
-        function renderAdminProducts() {
+        function renderAdminCardsTable() {
             const tbody = document.getElementById('adminTableBody');
             tbody.innerHTML = '';
             products.forEach(p => {
+                const catName = p.category === 'moto-lighting' ? '🏍️ Đèn Xe Máy' : (p.category === 'lighting' ? '🚗 Đèn Ô Tô' : 'Phụ kiện');
                 tbody.innerHTML += `
                     <tr class="hover:bg-slate-900/50">
-                        <td class="py-3"><img src="${p.image}" class="w-12 h-12 object-cover rounded-lg border border-borderSubtle"></td>
-                        <td class="py-3 font-semibold text-white">${p.name}</td>
-                        <td class="py-3 text-amberGold font-bold">${formatMoney(p.price)}</td>
-                        <td class="py-3 text-right">
-                            <button onclick="deleteProduct(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-3 py-1 rounded text-xs">Xóa</button>
+                        <td class="py-3"><img src="${p.image || DEFAULT_IMG}" class="w-12 h-12 object-cover rounded-lg border border-borderSubtle"></td>
+                        <td class="py-3 font-semibold text-white max-w-xs truncate">${p.name}</td>
+                        <td class="py-3 text-xs text-slate-400 font-heading">${catName}</td>
+                        <td class="py-3 text-right space-x-1">
+                            <button onclick="editCard(${p.id})" class="bg-amberGold/20 text-amberGold hover:bg-amberGold/30 px-2.5 py-1 rounded text-xs font-bold">Sửa</button>
+                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2.5 py-1 rounded text-xs">Xóa</button>
                         </td>
                     </tr>
                 `;
             });
         }
 
-        function handleAddNewProduct(e) {
-            e.preventDefault();
-            const newP = {
-                id: Date.now(),
-                name: document.getElementById('newProdName').value,
-                category: document.getElementById('newProdCat').value,
-                price: parseInt(document.getElementById('newProdPrice').value),
-                image: document.getElementById('newProdImg').value,
-                tiktokShopUrl: document.getElementById('newProdTiktokShop').value.trim()
-            };
-            products.push(newP);
-            saveProducts();
-            renderAdminProducts();
-            e.target.reset();
-            alert("Đã thêm sản phẩm thành công!");
+        function editCard(id) {
+            const p = products.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('editCardId').value = p.id;
+            document.getElementById('quickCardName').value = p.name;
+            document.getElementById('quickCardUrl').value = p.tiktokShopUrl || '';
+            document.getElementById('quickCardCat').value = p.category || 'moto-lighting';
+            document.getElementById('quickCardPrice').value = p.price || '';
+            document.getElementById('quickCardImg').value = p.image || '';
+
+            document.getElementById('cardFormTitle').innerHTML = '<span>✏️</span> Sửa Thẻ Hàng';
+            document.getElementById('cardSubmitBtn').textContent = 'Cập Nhật Thẻ Hàng';
+            document.getElementById('cardCancelBtn').classList.remove('hidden');
         }
 
-        function deleteProduct(id) {
-            if (confirm("Anh có chắc muốn xóa món này khỏi web?")) {
+        function resetCardForm() {
+            document.getElementById('editCardId').value = '';
+            document.getElementById('quickCardName').value = '';
+            document.getElementById('quickCardUrl').value = '';
+            document.getElementById('quickCardPrice').value = '';
+            document.getElementById('quickCardImg').value = '';
+
+            document.getElementById('cardFormTitle').innerHTML = '<span>➕</span> Gắn Thẻ Hàng Mới';
+            document.getElementById('cardSubmitBtn').textContent = 'Tạo & Gắn Thẻ Hàng Lên Web';
+            document.getElementById('cardCancelBtn').classList.add('hidden');
+        }
+
+        function deleteCard(id) {
+            if (confirm("Anh có chắc muốn xóa thẻ này khỏi trang web?")) {
                 products = products.filter(p => p.id !== id);
                 saveProducts();
-                renderAdminProducts();
+                renderAdminCardsTable();
             }
         }
 
-        // ================= 3. ĐĂNG NHẬP ADMIN =================
+        // ================= VIDEO TEST XE =================
+        const defaultVideos = [
+            {
+                id: 1,
+                title: "Test Bi Cầu Mini 2 Màu Xe Máy (Cos Vàng Pha Trắng)",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 2,
+                title: "Đèn Nóc Future Eyes Laser Gom Xa 800m",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+                thumbnail: "https://images.unsplash.com/photo-1549646849-c12b1c7fc017?auto=format&fit=crop&q=80&w=800"
+            }
+        ];
+
+        let videos = JSON.parse(localStorage.getItem('chinhVideos')) || defaultVideos;
+
+        function renderVideos() {
+            const grid = document.getElementById('videoGrid');
+            grid.innerHTML = '';
+
+            videos.forEach(v => {
+                grid.innerHTML += `
+                    <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle shadow-xl flex flex-col group relative">
+                        <div class="relative w-full h-[380px] bg-black overflow-hidden">
+                            <video id="vid_${v.id}" autoplay loop muted playsinline poster="${v.thumbnail || ''}" class="w-full h-full object-cover">
+                                <source src="${v.videoUrl}" type="video/mp4">
+                            </video>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/60 to-transparent p-4">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-amberGold">Test Thực Tế</span>
+                                <h3 class="text-base font-bold font-heading text-white line-clamp-1">${v.title}</h3>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-card flex flex-col gap-2.5 flex-grow justify-between">
+                            <p class="text-xs text-slate-400 line-clamp-2">${v.title}</p>
+                            <div class="pt-2 border-t border-borderSubtle/60">
+                                <a href="${globalShopUrl}" target="_blank" class="w-full bg-black hover:bg-slate-900 border border-red-500/60 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-md active:scale-95">
+                                    <span class="text-red-500 font-extrabold text-sm">♪</span> Mua Món Này Trên TikTok Shop ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // ================= QUẢN TRỊ BẢO MẬT =================
         const AUTH_USER = "008092001920";
         const AUTH_PASS = "Chinh@90";
 
@@ -1074,10 +802,8 @@
             if (dash.classList.contains('hidden')) {
                 dash.classList.remove('hidden');
                 pub.classList.add('hidden');
-                // Điền link shop hiện tại vào ô cài đặt
                 document.getElementById('globalShopUrlInput').value = globalShopUrl;
-                renderAdminVideos();
-                renderAdminProducts();
+                renderAdminCardsTable();
             } else {
                 dash.classList.add('hidden');
                 pub.classList.remove('hidden');
@@ -1086,11 +812,19 @@
             }
         }
 
+        function handleCustomOrder(e) {
+            e.preventDefault();
+            const car = document.getElementById('orderCarModel').value;
+            const item = document.getElementById('orderItemName').value;
+            const note = document.getElementById('orderNote').value;
+            const text = `Chào anh Chinh, tôi muốn ORDER phụ tùng theo yêu cầu:\n- Loại xe: ${car}\n- Đồ cần tìm: ${item}\n- Ghi chú: ${note}`;
+            window.open(`https://zalo.me/0868770966?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
         if (window.location.hash === '#login') {
             openLoginModal();
         }
 
-        // Khởi động
         updateGlobalShopLinks();
         renderProducts();
         renderVideos();
