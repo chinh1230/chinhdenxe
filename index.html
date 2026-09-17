@@ -45,14 +45,8 @@
             font-family: 'Barlow Condensed', sans-serif;
             letter-spacing: 0.04em;
         }
-        .hero-banner {
-            background: linear-gradient(180deg, rgba(7, 10, 15, 0.45) 0%, rgba(7, 10, 15, 0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-        }
         .glow-amber {
-            text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+            text-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
         }
         .card-hover:hover {
             border-color: #FE2C55;
@@ -75,7 +69,7 @@
         </div>
         <div class="flex items-center gap-2">
             <button onclick="toggleAdminDashboard()" class="bg-black text-white hover:bg-slate-900 px-3.5 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
-                ⚙️ Mở Bảng Thêm Thẻ Hàng & Video
+                ⚙️ Mở Bảng Gắn Thẻ Hàng & Video
             </button>
             <button onclick="logoutAdmin()" class="bg-red-700 text-white hover:bg-red-800 px-3 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
                 Đăng Xuất
@@ -122,27 +116,38 @@
 
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
-        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center">
-            <div class="max-w-4xl mx-auto">
-                <span class="bg-amberGold/10 text-amberGold border border-amberGold/30 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6">
-                    Xưởng Độ Đèn Trợ Sáng Ô Tô & Xe Máy Chuyên Nghiệp
+        
+        <!-- PHẦN NỀN VIDEO XE CHẠY CHUYỂN ĐỘNG (CINEMATIC HERO BACKGROUND) -->
+        <header class="relative min-h-[580px] md:min-h-[640px] flex items-center justify-center overflow-hidden border-b border-borderSubtle py-20 px-4 sm:px-6">
+            <!-- Thẻ Video Nền Tự Động Chạy Xe Chạy Đêm & Ánh Đèn -->
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            </video>
+
+            <!-- Lớp phủ màu tối Obsidian để chữ nổi bật 100% -->
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/75 to-obsidian/55 z-10"></div>
+
+            <!-- Nội dung trung tâm đè lên video -->
+            <div class="relative z-20 max-w-4xl mx-auto text-center">
+                <span class="bg-amberGold/15 backdrop-blur-md text-amberGold border border-amberGold/40 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6 shadow-lg">
+                    XƯỞNG ĐỘ ĐÈN TRỢ SÁNG Ô TÔ & XE MÁY CHUYÊN NGHIỆP
                 </span>
                 
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading uppercase text-white leading-tight mb-6 tracking-wide">
-                    Đột Phá Ánh Sáng <br>
-                    <span class="text-amberGold glow-amber">Cho Cả Ô Tô & Xe Máy</span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading uppercase text-white leading-tight mb-6 tracking-wide drop-shadow-2xl">
+                    ĐỘT PHÁ ÁNH SÁNG <br>
+                    <span class="text-amberGold glow-amber">CHO CẢ Ô TÔ & XE MÁY</span>
                 </h1>
 
-                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
                     Chuyên đèn nóc Future Eyes Laser, bi gầm phá sương 3000K, bi cầu mini trợ sáng xe máy, mâm đĩa tản nhiệt. Bấm vào bất kỳ thẻ hàng nào để mua trực tiếp trên TikTok Shop.
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-red-500/25 transition uppercase tracking-wide flex items-center gap-2.5">
+                    <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black/90 hover:bg-black border-2 border-red-500 text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-red-500/30 transition uppercase tracking-wide flex items-center gap-2.5 backdrop-blur-sm active:scale-95">
                         <span class="text-red-500 text-2xl font-extrabold">♪</span> VÀO GIAN HÀNG TIKTOK SHOP
                     </a>
-                    <a href="#products-section" class="bg-card hover:bg-slate-800 border border-borderSubtle text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide">
-                        Xem Các Thẻ Sản Phẩm
+                    <a href="#products-section" class="bg-card/80 hover:bg-slate-800 border border-borderSubtle text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide backdrop-blur-sm">
+                        XEM CÁC THẺ SẢN PHẨM
                     </a>
                 </div>
             </div>
@@ -172,7 +177,7 @@
             </div>
         </section>
 
-        <!-- KHO THẺ SẢN PHẨM (MỖI THẺ DẪN VÀO LINK TIKTOK SHOP RIÊNG) -->
+        <!-- KHO THẺ SẢN PHẨM -->
         <section id="products-section" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-6 border-b border-borderSubtle">
                 <div>
@@ -499,7 +504,6 @@
             }
         }
 
-        // Dữ liệu mẫu ban đầu
         const initialProducts = [
             {
                 id: 101,
@@ -578,7 +582,6 @@
                                 <p class="text-amberGold font-heading font-extrabold text-xl mt-1 mb-4">${formatMoney(p.price)}</p>
                             </div>
                             
-                            <!-- NÚT CHUYỂN SANG TIKTOK SHOP -->
                             <div class="space-y-2">
                                 <a href="${targetLink}" target="_blank" class="w-full bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-lg shadow-red-500/20 active:scale-95">
                                     <span class="text-red-500 font-extrabold text-sm">♪</span> MUA TRÊN TIKTOK SHOP ↗
@@ -604,7 +607,6 @@
             renderProducts();
         }
 
-        // ================= GẮN THẺ SẢN PHẨM SIÊU TỐC TRONG ADMIN =================
         function handleQuickAddCard(e) {
             e.preventDefault();
             const editId = document.getElementById('editCardId').value;
