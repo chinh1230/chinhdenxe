@@ -45,6 +45,12 @@
             font-family: 'Barlow Condensed', sans-serif;
             letter-spacing: 0.04em;
         }
+        .hero-banner {
+            background: linear-gradient(180deg, rgba(7, 10, 15, 0.5) 0%, rgba(7, 10, 15, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
         .glow-amber {
             text-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
         }
@@ -117,18 +123,9 @@
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
         
-        <!-- PHẦN NỀN VIDEO XE CHẠY CHUYỂN ĐỘNG -->
-        <header class="relative min-h-[580px] md:min-h-[640px] flex items-center justify-center overflow-hidden border-b border-borderSubtle py-20 px-4 sm:px-6 bg-black">
-            <!-- Video nền chạy mượt mà bằng CDN Google -->
-            <video id="heroBgVideo" autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none">
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-            </video>
-
-            <!-- Lớp phủ màu tối Obsidian đảm bảo chữ nổi bật sắc nét -->
-            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/75 to-obsidian/60 z-10"></div>
-
-            <!-- Nội dung chữ và nút bấm đè lên video -->
-            <div class="relative z-20 max-w-4xl mx-auto text-center">
+        <!-- HERO BANNER (DẠNG ẢNH NỀN CHẤT LƯỢNG CAO - ỔN ĐỊNH 100%, KHÔNG BAO GIỜ ĐEN XÌ) -->
+        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center">
+            <div class="max-w-4xl mx-auto">
                 <span class="bg-amberGold/15 backdrop-blur-md text-amberGold border border-amberGold/40 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6 shadow-lg">
                     XƯỞNG ĐỘ ĐÈN TRỢ SÁNG Ô TÔ & XE MÁY CHUYÊN NGHIỆP
                 </span>
@@ -343,7 +340,7 @@
                 </button>
             </div>
 
-            <!-- MỤC 1: CHỖ GẮN THẺ SẢN PHẨM TIKTOK SHOP SIÊU TỐC -->
+            <!-- MỤC 1: CHỖ GẮN THẺ SẢN PHẨM TIKTOK SHOP -->
             <section class="bg-panel border-2 border-red-500/50 p-6 sm:p-8 rounded-3xl shadow-xl">
                 <div class="flex items-center gap-3 mb-6 pb-3 border-b border-borderSubtle">
                     <span class="text-3xl text-red-500">🏷️</span>
@@ -739,19 +736,6 @@
             });
         }
 
-        // ================= CƯỠNG BỨC TỰ PHÁT VIDEO NỀN (FORCED AUTOPLAY) =================
-        function forcePlayBackgroundVideo() {
-            const bgVid = document.getElementById('heroBgVideo');
-            if (bgVid) {
-                bgVid.muted = true;
-                bgVid.play().catch(() => {
-                    document.addEventListener('touchstart', () => bgVid.play(), { once: true });
-                    document.addEventListener('click', () => bgVid.play(), { once: true });
-                    document.addEventListener('scroll', () => bgVid.play(), { once: true });
-                });
-            }
-        }
-
         // ================= QUẢN TRỊ BẢO MẬT =================
         const AUTH_USER = "008092001920";
         const AUTH_PASS = "Chinh@90";
@@ -838,7 +822,6 @@
         renderProducts();
         renderVideos();
         checkAdminSession();
-        forcePlayBackgroundVideo();
     </script>
 </body>
 </html>
