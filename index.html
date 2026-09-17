@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHINH DENXE - Chuyên Đèn Xe & Phụ Kiện Offroad</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome cho các icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Cấu hình Tailwind tùy chỉnh màu sắc -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        tiktok: {
+                            cyan: '#00f2fe',
+                            red: '#fe0979',
+                            dark: '#010101'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 - Dark mode */
+            color: #f8fafc; /* Slate 50 */
+        }
+        
+        /* Hiệu ứng viền cho nút TikTok nổi */
+        .tiktok-border {
+            box-shadow: -2px -2px 0px 0px #00f2fe, 2px 2px 0px 0px #fe0979;
+        }
+
+        /* Ẩn thanh cuộn */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <h1 class="text-3xl font-extrabold tracking-widest text-amber-500">
+                        CHINH <span class="text-white">DENXE</span>
+                    </h1>
+                </div>
+                
+                <!-- Nút chuyển đổi Admin / Storefront -->
+                <div>
+                    <button id="toggleViewBtn" onclick="toggleView()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium py-2.5 px-5 rounded-lg border border-slate-700 transition-all shadow-sm hover:shadow-amber-500/10 flex items-center gap-2">
+                        <i class="fas fa-cog"></i> <span class="hidden sm:inline">Quản Trị</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <a href="https://www.tiktok.com/@chinh0966" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-tiktok-dark text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl tiktok-border hover:scale-110 transition-transform duration-300 animate-bounce">
+        <i class="fab fa-tiktok"></i>
+    </a>
+
+    <!-- ========================================== -->
+    <!-- GIAO DIỆN KHÁCH HÀNG (CỬA HÀNG) -->
+    <!-- ========================================== -->
+    <main id="storeView" class="flex-grow block w-full">
+        
+        <div class="relative bg-slate-900 overflow-hidden border-b border-slate-800">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=1920" alt="Offroad Truck" class="w-full h-full object-cover opacity-20">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 uppercase">
+                    Độ Sáng Đỉnh Cao <br class="hidden sm:block"> 
+                    <span class="text-amber-500 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Bứt Phá Màn Đêm</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-lg text-slate-300 mx-auto mb-10">
+                    CHINH DENXE chuyên lắp đặt rơ-le, nâng cấp đèn nóc Future Eyes và cung cấp pin Lithium chất lượng cao cho các dòng xe bán tải, off-road.
+                </p>
+                <a href="#product-section" class="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-extrabold px-8 py-4 rounded-full transition-all transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)]">
+                    Xem Báo Giá Sản Phẩm <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <div id="product-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-3xl font-bold text-white border-l-4 border-amber-500 pl-4 uppercase tracking-wide">Sản Phẩm Cốt Lõi</h2>
+            </div>
+
+            <!-- Lưới Sản Phẩm được JS nạp vào -->
+            <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Thẻ sản phẩm sẽ xuất hiện tại đây -->
+            </div>
+        </div>
+
+        <div class="bg-slate-950 py-20 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center p-3 bg-tiktok-dark rounded-full tiktok-border mb-4">
+                        <i class="fab fa-tiktok text-white text-xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-3 uppercase tracking-wide">Video Thực Tế & Lắp Đặt</h2>
+                    <p class="text-slate-400">
+                        Trải nghiệm ánh sáng thực tế và quy trình thi công chuyên nghiệp từ kênh <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="text-amber-500 hover:underline font-bold">@chinh0966</a>
+                    </p>
+                </div>
+
+                <!-- Vùng chứa mã nhúng TikTok -->
+                <div class="flex justify-center w-full overflow-hidden rounded-2xl">
+                    <!-- Đây là mã nhúng Profile TikTok chuẩn. Nó sẽ hiển thị kênh của bạn và cho phép xem video trực tiếp -->
+                    <blockquote class="tiktok-embed bg-slate-900 rounded-xl" cite="https://www.tiktok.com/@chinh0966" data-unique-id="chinh0966" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" >
+                        <section> 
+                            <a target="_blank" href="https://www.tiktok.com/@chinh0966?refer=creator_embed" class="text-amber-500 hover:underline">Xem kênh TikTok @chinh0966</a> 
+                        </section>
+                    </blockquote>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border-2 border-slate-700 hover:border-amber-500 text-slate-300 hover:text-amber-500 rounded-lg transition-colors font-semibold shadow-lg bg-slate-900">
+                        Mở Ứng Dụng TikTok <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- GIAO DIỆN QUẢN TRỊ (ADMIN) -->
+    <!-- ========================================== -->
+    <main id="adminView" class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
+        <div class="mb-10">
+            <h2 class="text-3xl font-bold text-amber-500 mb-2 flex items-center gap-3 uppercase">
+                <i class="fas fa-tools"></i> Quản Lý Cửa Hàng
+            </h2>
+            <p class="text-slate-400">Thêm, sửa, xóa các sản phẩm bên dưới. Hệ thống tự động lưu trữ và cập nhật.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Form Thêm Sản Phẩm -->
+            <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 lg:col-span-1 h-fit shadow-2xl">
+                <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2 border-b border-slate-700 pb-4">
+                    <i class="fas fa-plus-circle text-amber-500"></i> Đăng Sản Phẩm Mới
+                </h3>
+                <form id="addProductForm" onsubmit="addProduct(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Tên Sản Phẩm</label>
+                        <input type="text" id="prodName" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all placeholder-slate-600" placeholder="VD: Bi Cầu LED Trợ Sáng...">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Giá Bán (VNĐ)</label>
+                        <input type="number" id="prodPrice" required min="0" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all placeholder-slate-600" placeholder="VD: 1500000">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Đường dẫn Hình Ảnh (URL)</label>
+                        <input type="url" id="prodImage" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all placeholder-slate-600" placeholder="https://link-anh.jpg">
+                    </div>
+                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-lg transition-all shadow-lg hover:shadow-amber-500/40">
+                        Lưu Sản Phẩm
+                    </button>
+                </form>
+            </div>
+
+            <!-- Bảng Danh Sách Sản Phẩm -->
+            <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 lg:col-span-2 shadow-2xl overflow-hidden flex flex-col">
+                <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2 border-b border-slate-700 pb-4">
+                    <i class="fas fa-box-open text-amber-500"></i> Kho Hàng Hiện Tại
+                </h3>
+                <div class="overflow-x-auto flex-grow">
+                    <table class="w-full text-left border-collapse whitespace-nowrap">
+                        <thead>
+                            <tr class="bg-slate-900 text-slate-300 text-sm">
+                                <th class="p-4 font-semibold rounded-tl-lg">Hình Ảnh</th>
+                                <th class="p-4 font-semibold">Tên Sản Phẩm</th>
+                                <th class="p-4 font-semibold">Giá Bán</th>
+                                <th class="p-4 font-semibold text-right rounded-tr-lg">Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductTable" class="divide-y divide-slate-700 text-slate-300">
+                            <!-- Dữ liệu sẽ được điền bằng JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Thông tin Thương hiệu -->
+            <div>
+                <h2 class="text-2xl font-bold tracking-widest text-amber-500 mb-4">
+                    CHINH <span class="text-white">DENXE</span>
+                </h2>
+                <p class="text-slate-400 mb-6 text-sm leading-relaxed">
+                    Chuyên phân phối, nâng cấp và thi công hệ thống điện, rơ-le, đèn trợ sáng cho xe ô tô, bán tải. Mang đến độ sáng và sự an toàn tuyệt đối.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-tiktok-dark hover:text-white hover:tiktok-border transition-all">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://zalo.me/0868770966" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-500 hover:text-white transition-all">
+                        <i class="fas fa-comment-dots"></i> <!-- Zalo Icon placeholder -->
+                    </a>
+                </div>
+            </div>
+
+            <!-- Liên hệ -->
+            <div>
+                <h3 class="text-lg font-bold text-white mb-4 uppercase tracking-wide">Liên Hệ Trực Tiếp</h3>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-amber-500 mt-1 text-lg"></i>
+                        <span>Cửa Hàng CHINH DENXE<br>Hồng Sơn, Tuyên Quang</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-amber-500 text-lg"></i>
+                        <a href="tel:0868770966" class="hover:text-amber-500 font-bold transition-colors text-lg text-white">0868 770 966</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-paper-plane text-amber-500 text-lg"></i>
+                        <a href="https://zalo.me/0868770966" target="_blank" class="hover:text-amber-500 transition-colors">Nhắn tin Zalo (0868770966)</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Dịch vụ -->
+            <div>
+                <h3 class="text-lg font-bold text-white mb-4 uppercase tracking-wide">Chuyên Môn</h3>
+                <ul class="space-y-2 text-slate-400 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500"></i> Lắp ráp sơ đồ rơ-le điện an toàn</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500"></i> Độ đèn LED nóc Future Eyes</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500"></i> Cung cấp pin Lithium 12V khối lớn</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-amber-500"></i> Tối ưu hệ thống điện bán tải</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <p>&copy; 2024 CHINH DENXE. Thiết kế chuyên nghiệp cho dân chơi xe.</p>
+        </div>
+    </footer>
+
+    <!-- Script cần thiết để chạy video TikTok -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <script>
+        // --- LOGIC QUẢN LÝ SẢN PHẨM ---
+        
+        // 1. Dữ liệu Mặc định cốt lõi
+        const defaultProducts = [
+            {
+                id: 1,
+                name: "Thanh Đèn LED Nóc Future Eyes Siêu Sáng",
+                price: 4500000,
+                image: "https://images.unsplash.com/photo-1549646849-c12b1c7fc017?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 2,
+                name: "Hộp pin Lithium 12V 100Ah (Dành cho Offroad)",
+                price: 3200000,
+                image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 3,
+                name: "Bộ Rơ-le Công Tắc Chống Cháy Nổ",
+                price: 850000,
+                image: "https://images.unsplash.com/photo-1616422285623-22dc9cb463c5?auto=format&fit=crop&q=80&w=800"
+            }
+        ];
+
+        // Khởi tạo và Lưu trữ bằng LocalStorage
+        const STORAGE_KEY = "chinhdenxe_products_v1";
+        let products = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        
+        if (!products || products.length === 0) {
+            products = defaultProducts;
+            saveToStorage();
+        }
+
+        function saveToStorage() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+        }
+
+        // Định dạng tiền tệ VNĐ
+        function formatMoney(amount) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        }
+
+        // 2. Render Cửa Hàng
+        function renderStore() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            
+            if (products.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-20 bg-slate-800/50 rounded-2xl border border-slate-700 border-dashed">
+                        <i class="fas fa-box-open text-4xl text-slate-500 mb-4"></i>
+                        <p class="text-slate-400">Kho hàng đang trống.</p>
+                    </div>`;
+                return;
+            }
+
+            products.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 hover:border-amber-500/80 transition duration-300 group flex flex-col h-full hover:shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2 line-clamp-2 leading-tight flex-grow group-hover:text-amber-400 transition-colors">${p.name}</h3>
+                            <div class="flex items-end justify-between mt-6 border-t border-slate-700 pt-4">
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase tracking-wider mb-1">Giá bán</p>
+                                    <p class="text-amber-500 font-extrabold text-2xl">${formatMoney(p.price)}</p>
+                                </div>
+                                <!-- NÚT MUA LIÊN KẾT ZALO -->
+                                <a href="https://zalo.me/0868770966" target="_blank" title="Nhắn tin đặt hàng qua Zalo" class="bg-blue-600 hover:bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1">
+                                    <i class="fas fa-paper-plane text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // 3. Render Bảng Admin
+        function renderAdminTable() {
+            const table = document.getElementById('adminProductTable');
+            table.innerHTML = '';
+            
+            if(products.length === 0) {
+                table.innerHTML = `<tr><td colspan="4" class="p-8 text-center text-slate-500 italic">Chưa có sản phẩm.</td></tr>`;
+                return;
+            }
+
+            products.forEach(p => {
+                table.innerHTML += `
+                    <tr class="hover:bg-slate-700/50 transition border-b border-slate-700 last:border-0">
+                        <td class="p-4">
+                            <img src="${p.image}" class="w-16 h-16 object-cover rounded-lg border border-slate-600 shadow-sm">
+                        </td>
+                        <td class="p-4 font-medium text-white max-w-[200px] sm:max-w-xs truncate" title="${p.name}">${p.name}</td>
+                        <td class="p-4 text-amber-500 font-bold">${formatMoney(p.price)}</td>
+                        <td class="p-4 text-right">
+                            <button onclick="deleteProduct(${p.id})" class="text-slate-400 hover:text-red-500 transition-colors p-2 bg-slate-900 rounded-lg border border-slate-700 hover:border-red-500" title="Xóa">
+                                <i class="fas fa-trash-alt text-lg"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // 4. Hàm Thêm Sản Phẩm
+        window.addProduct = function(e) {
+            e.preventDefault(); 
+            const name = document.getElementById('prodName').value;
+            const price = document.getElementById('prodPrice').value;
+            const image = document.getElementById('prodImage').value;
+
+            const newProduct = {
+                id: Date.now(), 
+                name: name.trim(),
+                price: parseInt(price),
+                image: image.trim()
+            };
+
+            products.unshift(newProduct); 
+            saveToStorage(); 
+            
+            renderStore();      
+            renderAdminTable(); 
+            document.getElementById('addProductForm').reset(); 
+            
+            showToast("Đã thêm lên cửa hàng thành công!");
+        }
+
+        // 5. Hàm Xóa Sản Phẩm
+        window.deleteProduct = function(id) {
+            products = products.filter(p => p.id !== id);
+            saveToStorage();
+            renderStore();
+            renderAdminTable();
+            showToast("Đã xóa sản phẩm", "error");
+        }
+
+        // 6. Chuyển đổi View
+        let isAdminView = false;
+        window.toggleView = function() {
+            isAdminView = !isAdminView;
+            const storeView = document.getElementById('storeView');
+            const adminView = document.getElementById('adminView');
+            const btn = document.getElementById('toggleViewBtn');
+
+            if (isAdminView) {
+                storeView.classList.replace('block', 'hidden');
+                adminView.classList.replace('hidden', 'block');
+                
+                btn.innerHTML = `<i class="fas fa-store"></i> <span class="hidden sm:inline">Xem Cửa Hàng</span>`;
+                btn.classList.replace('bg-slate-800', 'bg-amber-500');
+                btn.classList.replace('hover:bg-slate-700', 'hover:bg-amber-400');
+                btn.classList.replace('text-slate-200', 'text-slate-900');
+            } else {
+                storeView.classList.replace('hidden', 'block');
+                adminView.classList.replace('block', 'hidden');
+                
+                btn.innerHTML = `<i class="fas fa-cog"></i> <span class="hidden sm:inline">Quản Trị</span>`;
+                btn.classList.replace('bg-amber-500', 'bg-slate-800');
+                btn.classList.replace('hover:bg-amber-400', 'hover:bg-slate-700');
+                btn.classList.replace('text-slate-900', 'text-slate-200');
+            }
+        }
+
+        // 7. Toast Message UI
+        function showToast(message, type = "success") {
+            const toast = document.createElement('div');
+            const bgColor = type === "success" ? "bg-amber-500 text-slate-900" : "bg-red-500 text-white";
+            const icon = type === "success" ? "fa-check-circle" : "fa-trash-alt";
+            
+            toast.className = `fixed top-24 right-6 ${bgColor} px-6 py-3 rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center gap-3 z-50 transform transition-all duration-300 translate-x-full opacity-0 font-bold border border-slate-700`;
+            toast.innerHTML = `<i class="fas ${icon} text-xl"></i> <span>${message}</span>`;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => { toast.classList.remove('translate-x-full', 'opacity-0'); }, 10);
+            setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+
+        // Khởi động
+        document.addEventListener("DOMContentLoaded", () => {
+            renderStore();
+            renderAdminTable();
+        });
+    </script>
+</body>
+</html>
