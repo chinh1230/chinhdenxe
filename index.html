@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHINH DENXE | 4x4 Off-Road Workshop • Đèn Xe • Vành Mâm • Đĩa Phanh • Trợ Lý AI</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Barlow Condensed & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            950: '#07090E',
+                            900: '#0D1117',
+                            850: '#131923',
+                            800: '#1C2433',
+                            700: '#2A364D'
+                        },
+                        amberGold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706'
+                        },
+                        emeraldTech: {
+                            400: '#34D399',
+                            500: '#10B981',
+                            600: '#059669'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Barlow Condensed"', 'sans-serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #07090E;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .font-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        .hero-pattern {
+            background-color: #07090E;
+            background-image: 
+                radial-gradient(at 80% 20%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+                radial-gradient(at 20% 80%, rgba(16, 185, 129, 0.08) 0px, transparent 40%),
+                linear-gradient(180deg, rgba(7, 9, 14, 0.85) 0%, rgba(7, 9, 14, 0.98) 100%),
+                url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .carbon-card {
+            background: #0D1117;
+            border: 1px solid #1C2433;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .carbon-card:hover {
+            border-color: #F59E0B;
+            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.25);
+            transform: translateY(-3px);
+        }
+        .amber-text-glow {
+            text-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #07090E; }
+        ::-webkit-scrollbar-thumb { background: #1C2433; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
+        
+        /* Animation cho badge AI */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.6); }
+        }
+        .ai-pulse {
+            animation: pulseGlow 3s infinite;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-amberGold-500 selection:text-obsidian-950">
+
+    <!-- Ticker tiêu chuẩn xưởng độ -->
+    <div class="bg-obsidian-900 border-b border-obsidian-800 text-slate-300 py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex items-center justify-between text-xs font-heading font-bold uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emeraldTech-500 animate-ping"></span>
+                <span>CHINH DENXE • XƯỞNG ĐỘ ĐÈN XE, VÀNH MÂM, ĐĨA PHANH & ORDER PHỤ TÙNG BÁN TẢI</span>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-slate-400 text-[11px]">
+                <span><i class="fas fa-microchip text-amberGold-400 mr-1"></i> Có Trợ Lý AI Kỹ Thuật 24/7</span>
+                <span>•</span>
+                <span><i class="fas fa-shield-halved text-emeraldTech-400 mr-1"></i> Thi công chuẩn kỹ thuật điện xe</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thanh Điều Hướng Navbar -->
+    <nav class="bg-obsidian-950/95 backdrop-blur-md border-b border-obsidian-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            
+            <!-- Logo Thương Hiệu -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amberGold-400 to-amberGold-600 flex items-center justify-center text-obsidian-950 shadow-md shadow-amberGold-500/20 group-hover:scale-105 transition">
+                    <i class="fas fa-truck-monster text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5 leading-none">
+                        <span class="text-2xl sm:text-3xl font-black font-heading text-white tracking-wide">CHINH</span>
+                        <span class="text-2xl sm:text-3xl font-black font-heading text-amberGold-500 tracking-wide">DENXE</span>
+                    </div>
+                    <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase font-heading">
+                        LIGHTING • WHEELS • BRAKES • 4X4 ORDER
+                    </span>
+                </div>
+            </a>
+
+            <!-- Menu Điều Hướng Chính -->
+            <div class="hidden lg:flex items-center space-x-7 text-sm font-bold font-heading tracking-wider">
+                <a href="#products-section" class="text-slate-300 hover:text-amberGold-400 transition">KHO SẢN PHẨM</a>
+                <a href="#order-desk" class="text-amberGold-400 hover:text-amberGold-300 transition flex items-center gap-1.5">
+                    <i class="fas fa-cart-flatbed"></i> ORDER PHỤ TÙNG THEO YÊU CẦU
+                </a>
+                <a href="#showcase-section" class="text-slate-300 hover:text-amberGold-400 transition">DỰ ÁN ĐÃ ĐỘ</a>
+                
+                <!-- Nút Mở Kênh AI Kỹ Thuật Trực Tiếp -->
+                <button onclick="openAiChatModal()" class="text-emeraldTech-400 hover:text-emeraldTech-300 transition flex items-center gap-1.5 bg-emeraldTech-500/10 border border-emeraldTech-500/30 px-3 py-1.5 rounded-lg">
+                    <i class="fas fa-robot animate-bounce"></i> HỎI TRỢ LÝ AI
+                </button>
+            </div>
+
+            <!-- Nút Hành Động Phía Phải -->
+            <div class="flex items-center gap-3">
+                <a href="https://www.tiktok.com/@chinh0966" target="_blank" rel="noopener noreferrer" 
+                   class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-800 text-slate-300 hover:text-white hover:border-amberGold-500 text-xs font-bold font-heading transition">
+                    <i class="fab fa-tiktok text-amberGold-400"></i>
+                    <span>@chinh0966</span>
+                </a>
+
+                <button id="toggleAdminBtn" onclick="toggleAdminView()" 
+                        class="bg-amberGold-500 hover:bg-amberGold-400 text-obsidian-950 font-black font-heading px-4 py-2 rounded-xl text-xs sm:text-sm tracking-wider uppercase transition shadow-md shadow-amberGold-500/20 active:scale-95 flex items-center gap-2">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                    <span id="adminToggleText">QUẢN TRỊ KHO</span>
+                </button>
+
+                <button onclick="toggleMobileNavbar()" class="lg:hidden text-slate-300 hover:text-amberGold-400 p-2 text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Di Động -->
+        <div id="mobileNavbar" class="lg:hidden hidden bg-obsidian-900 border-b border-obsidian-800 px-6 py-4 space-y-3 font-heading text-sm font-bold tracking-wider">
+            <a href="#products-section" onclick="toggleMobileNavbar()" class="block py-2 text-slate-300 hover:text-amberGold-400 border-b border-obsidian-800">KHO SẢN PHẨM</a>
+            <a href="#order-desk" onclick="toggleMobileNavbar()" class="block py-2 text-amberGold-400 border-b border-obsidian-800 flex items-center gap-2"><i class="fas fa-cart-flatbed"></i> ORDER PHỤ TÙNG THEO YÊU CẦU</a>
+            <button onclick="toggleMobileNavbar(); openAiChatModal();" class="w-full text-left py-2 text-emeraldTech-400 border-b border-obsidian-800 flex items-center gap-2"><i class="fas fa-robot"></i> TRỢ LÝ KỸ THUẬT AI 24/7</button>
+            <a href="#showcase-section" onclick="toggleMobileNavbar()" class="block py-2 text-slate-300 hover:text-amberGold-400 border-b border-obsidian-800">DỰ ÁN ĐÃ ĐỘ</a>
+            <a href="#contact-footer" onclick="toggleMobileNavbar()" class="block py-2 text-slate-300 hover:text-amberGold-400">LIÊN HỆ & ĐỊA CHỈ XƯỞNG</a>
+        </div>
+    </nav>
+
+    <div id="storefrontContainer" class="block flex-grow">
+
+        <!-- Hero Section -->
+        <header class="relative hero-pattern pt-20 pb-24 md:pt-28 md:pb-32 border-b border-obsidian-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                
+                <span class="inline-flex items-center gap-2 bg-obsidian-900/90 border border-amberGold-500/30 text-amberGold-400 px-4 py-1.5 rounded-full text-xs font-bold font-heading tracking-widest uppercase mb-6 shadow-xl">
+                    CHUYÊN GIA ĐỘ ĐÈN • VÀNH MÂM • ĐĨA PHANH • PHỤ KIỆN OFF-ROAD BÁN TẢI
+                </span>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-heading uppercase text-white tracking-tight leading-[1.08] mb-6">
+                    NÂNG TẦM ÁNH SÁNG <br>
+                    <span class="text-amberGold-500 amber-text-glow">TRANG BỊ OFF-ROAD ĐỈNH CAO</span>
+                </h1>
+
+                <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-10">
+                    Cung cấp và thi công chính hãng đèn nóc <strong class="text-white font-bold">Future Eyes Laser</strong>, bi gầm phá sương 3000K, vành mâm thể thao 17-18-20 inch, đĩa phanh vát rãnh tản nhiệt, spacer bánh xe và dịch vụ <strong class="text-amberGold-400 font-bold">ORDER MỌI MẶT HÀNG PHỤ TÙNG XE</strong> theo yêu cầu.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto mb-12">
+                    <a href="#products-section" class="w-full sm:w-auto bg-amberGold-500 hover:bg-amberGold-400 text-obsidian-950 font-black font-heading text-lg px-8 py-4 rounded-xl shadow-xl shadow-amberGold-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 tracking-wider">
+                        <i class="fas fa-fire"></i>
+                        <span>XEM SẢN PHẨM CÓ SẴN</span>
+                    </a>
+                    
+                    <button onclick="openAiChatModal()" class="w-full sm:w-auto bg-gradient-to-r from-emeraldTech-600 to-emeraldTech-500 hover:from-emeraldTech-500 hover:to-emeraldTech-400 text-white font-black font-heading text-lg px-8 py-4 rounded-xl shadow-xl shadow-emeraldTech-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 tracking-wider ai-pulse">
+                        <i class="fas fa-brain"></i>
+                        <span>TRỢ LÝ KỸ THUẬT AI (24/7)</span>
+                    </button>
+                    
+                    <a href="#order-desk" class="w-full sm:w-auto bg-obsidian-900 hover:bg-obsidian-850 text-white border border-obsidian-700 hover:border-amberGold-500 font-bold font-heading text-lg px-6 py-4 rounded-xl transition flex items-center justify-center gap-2 tracking-wider">
+                        <i class="fas fa-magnifying-glass text-amberGold-500"></i>
+                        <span>ORDER PHỤ TÙNG</span>
+                    </a>
+                </div>
+
+                <!-- Banner Giới Thiệu Kênh AI Thông Minh -->
+                <div class="max-w-4xl mx-auto bg-obsidian-900/90 border border-emeraldTech-500/30 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-left shadow-2xl">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emeraldTech-500/15 border border-emeraldTech-500/30 text-emeraldTech-400 flex items-center justify-center text-2xl flex-shrink-0">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold font-heading uppercase text-white flex items-center gap-2">
+                                <span>KÊNH TƯ VẤN KỸ THUẬT TỰ ĐỘNG AI</span>
+                                <span class="bg-emeraldTech-500/20 text-emeraldTech-400 text-[10px] px-2 py-0.5 rounded font-mono">ONLINE</span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-0.5 leading-snug">
+                                Hỏi đáp tức thì về nhiệt màu đèn phá sương, thông số PCD vành mâm, đĩa tản nhiệt và tự động xuất tóm tắt sang Zalo anh Chinh.
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="openAiChatModal()" class="w-full sm:w-auto bg-emeraldTech-500 hover:bg-emeraldTech-400 text-obsidian-950 font-black font-heading text-xs uppercase px-5 py-2.5 rounded-xl transition flex-shrink-0 flex items-center justify-center gap-2">
+                        <span>MỞ KHUNG CHAT AI</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Khu Vực Order Phụ Tùng & Đồ Chơi Xe Theo Yêu Cầu -->
+        <section id="order-desk" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="bg-gradient-to-br from-obsidian-900 via-obsidian-850 to-obsidian-900 border border-amberGold-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 bg-amberGold-500/15 border border-amberGold-500/30 text-amberGold-400 px-3.5 py-1 rounded-full text-xs font-bold font-heading uppercase tracking-wider mb-4">
+                            <i class="fas fa-star text-amberGold-400"></i> DỊCH VỤ ĐẶT HÀNG RIÊNG CHO ANH EM BÁN TẢI
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-heading uppercase text-white tracking-wide leading-tight mb-4">
+                            BẠN CẦN TÌM ĐỒ GÌ CHO XE? <br>
+                            <span class="text-amberGold-500">CHINH DENXE NHẬN ORDER MỌI PHỤ TÙNG!</span>
+                        </h2>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+                            Chuyên săn tìm và order các dòng <strong class="text-white">vành mâm độ hiếm, đĩa phanh tản nhiệt thể thao, thanh đèn nóc Laser bản đặc biệt, cản trước sau, bộ nâng gầm</strong> đúng chuẩn theo đời xe. Điền thông tin vào phiếu bên cạnh, xưởng sẽ phản hồi hình ảnh thực tế và báo giá chi tiết sau 15 phút.
+                        </p>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                            <div class="p-3 bg-obsidian-950 rounded-xl border border-obsidian-800">
+                                <i class="fas fa-compact-disc text-amberGold-400 text-base mb-1"></i>
+                                <div class="text-xs font-bold font-heading text-white">VÀNH MÂM ĐỘ</div>
+                                <div class="text-[10px] text-slate-400">16, 17, 18, 20 inch</div>
+                            </div>
+                            <div class="p-3 bg-obsidian-950 rounded-xl border border-obsidian-800">
+                                <i class="fas fa-circle-notch text-amberGold-400 text-base mb-1"></i>
+                                <div class="text-xs font-bold font-heading text-white">ĐĨA PHANH</div>
+                                <div class="text-[10px] text-slate-400">Vát rãnh tản nhiệt</div>
+                            </div>
+                            <div class="p-3 bg-obsidian-950 rounded-xl border border-obsidian-800">
+                                <i class="fas fa-lightbulb text-amberGold-400 text-base mb-1"></i>
+                                <div class="text-xs font-bold font-heading text-white">ĐÈN LASER</div>
+                                <div class="text-[10px] text-slate-400">Pha gom chiếu xa</div>
+                            </div>
+                            <div class="p-3 bg-obsidian-950 rounded-xl border border-obsidian-800">
+                                <i class="fas fa-sliders text-amberGold-400 text-base mb-1"></i>
+                                <div class="text-xs font-bold font-heading text-white">PHỤ KIỆN 4X4</div>
+                                <div class="text-[10px] text-slate-400">Rơ-le, cản, tời...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Đặt Hàng Nhanh -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-obsidian-950 border border-obsidian-800 rounded-2xl p-6 shadow-xl">
+                            <div class="flex items-center justify-between border-b border-obsidian-800 pb-3 mb-4">
+                                <h3 class="text-sm font-bold font-heading uppercase text-white flex items-center gap-2">
+                                    <i class="fas fa-paper-plane text-amberGold-400"></i> PHIẾU ĐẶT HÀNG NHANH
+                                </h3>
+                                <span class="text-[11px] text-emeraldTech-400 font-bold font-heading"><i class="fas fa-bolt"></i> Báo giá nhanh</span>
+                            </div>
+
+                            <div class="space-y-3.5 text-xs">
+                                <div>
+                                    <label class="block font-bold font-heading uppercase text-slate-300 mb-1">Dòng Xe & Đời Xe *</label>
+                                    <select id="orderCarBrand" class="w-full bg-obsidian-900 border border-obsidian-800 rounded-xl p-3 text-white focus:outline-none focus:border-amberGold-500 font-medium">
+                                        <option value="Ford Ranger / Ranger Raptor">Ford Ranger / Ranger Raptor Next-Gen</option>
+                                        <option value="Toyota Hilux">Toyota Hilux (Revo / Adventure / Rocco)</option>
+                                        <option value="Mitsubishi Triton">Mitsubishi Triton Athlete / All-New</option>
+                                        <option value="Nissan Navara">Nissan Navara Pro-4X / VL</option>
+                                        <option value="Isuzu D-Max">Isuzu D-Max / Mu-X</option>
+                                        <option value="Dòng xe khác">Dòng xe khác (SUV / Bán tải / Crossover)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block font-bold font-heading uppercase text-slate-300 mb-1">Tên Món Đồ Cần Tìm *</label>
+                                    <input type="text" id="orderItemDetail" placeholder="VD: Mâm 18 inch Beadlock, đĩa phanh tản nhiệt, đèn nóc F150..." 
+                                           class="w-full bg-obsidian-900 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500">
+                                </div>
+
+                                <div>
+                                    <label class="block font-bold font-heading uppercase text-slate-300 mb-1">Ghi Chú Thêm (Thông số, màu sắc, tầm giá)</label>
+                                    <textarea id="orderNote" rows="2" placeholder="Ghi chú thêm về thông số hoặc yêu cầu gửi ảnh mẫu..." 
+                                              class="w-full bg-obsidian-900 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500"></textarea>
+                                </div>
+
+                                <div class="pt-2 grid grid-cols-2 gap-2.5">
+                                    <button onclick="submitOrderInquiry('zalo')" 
+                                            class="bg-blue-600 hover:bg-blue-500 text-white font-bold font-heading text-xs py-3 px-3 rounded-xl transition shadow flex items-center justify-center gap-1.5 active:scale-95">
+                                        <i class="fas fa-comment-dots"></i>
+                                        <span>GỬI QUA ZALO</span>
+                                    </button>
+                                    <button onclick="submitOrderInquiry('whatsapp')" 
+                                            class="bg-emeraldTech-600 hover:bg-emeraldTech-500 text-white font-bold font-heading text-xs py-3 px-3 rounded-xl transition shadow flex items-center justify-center gap-1.5 active:scale-95">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>GỬI WHATSAPP</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KHO SẢN PHẨM SẴN CÓ TẠI XƯỞNG (Không bán pin) -->
+        <section id="products-section" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-obsidian-800 pb-6 gap-4">
+                <div>
+                    <span class="text-amberGold-500 font-bold font-heading text-sm uppercase tracking-widest flex items-center gap-2">
+                        <i class="fas fa-microchip"></i> PHỤ TÙNG CHUYÊN DỤNG CHO BÁN TẢI
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-black font-heading uppercase text-white tracking-wide mt-1">
+                        SẢN PHẨM <span class="text-amberGold-500">NỔI BẬT</span>
+                    </h2>
+                </div>
+                <div class="text-xs text-slate-400">
+                    Bấm "Tư Vấn Zalo" để kết nối trực tiếp anh Chinh trao đổi kỹ thuật.
+                </div>
+            </div>
+
+            <!-- Bộ Lọc Thông Minh (Danh Mục & Dòng Xe) -->
+            <div class="bg-obsidian-900 border border-obsidian-800 rounded-2xl p-4 sm:p-5 mb-10 space-y-4">
+                <!-- Bộ lọc Danh Mục -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                    <span class="text-xs font-bold font-heading uppercase text-amberGold-400 sm:w-28 flex-shrink-0">
+                        <i class="fas fa-layer-group mr-1"></i> Danh Mục:
+                    </span>
+                    <div class="flex flex-wrap gap-2" id="categoryFilterTabs">
+                        <button onclick="setCategoryFilter('all')" class="cat-btn active px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-amberGold-500 text-obsidian-950 shadow-md">
+                            Tất Cả
+                        </button>
+                        <button onclick="setCategoryFilter('light')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-amberGold-500">
+                            Đèn Xe & Trợ Sáng
+                        </button>
+                        <button onclick="setCategoryFilter('wheel')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-amberGold-500">
+                            Vành Mâm Thể Thao
+                        </button>
+                        <button onclick="setCategoryFilter('brake_spacer')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-amberGold-500">
+                            Đĩa Phanh & Spacer
+                        </button>
+                        <button onclick="setCategoryFilter('accessories')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-amberGold-500">
+                            Phụ Kiện Off-Road
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bộ lọc Dòng Xe -->
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-3 border-t border-obsidian-800/80">
+                    <span class="text-xs font-bold font-heading uppercase text-emeraldTech-400 sm:w-28 flex-shrink-0">
+                        <i class="fas fa-truck-pickup mr-1"></i> Dòng Xe:
+                    </span>
+                    <div class="flex flex-wrap gap-2" id="vehicleFilterTabs">
+                        <button onclick="setVehicleFilter('all')" class="veh-btn active px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-emeraldTech-500 text-obsidian-950 font-heading">
+                            Tất Cả Dòng Xe
+                        </button>
+                        <button onclick="setVehicleFilter('raptor_ranger')" class="veh-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-emeraldTech-500 font-heading">
+                            Ford Ranger / Raptor
+                        </button>
+                        <button onclick="setVehicleFilter('hilux')" class="veh-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-emeraldTech-500 font-heading">
+                            Toyota Hilux
+                        </button>
+                        <button onclick="setVehicleFilter('triton')" class="veh-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-emeraldTech-500 font-heading">
+                            Mitsubishi Triton
+                        </button>
+                        <button onclick="setVehicleFilter('navara_dmax')" class="veh-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-emeraldTech-500 font-heading">
+                            Navara / D-Max
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lưới Sản Phẩm Hiển Thị -->
+            <div id="productShowcaseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Javascript sẽ điền sản phẩm tại đây -->
+            </div>
+        </section>
+
+        <!-- DỰ ÁN XE ĐÃ ĐỘ TẠI XƯỞNG -->
+        <section id="showcase-section" class="bg-obsidian-900 border-t border-b border-obsidian-800 py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-amberGold-500 font-bold font-heading text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fas fa-camera"></i> HÌNH ẢNH HOÀN THIỆN
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-black font-heading uppercase text-white tracking-wide mt-1">
+                        DỰ ÁN XE ĐÃ LÊN ĐỒ <span class="text-amberGold-500">THỰC TẾ</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm md:text-base mt-2">
+                        Những cấu hình nâng cấp ánh sáng, mâm lốp thể thao và đĩa tản nhiệt được thi công trực tiếp bởi CHINH DENXE.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Dự án 1 -->
+                    <div class="carbon-card rounded-2xl overflow-hidden group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Raptor Next-Gen" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amberGold-500 text-obsidian-950 font-black font-heading text-xs px-3 py-1 rounded-md uppercase tracking-wider">
+                                Ranger Raptor Next-Gen
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold font-heading text-white mb-2">Thanh Đèn Nóc F150 & Mâm 18 Inch Beadlock</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                                Nâng cấp dải sáng ban đêm với cụm đèn nóc Future Eyes Laser siêu gom, kết hợp mâm thể thao lốp AT và đi dây rơ-le chống cháy an toàn tuyệt đối.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-bold font-heading text-amberGold-400">
+                                <span class="bg-obsidian-950 px-2.5 py-1 rounded border border-obsidian-800">Laser F150</span>
+                                <span class="bg-obsidian-950 px-2.5 py-1 rounded border border-obsidian-800">Mâm 18 PCD 6x139.7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dự án 2 -->
+                    <div class="carbon-card rounded-2xl overflow-hidden group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Hilux Adventure" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-emeraldTech-500 text-obsidian-950 font-black font-heading text-xs px-3 py-1 rounded-md uppercase tracking-wider">
+                                Toyota Hilux Adventure
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold font-heading text-white mb-2">Đĩa Phanh Tản Nhiệt & Bi Gầm Phá Sương</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                                Thay thế đĩa phanh hợp kim tôi nhiệt vát rãnh chống trơ má phanh khi đi đường đèo dốc, đi kèm cặp bi gầm phá sương vàng 3000K bám đường.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-bold font-heading text-emeraldTech-400">
+                                <span class="bg-obsidian-950 px-2.5 py-1 rounded border border-obsidian-800">Đĩa Tản Nhiệt</span>
+                                <span class="bg-obsidian-950 px-2.5 py-1 rounded border border-obsidian-800">Bi Gầm 3000K Laser</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dự án 3 -->
+                    <div class="carbon-card rounded-2xl overflow-hidden group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Triton Athlete" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-blue-500 text-white font-black font-heading text-xs px-3 py-1 rounded-md uppercase tracking-wider">
+                                Mitsubishi Triton Athlete
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold font-heading text-white mb-2">Spacer Nhôm CNC 35mm & Đèn Trợ Sáng Cột A</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                                Mở rộng vệt bánh xe giúp xe vào cua đầm chắc và không cạ gầm khi lắp lốp to, đi kèm cặp đèn vuông Future Eyes F30 chiếu xa 700 mét.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-bold font-heading text-blue-400">
+                                <span class="bg-obsidian-950 px-2.5 py-1 rounded border border-obsidian-800">Spacer 35mm Định Tâm</span>
+                                <span class="bg-obsidian-950 px-2.5 py-1 rounded border border-obsidian-800">Future Eyes F30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THÔNG TIN LIÊN HỆ GỌN GÀNG Ở CHÂN TRANG (FOOTER) -->
+        <footer id="contact-footer" class="bg-obsidian-950 border-t border-obsidian-800 text-slate-400 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Cột 1: Thông tin thương hiệu -->
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-2xl font-black font-heading text-white tracking-wide">CHINH</span>
+                        <span class="text-2xl font-black font-heading text-amberGold-500 tracking-wide">DENXE</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400 mb-5">
+                        Xưởng chuyên nâng cấp đèn xe Future Eyes, vành mâm địa hình, đĩa phanh tản nhiệt và nhận order phụ tùng phụ kiện cho xe bán tải theo yêu cầu.
+                    </p>
+                    <div class="text-xs text-slate-400 space-y-1">
+                        <div><i class="fas fa-location-dot text-amberGold-500 mr-2"></i> Hồng Sơn, Tuyên Quang</div>
+                        <div><i class="fas fa-clock text-amberGold-500 mr-2"></i> Làm việc: 08:00 - 20:00 (Tất cả các ngày)</div>
+                    </div>
+                </div>
+
+                <!-- Cột 2: Danh mục nâng cấp -->
+                <div>
+                    <h4 class="text-white font-bold font-heading text-sm uppercase tracking-wider mb-4 border-b border-obsidian-800 pb-2">
+                        DANH MỤC TRỌNG TÂM
+                    </h4>
+                    <ul class="space-y-2.5 text-xs font-medium">
+                        <li><a href="#products-section" class="hover:text-amberGold-400 transition flex items-center gap-2"><i class="fas fa-angle-right text-amberGold-500"></i> Đèn Nóc & Bi Gầm Future Eyes Laser</a></li>
+                        <li><a href="#products-section" class="hover:text-amberGold-400 transition flex items-center gap-2"><i class="fas fa-angle-right text-amberGold-500"></i> Vành Mâm Thể Thao 17, 18, 20 Inch</a></li>
+                        <li><a href="#products-section" class="hover:text-amberGold-400 transition flex items-center gap-2"><i class="fas fa-angle-right text-amberGold-500"></i> Đĩa Phanh Tản Nhiệt Vát Rãnh</a></li>
+                        <li><a href="#products-section" class="hover:text-amberGold-400 transition flex items-center gap-2"><i class="fas fa-angle-right text-amberGold-500"></i> Spacer Hợp Kim Nhôm Đúc CNC</a></li>
+                        <li><button onclick="openAiChatModal()" class="text-emeraldTech-400 hover:underline flex items-center gap-2"><i class="fas fa-robot text-emeraldTech-400"></i> Tư Vấn Kỹ Thuật Bằng AI 24/7</button></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3: Kênh Liên Hệ Trực Tiếp -->
+                <div>
+                    <h4 class="text-white font-bold font-heading text-sm uppercase tracking-wider mb-4 border-b border-obsidian-800 pb-2">
+                        KÊNH LIÊN HỆ TRỰC TIẾP
+                    </h4>
+                    <div class="space-y-3 text-xs">
+                        <a href="https://zalo.me/0868770966" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center gap-3 p-2.5 bg-obsidian-900 hover:bg-blue-600/20 border border-obsidian-800 hover:border-blue-500 rounded-xl transition text-slate-300 hover:text-white">
+                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">Zalo</div>
+                            <div>
+                                <strong class="block text-white font-heading text-sm">0868 770 966</strong>
+                                <span class="text-[11px] text-slate-400">Tư vấn kỹ thuật & gửi ảnh</span>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/84868770966" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center gap-3 p-2.5 bg-obsidian-900 hover:bg-emeraldTech-600/20 border border-obsidian-800 hover:border-emeraldTech-500 rounded-xl transition text-slate-300 hover:text-white">
+                            <div class="w-8 h-8 rounded-lg bg-emeraldTech-600 text-white flex items-center justify-center text-sm flex-shrink-0"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <strong class="block text-white font-heading text-sm">+84 868 770 966</strong>
+                                <span class="text-[11px] text-slate-400">WhatsApp đặt hàng</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cột 4: Mạng xã hội & Video -->
+                <div>
+                    <h4 class="text-white font-bold font-heading text-sm uppercase tracking-wider mb-4 border-b border-obsidian-800 pb-2">
+                        KÊNH TRUYỀN THÔNG
+                    </h4>
+                    <div class="space-y-3 text-xs">
+                        <a href="https://www.tiktok.com/@chinh0966" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center gap-3 p-2.5 bg-obsidian-900 hover:bg-black border border-obsidian-800 hover:border-slate-500 rounded-xl transition text-slate-300 hover:text-white">
+                            <div class="w-8 h-8 rounded-lg bg-obsidian-800 text-amberGold-400 flex items-center justify-center text-sm flex-shrink-0"><i class="fab fa-tiktok"></i></div>
+                            <div>
+                                <strong class="block text-white font-heading text-sm">TikTok: @chinh0966</strong>
+                                <span class="text-[11px] text-slate-400">Xem video test đèn thực tế</span>
+                            </div>
+                        </a>
+
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                           class="flex items-center gap-3 p-2.5 bg-obsidian-900 hover:bg-blue-700 border border-obsidian-800 hover:border-blue-600 rounded-xl transition text-slate-300 hover:text-white">
+                            <div class="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center text-sm flex-shrink-0"><i class="fab fa-facebook-f"></i></div>
+                            <div>
+                                <strong class="block text-white font-heading text-sm">Facebook CHINH DENXE</strong>
+                                <span class="text-[11px] text-slate-400">Hình ảnh các xe đã hoàn thiện</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto pt-8 border-t border-obsidian-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-3">
+                <span>© 2026 CHINH DENXE. Chuyên Độ Đèn Xe, Vành Mâm, Đĩa Phanh & Order Phụ Tùng Bán Tải.</span>
+                <span>Hồng Sơn • Tuyên Quang</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- GIAO DIỆN QUẢN TRỊ KHO SẢN PHẨM (ADMIN) -->
+    <div id="adminPanelContainer" class="hidden flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-obsidian-800 pb-6 mb-8 gap-4">
+            <div>
+                <div class="inline-flex items-center gap-2 text-amberGold-500 text-xs font-bold font-heading uppercase tracking-wider mb-1">
+                    <i class="fas fa-shield-halved"></i> BẢNG ĐIỀU KHIỂN QUẢN LÝ
+                </div>
+                <h2 class="text-3xl font-black font-heading uppercase text-white tracking-wide">
+                    QUẢN LÝ SẢN PHẨM & CẤU HÌNH KHO
+                </h2>
+                <p class="text-xs text-slate-400 mt-1">
+                    Thêm mới hoặc xóa sản phẩm. Dữ liệu được lưu ngay vào LocalStorage trình duyệt của bạn.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button onclick="confirmResetDefaults()" class="bg-obsidian-900 hover:bg-obsidian-850 border border-obsidian-800 text-slate-300 hover:text-white px-4 py-2.5 rounded-xl text-xs font-bold font-heading transition">
+                    <i class="fas fa-rotate-left mr-1 text-amberGold-500"></i> KHÔI PHỤC KHO MẶC ĐỊNH
+                </button>
+                <button onclick="toggleAdminView()" class="bg-amberGold-500 hover:bg-amberGold-400 text-obsidian-950 px-5 py-2.5 rounded-xl text-xs font-black font-heading tracking-wider uppercase transition flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> VỀ CỬA HÀNG
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Form Thêm Sản Phẩm Mới -->
+            <div class="lg:col-span-5">
+                <div class="bg-obsidian-900 p-6 rounded-2xl border border-obsidian-800 sticky top-28">
+                    <h3 class="text-lg font-bold font-heading text-white uppercase border-b border-obsidian-800 pb-3 mb-5 flex items-center gap-2">
+                        <i class="fas fa-plus-circle text-amberGold-500"></i> THÊM MỚI SẢN PHẨM
+                    </h3>
+
+                    <form id="adminProductForm" onsubmit="handleProductCreation(event)" class="space-y-4 text-xs">
+                        <div>
+                            <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Tên Sản Phẩm *</label>
+                            <input type="text" id="adminName" required placeholder="VD: Đèn Nóc Future Eyes Laser F300" 
+                                   class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Danh Mục *</label>
+                                <select id="adminCategory" required class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white focus:outline-none focus:border-amberGold-500 font-medium">
+                                    <option value="light">Đèn Xe & Trợ Sáng</option>
+                                    <option value="wheel">Vành Mâm Thể Thao</option>
+                                    <option value="brake_spacer">Đĩa Phanh & Spacer</option>
+                                    <option value="accessories">Phụ Kiện Off-Road</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Dòng Xe *</label>
+                                <select id="adminVehicle" required class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white focus:outline-none focus:border-amberGold-500 font-medium">
+                                    <option value="raptor_ranger">Ford Ranger / Raptor</option>
+                                    <option value="hilux">Toyota Hilux</option>
+                                    <option value="triton">Mitsubishi Triton</option>
+                                    <option value="navara_dmax">Navara / D-Max</option>
+                                    <option value="universal">Tương Thích Mọi Xe</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Giá Bán (VNĐ) *</label>
+                                <input type="number" id="adminPrice" required placeholder="VD: 4500000" min="0" step="10000"
+                                       class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500">
+                            </div>
+                            <div>
+                                <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Mã SKU</label>
+                                <input type="text" id="adminSku" placeholder="VD: CD-FE-300"
+                                       class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Thẻ Điểm Nhấn (Phân cách bằng dấu phẩy)</label>
+                            <input type="text" id="adminBadges" placeholder="VD: Chính Hãng, Bảo Hành 24T, IP68, Nhôm CNC" 
+                                   class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Thông Số Kỹ Thuật (Phân cách bằng dấu |)</label>
+                            <textarea id="adminSpecs" rows="2" placeholder="VD: Công suất: 120W Laser | Điện áp: 12V-24V | Chiếu xa: 600m | Vật liệu: Nhôm 6063" 
+                                      class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold font-heading uppercase text-slate-300 mb-1.5">Link Hình Ảnh (URL) *</label>
+                            <input type="url" id="adminImage" required placeholder="https://..." 
+                                   class="w-full bg-obsidian-950 border border-obsidian-800 rounded-xl p-3 text-white placeholder-slate-500 focus:outline-none focus:border-amberGold-500">
+                        </div>
+
+                        <button type="submit" class="w-full bg-amberGold-500 hover:bg-amberGold-400 text-obsidian-950 font-black font-heading text-sm py-3.5 px-4 rounded-xl shadow transition tracking-wider uppercase mt-3">
+                            <i class="fas fa-check mr-1"></i> LƯU VÀO KHO SẢN PHẨM
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bảng Danh Sách Sản Phẩm -->
+            <div class="lg:col-span-7">
+                <div class="bg-obsidian-900 p-6 rounded-2xl border border-obsidian-800">
+                    <div class="flex items-center justify-between border-b border-obsidian-800 pb-3 mb-5">
+                        <h3 class="text-lg font-bold font-heading text-white uppercase flex items-center gap-2">
+                            <i class="fas fa-boxes-stacked text-amberGold-500"></i> DANH MỤC TRÊN WEBSITE
+                        </h3>
+                        <span id="adminProductCounter" class="bg-obsidian-950 text-amberGold-400 text-xs font-bold font-heading px-3 py-1 rounded-full border border-obsidian-800">
+                            0 Sản phẩm
+                        </span>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-obsidian-950 text-slate-400 uppercase tracking-wider border-b border-obsidian-800 font-heading">
+                                    <th class="p-3.5 rounded-l-xl">Sản Phẩm</th>
+                                    <th class="p-3.5">Danh Mục</th>
+                                    <th class="p-3.5">Giá Bán</th>
+                                    <th class="p-3.5 text-right rounded-r-xl">Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminProductsTableBody" class="divide-y divide-obsidian-800">
+                                <!-- Điền bằng JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút Nổi Liên Hệ Nhanh Thu Gọn Góc Dưới (Bao gồm Kênh AI) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2.5">
+        <!-- Danh sách kênh ẩn/hiện mượt mà -->
+        <div id="floatingContactList" class="flex flex-col items-end gap-2 transition-all duration-300">
+            
+            <!-- Trợ Lý AI Kỹ Thuật (Nổi bật nhất) -->
+            <button onclick="openAiChatModal()" 
+                    class="flex items-center gap-2.5 bg-obsidian-950/95 hover:bg-emeraldTech-600 text-emeraldTech-400 hover:text-white px-3.5 py-2 rounded-full border border-emeraldTech-500/50 shadow-2xl transition group text-xs font-bold font-heading tracking-wide">
+                <span class="text-emeraldTech-400 group-hover:text-white transition">Hỏi Trợ Lý AI 24/7</span>
+                <div class="w-7 h-7 rounded-full bg-emeraldTech-500 text-obsidian-950 flex items-center justify-center text-xs font-bold shadow">
+                    <i class="fas fa-brain"></i>
+                </div>
+            </button>
+
+            <!-- Zalo -->
+            <a href="https://zalo.me/0868770966" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-2.5 bg-obsidian-950/95 hover:bg-blue-600 text-slate-200 hover:text-white px-3.5 py-2 rounded-full border border-blue-500/40 shadow-xl transition group text-xs font-bold font-heading tracking-wide">
+                <span class="text-slate-300 group-hover:text-white transition">Zalo Tư Vấn</span>
+                <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold shadow">
+                    Zalo
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/84868770966" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-2.5 bg-obsidian-950/95 hover:bg-emeraldTech-600 text-slate-200 hover:text-white px-3.5 py-2 rounded-full border border-emeraldTech-500/40 shadow-xl transition group text-xs font-bold font-heading tracking-wide">
+                <span class="text-slate-300 group-hover:text-white transition">WhatsApp</span>
+                <div class="w-7 h-7 rounded-full bg-emeraldTech-600 text-white flex items-center justify-center text-xs shadow">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@chinh0966" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-2.5 bg-obsidian-950/95 hover:bg-black text-slate-200 hover:text-amberGold-400 px-3.5 py-2 rounded-full border border-obsidian-700 shadow-xl transition group text-xs font-bold font-heading tracking-wide">
+                <span class="text-slate-300 group-hover:text-amberGold-400 transition">TikTok @chinh0966</span>
+                <div class="w-7 h-7 rounded-full bg-obsidian-800 text-amberGold-400 flex items-center justify-center text-xs shadow">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-2.5 bg-obsidian-950/95 hover:bg-blue-700 text-slate-200 hover:text-white px-3.5 py-2 rounded-full border border-blue-600/40 shadow-xl transition group text-xs font-bold font-heading tracking-wide">
+                <span class="text-slate-300 group-hover:text-white transition">Facebook</span>
+                <div class="w-7 h-7 rounded-full bg-blue-700 text-white flex items-center justify-center text-xs shadow">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Nút Tròn Bật/Tắt -->
+        <button onclick="toggleSpeedDialMenu()" 
+                class="w-13 h-13 p-3.5 rounded-full bg-gradient-to-tr from-amberGold-500 to-amberGold-400 text-obsidian-950 flex items-center justify-center text-xl shadow-2xl transition transform hover:scale-105 active:scale-95 focus:outline-none"
+                title="Kênh liên hệ">
+            <i id="speedDialIconEl" class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <!-- CỬA SỔ TRÒ CHUYỆN VỚI TRỢ LÝ KỸ THUẬT AI -->
+    <div id="aiChatModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
+        <div class="bg-obsidian-900 border border-emeraldTech-500/40 w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[85vh] max-h-[750px]">
+            
+            <!-- Header Modal AI -->
+            <div class="p-4 sm:p-5 border-b border-obsidian-800 flex justify-between items-center bg-obsidian-950">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emeraldTech-500 to-emeraldTech-600 flex items-center justify-center text-obsidian-950 text-xl font-bold shadow">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-lg font-bold font-heading text-white uppercase tracking-wide">TRỢ LÝ KỸ THUẬT AI</h3>
+                            <span class="bg-emeraldTech-500/20 text-emeraldTech-400 text-[10px] font-bold px-2 py-0.5 rounded font-mono">24/7 ONLINE</span>
+                        </div>
+                        <p class="text-[11px] text-slate-400">Chuyên gia tư vấn Đèn Xe • Vành Mâm • Đĩa Phanh • Order Phụ Tùng</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <button onclick="forwardAiChatToZalo()" 
+                            class="hidden sm:inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold font-heading text-xs px-3 py-1.5 rounded-lg transition shadow active:scale-95"
+                            title="Gửi toàn bộ nội dung chat sang Zalo anh Chinh">
+                        <i class="fas fa-share"></i>
+                        <span>CHUYỂN SANG ZALO</span>
+                    </button>
+
+                    <button onclick="closeAiChatModal()" class="text-slate-400 hover:text-white text-xl p-2 rounded-lg hover:bg-obsidian-850">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Khung Nội Dung Chat -->
+            <div id="aiChatMessages" class="flex-grow p-4 overflow-y-auto space-y-4 text-xs">
+                <!-- Tin Nhắn Chào Mừng Ban Đầu -->
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-emeraldTech-500 text-obsidian-950 flex items-center justify-center text-sm flex-shrink-0 font-bold">
+                        AI
+                    </div>
+                    <div class="bg-obsidian-850 border border-obsidian-800 rounded-2xl rounded-tl-none p-3.5 max-w-[85%] text-slate-200 leading-relaxed space-y-2">
+                        <p>
+                            Chào anh/chị! Em là <strong>Trợ Lý Kỹ Thuật AI</strong> của xưởng độ <strong>CHINH DENXE</strong> (Hồng Sơn, Tuyên Quang).
+                        </p>
+                        <p>
+                            Em có thể tư vấn chuyên sâu về:
+                            <br>• <strong>Đèn xe & Bi gầm:</strong> Chọn nhiệt màu 3000K phá sương hay 5500K chiếu xa, đèn nóc Future Eyes Laser F150/F300.
+                            <br>• <strong>Vành mâm & Lốp:</strong> Tra thông số PCD 6x139.7, độ Offset âm/dương tránh cạ hốc bánh cho Hilux, Raptor, Ranger.
+                            <br>• <strong>Đĩa phanh tản nhiệt & Spacer:</strong> Chống cong vênh khi đổ đèo dốc, mở rộng vệt bánh xe.
+                            <br>• <strong>Order phụ tùng:</strong> Tìm kiếm phụ tùng bán tải độc lạ từ nước ngoài theo đời xe.
+                        </p>
+                        <p class="text-[11px] text-amberGold-400 font-semibold pt-1">
+                            Bấm các câu hỏi nhanh bên dưới hoặc gõ trực tiếp câu hỏi của anh/chị nhé!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thanh Câu Hỏi Gợi Ý Nhanh -->
+            <div class="px-4 py-2 bg-obsidian-950/80 border-t border-obsidian-800 flex gap-2 overflow-x-auto text-[11px] no-scrollbar">
+                <button onclick="sendQuickAiQuery('Tư vấn đèn gầm phá sương cho Toyota Hilux đi đường đèo Tuyên Quang')" 
+                        class="bg-obsidian-900 hover:bg-obsidian-800 text-slate-300 border border-obsidian-700 hover:border-amberGold-500 px-3 py-1.5 rounded-full whitespace-nowrap transition flex-shrink-0">
+                    💡 Đèn phá sương cho Hilux
+                </button>
+                <button onclick="sendQuickAiQuery('Ford Ranger Raptor Next-Gen nên lắp thanh đèn nóc Future Eyes loại nào?')" 
+                        class="bg-obsidian-900 hover:bg-obsidian-800 text-slate-300 border border-obsidian-700 hover:border-amberGold-500 px-3 py-1.5 rounded-full whitespace-nowrap transition flex-shrink-0">
+                    ⚡ Đèn nóc Laser Raptor
+                </button>
+                <button onclick="sendQuickAiQuery('Tư vấn mâm 18 inch PCD 6x139.7 và spacer bánh xe')" 
+                        class="bg-obsidian-900 hover:bg-obsidian-800 text-slate-300 border border-obsidian-700 hover:border-amberGold-500 px-3 py-1.5 rounded-full whitespace-nowrap transition flex-shrink-0">
+                    🛞 Mâm 18 & Spacer 35mm
+                </button>
+                <button onclick="sendQuickAiQuery('Tại sao nên lên đĩa phanh vát rãnh tản nhiệt cho xe bán tải?')" 
+                        class="bg-obsidian-900 hover:bg-obsidian-800 text-slate-300 border border-obsidian-700 hover:border-amberGold-500 px-3 py-1.5 rounded-full whitespace-nowrap transition flex-shrink-0">
+                    🛑 Đĩa phanh tản nhiệt
+                </button>
+                <button onclick="sendQuickAiQuery('Quy trình order phụ tùng hiếm theo yêu cầu tại xưởng CHINH DENXE?')" 
+                        class="bg-obsidian-900 hover:bg-obsidian-800 text-slate-300 border border-obsidian-700 hover:border-amberGold-500 px-3 py-1.5 rounded-full whitespace-nowrap transition flex-shrink-0">
+                    📦 Quy trình Order phụ tùng
+                </button>
+            </div>
+
+            <!-- Khung Nhập Liệu Chat & Nút Gửi Zalo -->
+            <div class="p-3 sm:p-4 bg-obsidian-950 border-t border-obsidian-800 space-y-2">
+                <form id="aiChatInputForm" onsubmit="handleAiChatSubmit(event)" class="flex items-center gap-2">
+                    <input type="text" id="aiUserPromptInput" placeholder="Hỏi về đèn Future Eyes, mâm, đĩa phanh, đời xe của anh..." 
+                           class="flex-grow bg-obsidian-900 border border-obsidian-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emeraldTech-500">
+                    
+                    <button type="submit" id="aiSendBtn" 
+                            class="bg-emeraldTech-500 hover:bg-emeraldTech-400 text-obsidian-950 font-bold font-heading px-4 py-3 rounded-xl transition text-sm flex items-center justify-center shadow active:scale-95 flex-shrink-0">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+                    <span class="flex items-center gap-1.5">
+                        <i class="fas fa-shield-cat text-emeraldTech-400"></i> Hỗ trợ kỹ thuật 24/7 bởi Gemini AI
+                    </span>
+                    <button onclick="forwardAiChatToZalo()" class="text-blue-400 hover:underline font-bold flex items-center gap-1">
+                        <i class="fas fa-share-nodes"></i> Chuyển tóm tắt sang Zalo chốt đơn &rarr;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Thông Số Kỹ Thuật Chi Tiết -->
+    <div id="techSpecModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-obsidian-900 border border-obsidian-800 w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl transform transition-all max-h-[90vh] flex flex-col">
+            
+            <div class="p-5 border-b border-obsidian-800 flex justify-between items-center bg-obsidian-950">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-amberGold-500"></span>
+                    <h3 id="modalProductTitle" class="text-xl font-bold font-heading text-white uppercase">CẤU HÌNH KỸ THUẬT</h3>
+                </div>
+                <button onclick="closeTechSpecModal()" class="text-slate-400 hover:text-white text-xl p-1">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-5 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="h-56 rounded-xl overflow-hidden bg-obsidian-950 border border-obsidian-800">
+                        <img id="modalProductImg" src="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <div>
+                            <div id="modalBadgesContainer" class="flex flex-wrap gap-1.5 mb-2"></div>
+                            <div class="text-sm font-semibold text-slate-300 mb-1" id="modalCategoryVehicle"></div>
+                            <div class="text-2xl font-bold font-heading text-amberGold-500" id="modalPrice"></div>
+                            <p class="text-slate-400 mt-2 text-[11px] leading-relaxed" id="modalSkuInfo"></p>
+                        </div>
+
+                        <div class="pt-3 border-t border-obsidian-800 grid grid-cols-2 gap-2 mt-4">
+                            <a id="modalZaloBtn" href="#" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-bold font-heading text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow">
+                                <i class="fas fa-comment-dots"></i> TƯ VẤN ZALO
+                            </a>
+                            <button onclick="askAiAboutCurrentProduct()" class="bg-emeraldTech-600 hover:bg-emeraldTech-500 text-white font-bold font-heading text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow">
+                                <i class="fas fa-brain"></i> HỎI AI CHI TIẾT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-obsidian-950 p-4 rounded-2xl border border-obsidian-800">
+                    <h4 class="font-bold font-heading text-white uppercase text-xs mb-3 flex items-center gap-2">
+                        <i class="fas fa-list-check text-amberGold-500"></i> CHI TIẾT THÔNG SỐ KỸ THUẬT
+                    </h4>
+                    <div id="modalSpecsDetailTable" class="space-y-2 text-[11px] text-slate-300"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hộp Thoại Xác Nhận Tùy Chỉnh (Không dùng confirm mặc định) -->
+    <div id="customConfirmModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-obsidian-900 border border-obsidian-800 w-full max-w-md rounded-2xl p-6 shadow-2xl text-center">
+            <div class="w-12 h-12 rounded-2xl bg-amberGold-500/15 text-amberGold-400 border border-amberGold-500/30 mx-auto flex items-center justify-center text-xl mb-4">
+                <i class="fas fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="confirmTitle" class="text-lg font-bold font-heading text-white mb-2 uppercase">XÁC NHẬN THAO TÁC</h3>
+            <p id="confirmMessage" class="text-slate-300 text-xs leading-relaxed mb-6"></p>
+            
+            <div class="flex justify-center gap-3">
+                <button onclick="closeConfirmModal()" class="bg-obsidian-800 hover:bg-obsidian-700 text-slate-300 font-bold font-heading px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition">
+                    HỦY BỎ
+                </button>
+                <button id="confirmAcceptBtn" onclick="runConfirmCallback()" class="bg-red-600 hover:bg-red-500 text-white font-bold font-heading px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow">
+                    XÁC NHẬN
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thông Báo Toast Tùy Chỉnh (Không dùng alert mặc định) -->
+    <div id="toastContainer" class="fixed top-24 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <script>
+        // Kho Dữ Liệu Khởi Tạo Chuẩn (Tuyệt đối KHÔNG có pin)
+        const INITIAL_WORKSHOP_INVENTORY = [
+            {
+                id: 201,
+                sku: "CD-FE-F150",
+                name: "Thanh Đèn LED Nóc Future Eyes F150 Laser Cao Cấp",
+                category: "light",
+                vehicle: "raptor_ranger",
+                price: 4500000,
+                badges: ["Chính Hãng", "Bảo Hành 24T", "IP68 Chống Nước", "Chip Osram Đức"],
+                specs: "Điện áp: 12V-24V DC | Công suất: 180W Laser Siêu Gom | Chiếu xa: 600m | Nhiệt màu: 5500K Trắng Sâu + Vàng Phá Sương | Vật liệu: Nhôm 6063 Tản Nhiệt Nhanh",
+                image: "https://images.unsplash.com/photo-1549646849-c12b1c7fc017?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 202,
+                sku: "CD-WHEEL-18KMC",
+                name: "Bộ 4 Vành Mâm Off-Road 18 Inch Thể Thao KMC Beadlock",
+                category: "wheel",
+                vehicle: "raptor_ranger",
+                price: 6800000,
+                badges: ["Chính Hãng", "Hợp Kim Nhôm Đúc", "PCD 6x139.7", "Tải Trọng 1250kg/bánh"],
+                specs: "Kích thước: 18 x 9.0J | Offset (ET): -12mm | Lỗ ốc: 6x139.7 | Tương thích: Ranger Raptor, Hilux, Triton, D-Max | Chống nứt vỡ va đập đá hộc",
+                image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 203,
+                sku: "CD-BRAKE-VENT",
+                name: "Bộ Đĩa Phanh Tản Nhiệt Khoan Lỗ Vát Rãnh Carbon Steel",
+                category: "brake_spacer",
+                vehicle: "hilux",
+                price: 3200000,
+                badges: ["Thép Carbon Tôi Nhiệt", "Chống Trơ Má Phanh", "Rút Ngắn Quãng Đường Phanh 25%"],
+                specs: "Vật liệu: High-Carbon Cast Iron | Thiết kế vát rãnh tản nhiệt khí xoáy | Tương thích cùm phanh zin Toyota Hilux & Ranger | Chống cong vênh khi đổ đèo",
+                image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 204,
+                sku: "CD-SPACER-35MM",
+                name: "Bộ 4 Spacer Bánh Xe Hợp Kim Nhôm Đúc CNC 35mm Kèm Gờ Định Tâm",
+                category: "brake_spacer",
+                vehicle: "triton",
+                price: 1850000,
+                badges: ["Nhôm Hàng Không 6061-T6", "Bulong Cường Độ 10.9", "Tăng Độ Ổn Định"],
+                specs: "Độ dày: 35mm | PCD: 6x139.7 | Hubcentric: 93.1mm / 106.1mm | Giúp lốp không cạ gầm khi nâng lốp gai to và xe vào cua đầm chắc",
+                image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 205,
+                sku: "CD-FOG-3000K",
+                name: "Cặp Bi Cầu Gầm Laser Future Eyes Phá Sương Vàng 3000K",
+                category: "light",
+                vehicle: "hilux",
+                price: 2400000,
+                badges: ["Laser Dual Core", "Bám Đường Mưa Sương", "Đường Cắt Chuẩn Không Lóa"],
+                specs: "Công suất: Cos 45W / Pha 65W Laser | Lens xanh chống lóa | Chống nước tuyệt đối IP68 | Lắp đặt trực tiếp hốc bi gầm zin không đục khoét",
+                image: "https://images.unsplash.com/photo-1629853909789-705a60c0422c?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 206,
+                sku: "CD-WHEEL-17FUEL",
+                name: "Bộ 4 Vành Mâm Thể Thao Fuel Off-Road 17 Inch PCD 6x139.7",
+                category: "wheel",
+                vehicle: "universal",
+                price: 5900000,
+                badges: ["Hợp Kim Đúc Siêu Bền", "Chống Trầy Xước", "Cân Bằng Động Chuẩn"],
+                specs: "Kích thước: 17 x 8.5J | ET: 0 | PCD: 6x139.7 | Trọng lượng nhẹ giúp giảm tải trọng treo, xe tăng tốc mượt mà và êm ái",
+                image: "https://images.unsplash.com/photo-1611821064430-0d40291d0f0d?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 207,
+                sku: "CD-RELAY-WIRELESS",
+                name: "Cụm Rơ-le Cầu Chì Chống Cháy Kèm Remote Không Dây 4 Kênh",
+                category: "accessories",
+                vehicle: "universal",
+                price: 850000,
+                badges: ["Ống Bọc Amiang Chống Cháy", "Rơ-le Kín Nước 40A", "Điều Khiển 50m"],
+                specs: "Hệ thống điện độc lập 4 nút bật/tắt đèn nóc, bi gầm mà không cần cắt dây táp-lô | Có cầu chì tự ngắt khi quá tải bảo vệ xe tuyệt đối",
+                image: "https://images.unsplash.com/photo-1616422285623-22dc9cb463c5?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 208,
+                sku: "CD-FE-F30",
+                name: "Đèn Trợ Sáng Vuông Future Eyes F30 Laser Siêu Gom Bắn Xa",
+                category: "light",
+                vehicle: "navara_dmax",
+                price: 3200000,
+                badges: ["Laser 700m", "Nhôm Nguyên Khối CNC", "Chống Rung Lắc Địa Hình"],
+                specs: "Công suất: 60W/bóng | Tâm laser rọi xuyên sương mù dày đặc | Pát bắt inox 304 dày 3mm chống gỉ sét | Tương thích cột chữ A và cản trước",
+                image: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        let inventory = [];
+        let activeCategory = 'all';
+        let activeVehicle = 'all';
+        let isAdminViewOpen = false;
+        let isSpeedDialOpen = true;
+        let currentlySelectedProduct = null;
+        let aiChatHistory = []; // Lưu lịch sử chat AI
+
+        function initInventory() {
+            try {
+                const data = localStorage.getItem("CHINH_DENXE_INVENTORY_NO_BATT_AI_V6");
+                if (data) {
+                    inventory = JSON.parse(data);
+                } else {
+                    inventory = [...INITIAL_WORKSHOP_INVENTORY];
+                    saveInventory();
+                }
+            } catch (e) {
+                inventory = [...INITIAL_WORKSHOP_INVENTORY];
+            }
+        }
+
+        function saveInventory() {
+            try {
+                localStorage.setItem("CHINH_DENXE_INVENTORY_NO_BATT_AI_V6", JSON.stringify(inventory));
+            } catch (e) {
+                console.error("Lưu storage thất bại", e);
+            }
+        }
+
+        function formatPriceVND(val) {
+            return new Intl.NumberFormat('vi-VN').format(val) + ' ₫';
+        }
+
+        function getCategoryTitle(cat) {
+            switch(cat) {
+                case 'light': return 'Đèn Xe & Trợ Sáng';
+                case 'wheel': return 'Vành Mâm Thể Thao';
+                case 'brake_spacer': return 'Đĩa Phanh & Spacer';
+                case 'accessories': return 'Phụ Kiện Off-Road';
+                default: return 'Phụ Tùng Xe';
+            }
+        }
+
+        function getVehicleTitle(veh) {
+            switch(veh) {
+                case 'raptor_ranger': return 'Ford Ranger / Raptor';
+                case 'hilux': return 'Toyota Hilux';
+                case 'triton': return 'Mitsubishi Triton';
+                case 'navara_dmax': return 'Navara / D-Max';
+                case 'universal': return 'Tương Thích Mọi Xe';
+                default: return 'Bán Tải & Off-Road';
+            }
+        }
+
+        function renderStorefront() {
+            const grid = document.getElementById("productShowcaseGrid");
+            grid.innerHTML = "";
+
+            const filtered = inventory.filter(item => {
+                const matchCategory = (activeCategory === 'all') || (item.category === activeCategory);
+                const matchVehicle = (activeVehicle === 'all') || 
+                                     (item.vehicle === activeVehicle) || 
+                                     (item.vehicle === 'universal');
+                return matchCategory && matchVehicle;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center text-slate-500 bg-obsidian-900/50 rounded-2xl border border-obsidian-800">
+                        <i class="fas fa-boxes-packing text-4xl mb-3 text-slate-600"></i>
+                        <p class="text-sm">Hiện chưa có sản phẩm sẵn có cho bộ lọc này.</p>
+                        <a href="#order-desk" class="inline-block mt-3 text-amberGold-400 hover:underline text-xs font-bold font-heading uppercase tracking-wider">
+                            Gửi yêu cầu order riêng qua Custom Order Desk &rarr;
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const card = document.createElement("div");
+                card.className = "carbon-card rounded-2xl overflow-hidden flex flex-col justify-between group";
+
+                const categoryLabel = getCategoryTitle(p.category);
+                const vehicleLabel = getVehicleTitle(p.vehicle);
+
+                let badgeHTML = "";
+                if (p.badges && Array.isArray(p.badges)) {
+                    badgeHTML = p.badges.slice(0, 2).map(b => `
+                        <span class="bg-obsidian-950/90 text-emeraldTech-400 border border-emeraldTech-500/30 text-[10px] font-bold font-heading px-2 py-0.5 rounded">
+                            <i class="fas fa-check-circle text-[9px] mr-0.5"></i> ${b}
+                        </span>
+                    `).join("");
+                }
+
+                const zaloMsg = encodeURIComponent(`Chào anh Chinh (CHINH DENXE), tôi muốn tư vấn mua sản phẩm:\n- Tên: ${p.name}\n- Mã: ${p.sku || 'N/A'}\n- Giá: ${formatPriceVND(p.price)}\nVui lòng báo giá chi tiết và hướng dẫn lắp đặt!`);
+                const zaloUrl = `https://zalo.me/0868770966?text=${zaloMsg}`;
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Khung Ảnh -->
+                        <div class="relative h-52 w-full bg-obsidian-950 overflow-hidden">
+                            <img src="${p.image}" alt="${p.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100"
+                                 onerror="this.src='https://placehold.co/600x400/0D1117/F59E0B?text=CHINH+DENXE'">
+                            
+                            <div class="absolute top-3 left-3 bg-obsidian-950/90 backdrop-blur-md text-amberGold-400 border border-obsidian-800 font-heading text-[11px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">
+                                ${categoryLabel}
+                            </div>
+                            <div class="absolute bottom-2.5 left-3 flex flex-wrap gap-1">
+                                ${badgeHTML}
+                            </div>
+                        </div>
+
+                        <!-- Nội dung thẻ -->
+                        <div class="p-5">
+                            <div class="text-[11px] font-bold font-heading text-slate-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                                <i class="fas fa-truck-pickup text-amberGold-500"></i> ${vehicleLabel}
+                            </div>
+                            <h3 class="text-base font-bold font-heading text-white line-clamp-2 group-hover:text-amberGold-400 transition leading-snug mb-3">
+                                ${p.name}
+                            </h3>
+                            <div class="text-xl font-black font-heading text-amberGold-500 tracking-wide mb-4">
+                                ${formatPriceVND(p.price)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nút Thao Tác Gọn Gàng -->
+                    <div class="px-5 pb-5 pt-0 space-y-2">
+                        <button onclick="openTechSpecModal(${p.id})" 
+                                class="w-full bg-obsidian-950 hover:bg-obsidian-800 text-slate-300 hover:text-white border border-obsidian-800 hover:border-amberGold-500 font-bold font-heading text-xs py-2.5 px-3 rounded-xl transition flex items-center justify-center gap-1.5">
+                            <i class="fas fa-sliders text-amberGold-500"></i> XEM THÔNG SỐ KỸ THUẬT
+                        </button>
+                        
+                        <a href="${zaloUrl}" target="_blank" rel="noopener noreferrer"
+                           class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold font-heading text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+                            <i class="fas fa-comment-dots"></i> TƯ VẤN ZALO
+                        </a>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function setCategoryFilter(cat) {
+            activeCategory = cat;
+            const buttons = document.querySelectorAll("#categoryFilterTabs .cat-btn");
+            buttons.forEach(btn => {
+                btn.className = "cat-btn px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-amberGold-500";
+            });
+            event.currentTarget.className = "cat-btn active px-4 py-2 rounded-xl text-xs font-bold font-heading uppercase tracking-wider transition bg-amberGold-500 text-obsidian-950 shadow-md";
+            renderStorefront();
+        }
+
+        function setVehicleFilter(veh) {
+            activeVehicle = veh;
+            const buttons = document.querySelectorAll("#vehicleFilterTabs .veh-btn");
+            buttons.forEach(btn => {
+                btn.className = "veh-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-obsidian-950 text-slate-300 border border-obsidian-800 hover:border-emeraldTech-500 font-heading";
+            });
+            event.currentTarget.className = "veh-btn active px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-emeraldTech-500 text-obsidian-950 font-heading";
+            renderStorefront();
+        }
+
+        function submitOrderInquiry(channel) {
+            const carBrand = document.getElementById("orderCarBrand").value;
+            const itemDetail = document.getElementById("orderItemDetail").value.trim();
+            const note = document.getElementById("orderNote").value.trim();
+
+            if (!itemDetail) {
+                showToastNotification("Vui lòng nhập tên món đồ bạn cần tìm!", "warning");
+                return;
+            }
+
+            const message = `Chào anh Chinh (CHINH DENXE), tôi muốn nhờ xưởng TÌM VÀ BÁO GIÁ ORDER phụ tùng sau:\n- Xe: ${carBrand}\n- Món đồ: ${itemDetail}\n- Ghi chú: ${note || 'Báo giá bản chính hãng có bảo hành'}\nVui lòng gửi ảnh và báo giá giúp tôi qua kênh này!`;
+
+            if (channel === 'zalo') {
+                window.open(`https://zalo.me/0868770966?text=${encodeURIComponent(message)}`, '_blank');
+            } else {
+                window.open(`https://wa.me/84868770966?text=${encodeURIComponent(message)}`, '_blank');
+            }
+
+            showToastNotification("Đang mở kênh trao đổi với xưởng...", "success");
+        }
+
+        const GEMINI_SYSTEM_INSTRUCTION = `Bạn là Trợ Lý Kỹ Thuật AI độc quyền của xưởng độ CHINH DENXE (Hồng Sơn, Tuyên Quang).
+Xưởng chuyên:
+1. Đèn xe & Trợ sáng: Đèn nóc Future Eyes Laser F150, F300, bi gầm phá sương vàng 3000K, đèn trợ sáng F30 cột A.
+2. Vành mâm độ thể thao: 17, 18, 20 inch, PCD 6x139.7 cho Raptor, Ranger, Hilux, Triton, D-Max.
+3. Đĩa phanh vát rãnh tản nhiệt chống cong vênh má phanh khi đi đường đèo dốc & Spacer bánh xe 35mm.
+4. Nhận ORDER mọi mặt hàng phụ tùng xe bán tải theo yêu cầu.
+TUYỆT ĐỐI KHÔNG BÁN PIN HAY HỘP PIN.
+Quy tắc trả lời:
+- Xưng "em", gọi khách là "anh/chị".
+- Trả lời súc tích, cực kỳ chuẩn kỹ thuật off-road, dễ hiểu.
+- Cuối câu luôn nhắc khách có thể bấm nút "Chuyển sang Zalo" phía trên để kết nối trực tiếp anh Chinh (0868 770 966) chốt giá và đặt lịch thi công.`;
+
+        // Cơ chế phản hồi ngoại tuyến thông minh (offline fallback engine) khi chưa gắn API Key
+        function generateOfflineTechnicalAdvice(query) {
+            const q = query.toLowerCase();
+
+            if (q.includes("sương") || q.includes("phá sương") || q.includes("3000k") || q.includes("bi gầm")) {
+                return `Dạ đối với cung đường sương mù, mưa lớn đặc thù như đèo dốc Tuyên Quang và vùng cao, anh/chị nên ưu tiên:
+1. **Bi Cầu Gầm Laser Future Eyes 3000K (Vàng Nắng Chanh):** Ánh sáng vàng bước sóng dài giúp bám đường cực mạnh, không bị dội sáng ngược vào mắt như ánh sáng trắng 6000K.
+2. **Đường cắt sáng Flat Cut:** Không gây chói mắt xe đối diện, lắp đặt trực tiếp pát zin không đục khoét chóa đèn.
+3. **Chống nước chuẩn IP68:** Đi ngập nước hay lội suối an toàn tuyệt đối.
+
+Anh/chị bấm nút **"Chuyển sang Zalo"** ở trên để em gửi video test ánh sáng thực tế qua Zalo anh Chinh nhé!`;
+            }
+
+            if (q.includes("đèn nóc") || q.includes("future eyes") || q.includes("f150") || q.includes("f300") || q.includes("raptor")) {
+                return `Dạ đối với dòng bán tải như Ford Ranger, Raptor hay Hilux, cấu hình đèn nóc Future Eyes Laser là đỉnh nhất hiện nay:
+1. **Future Eyes Laser F150 / F300:** Sử dụng nhân chip Laser gom tâm siêu xa tới 600 - 700 mét, xé toạc màn đêm trên cao tốc hoặc đường rừng off-road.
+2. **Kỹ thuật đi dây tại xưởng:** Sử dụng ống bọc amiang chống cháy cao cấp, rơ-le 40A kín nước và bộ công tắc không dây 4 kênh, hoàn toàn KHÔNG cắt trích dây táp-lô của xe.
+
+Anh/chị có thể bấm **"Chuyển sang Zalo"** để xưởng gửi ảnh các xe Raptor đã lên đèn nóc thực tế ạ!`;
+            }
+
+            if (q.includes("mâm") || q.includes("vành") || q.includes("pcd") || q.includes("offset") || q.includes("18 inch") || q.includes("17 inch")) {
+                return `Dạ về vành mâm off-road cho các dòng bán tải (Ranger, Raptor, Hilux, Triton, D-Max):
+1. **Thông số PCD chuẩn:** 6x139.7 (6 lỗ ốc khoảng cách 139.7mm) - đây là chuẩn chung của đa số dòng bán tải hiện nay.
+2. **Offset (ET):** Xưởng có sẵn các dòng mâm ET 0 đến ET -12 (như KMC Beadlock, Fuel Off-Road) giúp đưa bánh xe ra mép vè vừa vặn, dáng xe hầm hố và bám cua vững hơn.
+3. **Tải trọng:** Hợp kim nhôm đúc đạt chuẩn 1.250kg/bánh, bao dập đá hộc không lo nứt vỡ.
+
+Anh/chị gửi đời xe vào khung chat hoặc bấm **"Chuyển sang Zalo"** để xưởng ướm mẫu mâm đẹp nhất cho xe anh nhé!`;
+            }
+
+            if (q.includes("phanh") || q.includes("đĩa") || q.includes("spacer")) {
+                return `Dạ bộ đôi Đĩa Phanh Tản Nhiệt & Spacer là nâng cấp rất đáng giá:
+1. **Đĩa phanh vát rãnh khoan lỗ:** Làm từ thép High-Carbon tôi nhiệt, các rãnh khí xoáy giúp xả nhiệt má phanh cực nhanh khi rà phanh đổ đèo, chống trơ trượt má phanh và rút ngắn 25% quãng đường phanh.
+2. **Spacer bánh xe nhôm hàng không 6061-T6 (35mm):** Có gờ định tâm (Hubcentric) chuẩn tuyệt đối, chống rung lắc vô-lăng ở tốc độ cao, giúp xe lắp lốp to không bị cạ lồng vè.
+
+Anh/chị bấm nút **"Chuyển sang Zalo"** để nhận báo giá chi tiết theo từng dòng xe nhé!`;
+            }
+
+            if (q.includes("order") || q.includes("đặt hàng") || q.includes("tìm đồ")) {
+                return `Dạ quy trình Order phụ tùng theo yêu cầu tại CHINH DENXE rất đơn giản:
+1. **Bước 1:** Anh/chị cung cấp Tên dòng xe + Năm sản xuất + Món đồ cần tìm (mâm hiếm, phuộc, cản, đĩa phanh, đèn độc...).
+2. **Bước 2:** Xưởng tra mã phụ tùng gốc, kiểm tra tương thích kỹ thuật và gửi ảnh thực tế kèm báo giá sau 15 phút.
+3. **Bước 3:** Hàng về kiểm tra kỹ thuật chuẩn mới tiến hành giao hoặc lắp đặt tại Hồng Sơn, Tuyên Quang.
+
+Anh/chị có thể điền phiếu ở mục **Custom Order Desk** trên web hoặc bấm nút **"Chuyển sang Zalo"** để trao đổi ngay ạ!`;
+            }
+
+            // Mặc định chung
+            return `Dạ xưởng CHINH DENXE chuyên sâu về **Đèn xe Future Eyes Laser**, **Vành mâm thể thao (17-18-20 inch)**, **Đĩa phanh tản nhiệt** và **Nhận order mọi phụ tùng xe bán tải** theo đời xe.
+Anh/chị đang quan tâm nâng cấp món nào cho xe của mình (Raptor, Ranger, Hilux, Triton, Navara hay D-Max)?
+Anh/chị có thể bấm nút **"Chuyển sang Zalo"** phía trên để em gửi cấu hình chi tiết qua Zalo anh Chinh (0868 770 966) hỗ trợ ngay ạ!`;
+        }
+
+        // Gọi Gemini API có hỗ trợ backoff
+        async function fetchGeminiAiResponse(userPrompt) {
+            const apiKey = window.GEMINI_API_KEY || "";
+            if (!apiKey) {
+                // Nếu chưa cấu hình API Key trên máy, chuyển sang động cơ chuyên môn ngoại tuyến
+                await new Promise(r => setTimeout(r, 600));
+                return generateOfflineTechnicalAdvice(userPrompt);
+            }
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [
+                    {
+                        role: "user",
+                        parts: [{ text: userPrompt }]
+                    }
+                ],
+                systemInstruction: {
+                    parts: [{ text: GEMINI_SYSTEM_INSTRUCTION }]
+                }
+            };
+
+            let attempts = 0;
+            const delays = [1000, 2000, 4000];
+
+            while (attempts < 3) {
+                try {
+                    const res = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (res.ok) {
+                        const data = await res.json();
+                        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                        if (reply) return reply;
+                    }
+                } catch (e) {
+                    // Thử lại với exponential backoff
+                }
+
+                await new Promise(r => setTimeout(r, delays[attempts] || 2000));
+                attempts++;
+            }
+
+            // Fallback an toàn khi mạng chập chờn
+            return generateOfflineTechnicalAdvice(userPrompt);
+        }
+
+        function openAiChatModal() {
+            document.getElementById("aiChatModal").classList.remove("hidden");
+            document.getElementById("aiUserPromptInput").focus();
+        }
+
+        function closeAiChatModal() {
+            document.getElementById("aiChatModal").classList.add("hidden");
+        }
+
+        function appendChatMessage(sender, text) {
+            const container = document.getElementById("aiChatMessages");
+            const msgRow = document.createElement("div");
+            msgRow.className = "flex items-start gap-3";
+
+            if (sender === 'user') {
+                msgRow.innerHTML = `
+                    <div class="ml-auto bg-amberGold-500 text-obsidian-950 font-medium rounded-2xl rounded-tr-none p-3 max-w-[85%] shadow">
+                        ${escapeHtml(text)}
+                    </div>
+                `;
+            } else {
+                msgRow.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg bg-emeraldTech-500 text-obsidian-950 flex items-center justify-center text-sm flex-shrink-0 font-bold">
+                        AI
+                    </div>
+                    <div class="bg-obsidian-850 border border-obsidian-800 rounded-2xl rounded-tl-none p-3.5 max-w-[85%] text-slate-200 leading-relaxed space-y-2">
+                        ${formatMarkdownText(text)}
+                    </div>
+                `;
+            }
+
+            container.appendChild(msgRow);
+            container.scrollTop = container.scrollHeight;
+            aiChatHistory.push({ sender, text });
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+
+        function formatMarkdownText(txt) {
+            // Định dạng cơ bản cho chữ in đậm và gạch đầu dòng
+            return txt
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n\n/g, '<br><br>')
+                .replace(/\n/g, '<br>');
+        }
+
+        async function handleAiChatSubmit(e) {
+            if (e) e.preventDefault();
+            const input = document.getElementById("aiUserPromptInput");
+            const query = input.value.trim();
+            if (!query) return;
+
+            input.value = "";
+            appendChatMessage('user', query);
+
+            // Hiệu ứng đang gõ
+            const container = document.getElementById("aiChatMessages");
+            const typingRow = document.createElement("div");
+            typingRow.id = "aiTypingIndicator";
+            typingRow.className = "flex items-center gap-3 text-slate-400 text-xs italic";
+            typingRow.innerHTML = `
+                <div class="w-8 h-8 rounded-lg bg-obsidian-800 text-emeraldTech-400 flex items-center justify-center text-xs flex-shrink-0">
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                </div>
+                <span>Trợ lý AI đang tra cứu kỹ thuật...</span>
+            `;
+            container.appendChild(typingRow);
+            container.scrollTop = container.scrollHeight;
+
+            const answer = await fetchGeminiAiResponse(query);
+
+            const typingEl = document.getElementById("aiTypingIndicator");
+            if (typingEl) typingEl.remove();
+
+            appendChatMessage('ai', answer);
+        }
+
+        function sendQuickAiQuery(promptText) {
+            openAiChatModal();
+            document.getElementById("aiUserPromptInput").value = promptText;
+            handleAiChatSubmit(null);
+        }
+
+        function askAiAboutCurrentProduct() {
+            if (!currentlySelectedProduct) return;
+            closeTechSpecModal();
+            openAiChatModal();
+            const prompt = `Em quan tâm sản phẩm "${currentlySelectedProduct.name}". Nhờ tư vấn chi tiết về cách lắp đặt và độ tương thích với xe của em!`;
+            document.getElementById("aiUserPromptInput").value = prompt;
+            handleAiChatSubmit(null);
+        }
+
+        // Chuyển toàn bộ đoạn chat sang Zalo 0868 770 966
+        function forwardAiChatToZalo() {
+            if (aiChatHistory.length === 0) {
+                showToastNotification("Chưa có nội dung chat để chuyển!", "warning");
+                return;
+            }
+
+            let summary = "Chào anh Chinh (CHINH DENXE), tôi vừa trao đổi với Trợ Lý AI trên website và cần anh tư vấn chốt đơn:\n\n";
+            aiChatHistory.slice(-4).forEach(item => {
+                summary += `[${item.sender === 'user' ? 'Khách' : 'AI'}]: ${item.text.slice(0, 150)}...\n\n`;
+            });
+            summary += "Vui lòng hỗ trợ báo giá và đặt lịch giúp tôi!";
+
+            const zaloLink = `https://zalo.me/0868770966?text=${encodeURIComponent(summary)}`;
+            window.open(zaloLink, '_blank');
+            showToastNotification("Đang chuyển nội dung tóm tắt sang Zalo anh Chinh...", "success");
+        }
+
+        function openTechSpecModal(id) {
+            const item = inventory.find(p => p.id === id);
+            if (!item) return;
+
+            currentlySelectedProduct = item;
+            document.getElementById("modalProductTitle").textContent = item.name;
+            document.getElementById("modalProductImg").src = item.image;
+            document.getElementById("modalPrice").textContent = formatPriceVND(item.price);
+            document.getElementById("modalCategoryVehicle").textContent = `${getCategoryTitle(item.category)} • Dành cho ${getVehicleTitle(item.vehicle)}`;
+            document.getElementById("modalSkuInfo").textContent = `Mã SKU Xưởng: ${item.sku || 'CD-' + item.id}`;
+
+            const badgesBox = document.getElementById("modalBadgesContainer");
+            badgesBox.innerHTML = "";
+            if (item.badges && Array.isArray(item.badges)) {
+                item.badges.forEach(b => {
+                    badgesBox.innerHTML += `
+                        <span class="bg-emeraldTech-500/15 text-emeraldTech-400 border border-emeraldTech-500/30 text-[10px] font-bold font-heading px-2.5 py-1 rounded">
+                            <i class="fas fa-certificate text-[9px] mr-1"></i> ${b}
+                        </span>
+                    `;
+                });
+            }
+
+            const specsBox = document.getElementById("modalSpecsDetailTable");
+            specsBox.innerHTML = "";
+            if (item.specs) {
+                const parts = item.specs.split('|');
+                parts.forEach(part => {
+                    specsBox.innerHTML += `
+                        <div class="flex items-start gap-2 bg-obsidian-900 p-2.5 rounded-lg border border-obsidian-800">
+                            <i class="fas fa-check text-amberGold-500 mt-0.5"></i>
+                            <span>${part.trim()}</span>
+                        </div>
+                    `;
+                });
+            } else {
+                specsBox.innerHTML = "<p class='text-slate-500'>Liên hệ trực tiếp để nhận catalogue thông số chi tiết.</p>";
+            }
+
+            const zaloMsg = encodeURIComponent(`Chào anh Chinh, tôi muốn tư vấn sản phẩm: ${item.name} (${formatPriceVND(item.price)}).`);
+            document.getElementById("modalZaloBtn").href = `https://zalo.me/0868770966?text=${zaloMsg}`;
+
+            document.getElementById("techSpecModal").classList.remove("hidden");
+        }
+
+        function closeTechSpecModal() {
+            document.getElementById("techSpecModal").classList.add("hidden");
+            currentlySelectedProduct = null;
+        }
+
+        // Bảng Quản Trị Admin
+        function renderAdminTable() {
+            const tbody = document.getElementById("adminProductsTableBody");
+            const counter = document.getElementById("adminProductCounter");
+            tbody.innerHTML = "";
+            counter.textContent = `${inventory.length} Sản phẩm`;
+
+            if (inventory.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="text-center py-8 text-slate-500">Kho hàng đang trống. Hãy tạo sản phẩm mới ở cột bên trái.</td></tr>`;
+                return;
+            }
+
+            inventory.forEach(item => {
+                const tr = document.createElement("tr");
+                tr.className = "hover:bg-obsidian-950/60 transition";
+                tr.innerHTML = `
+                    <td class="p-3.5 flex items-center gap-3">
+                        <img src="${item.image}" class="w-12 h-12 rounded-xl object-cover border border-obsidian-800 flex-shrink-0" onerror="this.src='https://placehold.co/100x100/0D1117/F59E0B?text=CD'">
+                        <div>
+                            <div class="font-bold font-heading text-white text-sm">${item.name}</div>
+                            <div class="text-[10px] text-slate-400">SKU: ${item.sku || 'N/A'} • ${getVehicleTitle(item.vehicle)}</div>
+                        </div>
+                    </td>
+                    <td class="p-3.5">
+                        <span class="bg-obsidian-950 text-amberGold-400 px-2.5 py-1 rounded text-[10px] font-bold font-heading border border-obsidian-800">
+                            ${getCategoryTitle(item.category)}
+                        </span>
+                    </td>
+                    <td class="p-3.5 font-black font-heading text-amberGold-500 text-sm">
+                        ${formatPriceVND(item.price)}
+                    </td>
+                    <td class="p-3.5 text-right">
+                        <button onclick="requestDeleteProduct(${item.id})" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold font-heading transition">
+                            <i class="fas fa-trash-can mr-1"></i> Xóa
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function handleProductCreation(e) {
+            e.preventDefault();
+            const name = document.getElementById("adminName").value.trim();
+            const category = document.getElementById("adminCategory").value;
+            const vehicle = document.getElementById("adminVehicle").value;
+            const price = parseInt(document.getElementById("adminPrice").value);
+            const sku = document.getElementById("adminSku").value.trim() || `CD-${Date.now().toString().slice(-4)}`;
+            const rawBadges = document.getElementById("adminBadges").value.trim();
+            const specs = document.getElementById("adminSpecs").value.trim();
+            const image = document.getElementById("adminImage").value.trim();
+
+            if (!name || isNaN(price) || !image) {
+                showToastNotification("Vui lòng điền đầy đủ Tên, Giá và Link ảnh!", "warning");
+                return;
+            }
+
+            const badges = rawBadges ? rawBadges.split(',').map(b => b.trim()).filter(b => b.length > 0) : ["Chính Hãng", "Bảo Hành 12T"];
+
+            const newProduct = {
+                id: Date.now(),
+                sku,
+                name,
+                category,
+                vehicle,
+                price,
+                badges,
+                specs,
+                image
+            };
+
+            inventory.unshift(newProduct);
+            saveInventory();
+            renderStorefront();
+            renderAdminTable();
+
+            document.getElementById("adminProductForm").reset();
+            showToastNotification(`Đã thêm "${name}" vào kho thành công!`, "success");
+        }
+
+        function requestDeleteProduct(id) {
+            const item = inventory.find(p => p.id === id);
+            const itemName = item ? item.name : "sản phẩm";
+            showConfirmDialog(
+                "Xác Nhận Xóa?",
+                `Bạn có chắc chắn muốn xóa "${itemName}" khỏi kho không?`,
+                () => {
+                    inventory = inventory.filter(p => p.id !== id);
+                    saveInventory();
+                    renderStorefront();
+                    renderAdminTable();
+                    showToastNotification("Đã xóa sản phẩm khỏi kho hàng.", "info");
+                }
+            );
+        }
+
+        function confirmResetDefaults() {
+            showConfirmDialog(
+                "Khôi Phục Kho Chuẩn?",
+                "Kho hàng sẽ nạp lại 8 sản phẩm chuẩn của CHINH DENXE (chỉ bao gồm đèn, vành mâm, đĩa phanh và phụ kiện off-road).",
+                () => {
+                    inventory = [...INITIAL_WORKSHOP_INVENTORY];
+                    saveInventory();
+                    renderStorefront();
+                    renderAdminTable();
+                    showToastNotification("Đã khôi phục kho sản phẩm gốc thành công!", "success");
+                }
+            );
+        }
+
+        function toggleAdminView() {
+            isAdminViewOpen = !isAdminViewOpen;
+            const storeEl = document.getElementById("storefrontContainer");
+            const adminEl = document.getElementById("adminPanelContainer");
+            const btnText = document.getElementById("adminToggleText");
+
+            if (isAdminViewOpen) {
+                storeEl.classList.add("hidden");
+                adminEl.classList.remove("hidden");
+                btnText.textContent = "VỀ CỬA HÀNG";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                storeEl.classList.remove("hidden");
+                adminEl.classList.add("hidden");
+                btnText.textContent = "QUẢN TRỊ KHO";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function toggleMobileNavbar() {
+            document.getElementById("mobileNavbar").classList.toggle("hidden");
+        }
+
+        function toggleSpeedDialMenu() {
+            isSpeedDialOpen = !isSpeedDialOpen;
+            const menu = document.getElementById("floatingContactList");
+            const icon = document.getElementById("speedDialIconEl");
+            if (isSpeedDialOpen) {
+                menu.classList.remove("hidden");
+                icon.className = "fas fa-xmark";
+            } else {
+                menu.classList.add("hidden");
+                icon.className = "fas fa-headset";
+            }
+        }
+
+        let pendingConfirmFn = null;
+
+        function showConfirmDialog(title, message, onAccept) {
+            pendingConfirmFn = onAccept;
+            document.getElementById("confirmTitle").textContent = title;
+            document.getElementById("confirmMessage").textContent = message;
+            document.getElementById("customConfirmModal").classList.remove("hidden");
+        }
+
+        function closeConfirmModal() {
+            document.getElementById("customConfirmModal").classList.add("hidden");
+            pendingConfirmFn = null;
+        }
+
+        function runConfirmCallback() {
+            if (typeof pendingConfirmFn === 'function') {
+                pendingConfirmFn();
+            }
+            closeConfirmModal();
+        }
+
+        function showToastNotification(message, type = "info") {
+            const container = document.getElementById("toastContainer");
+            const toast = document.createElement("div");
+            toast.className = `p-4 rounded-xl shadow-2xl text-xs font-bold font-heading uppercase tracking-wider flex items-center gap-2.5 transition-all duration-300 transform translate-x-12 opacity-0 pointer-events-auto border ${
+                type === 'success' ? 'bg-emeraldTech-600 text-white border-emeraldTech-400' :
+                type === 'warning' ? 'bg-amberGold-500 text-obsidian-950 border-amberGold-300' :
+                'bg-obsidian-900 text-white border-obsidian-700'
+            }`;
+
+            const icon = type === 'success' ? 'fa-circle-check' : type === 'warning' ? 'fa-triangle-exclamation' : 'fa-circle-info';
+            toast.innerHTML = `<i class="fas ${icon} text-base"></i><span>${message}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove("translate-x-12", "opacity-0");
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add("translate-x-12", "opacity-0");
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        // Khởi động trang web
+        window.addEventListener("DOMContentLoaded", () => {
+            initInventory();
+            renderStorefront();
+            renderAdminTable();
+        });
+    </script>
+</body>
+</html>
