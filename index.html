@@ -45,14 +45,21 @@
             font-family: 'Barlow Condensed', sans-serif;
             letter-spacing: 0.04em;
         }
-        .hero-banner {
-            background: linear-gradient(180deg, rgba(7, 10, 15, 0.5) 0%, rgba(7, 10, 15, 0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
+        /* Hiệu ứng nền động ánh sáng Laser & Đèn trợ sáng */
+        .hero-animated-bg {
+            background: linear-gradient(135deg, #070A0F 0%, #121A26 50%, #070A0F 100%),
+                        radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 80%, rgba(254, 44, 85, 0.1) 0%, transparent 50%);
+            background-size: 200% 200%;
+            animation: gradientMove 10s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .glow-amber {
-            text-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+            text-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
         }
         .card-hover:hover {
             border-color: #FE2C55;
@@ -86,7 +93,6 @@
     <!-- THANH ĐIỀU HƯỚNG CÔNG KHAI -->
     <nav class="bg-panel/95 backdrop-blur-md border-b border-borderSubtle sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
-            <!-- Logo: Nhấp 3 lần nhanh vào tia sét để mở đăng nhập Admin -->
             <div onclick="handleLogoTripleClick()" class="flex items-center gap-3 cursor-pointer select-none group" title="Bấm 3 lần để vào Admin">
                 <div class="w-12 h-12 rounded-xl bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-amberGold text-2xl group-hover:scale-105 transition">
                     ⚡
@@ -123,8 +129,8 @@
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
         
-        <!-- HERO BANNER (ĐÃ XÓA DÒNG CHỮ NỔI PHÍA TRÊN) -->
-        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center relative overflow-hidden">
+        <!-- HERO BANNER VỚI HIỆU ỨNG NỀN ĐỘNG ÁNH SÁNG LASER CỰC KỲ SANG TRỌNG -->
+        <header class="hero-animated-bg py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
                 
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading uppercase text-white leading-tight mb-6 tracking-wide drop-shadow-2xl">
@@ -756,7 +762,6 @@
         }
 
         function openLoginModal() {
-            document.getElementById('loginModal').classList.add('hidden'); // Wait, should be remove('hidden')
             document.getElementById('loginModal').classList.remove('hidden');
         }
 
