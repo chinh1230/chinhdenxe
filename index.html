@@ -46,13 +46,13 @@
             letter-spacing: 0.04em;
         }
         .hero-banner {
-            background: linear-gradient(180deg, rgba(7, 10, 15, 0.5) 0%, rgba(7, 10, 15, 0.95) 100%), 
+            background: linear-gradient(180deg, rgba(7, 10, 15, 0.45) 0%, rgba(7, 10, 15, 0.95) 100%), 
                         url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
         }
         .glow-amber {
-            text-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
         }
         .card-hover:hover {
             border-color: #FE2C55;
@@ -67,7 +67,7 @@
 </head>
 <body class="bg-obsidian text-slate-200 antialiased selection:bg-amberGold selection:text-black">
 
-    <!-- THANH QUẢN TRỊ ADMIN -->
+    <!-- THANH QUẢN TRỊ ADMIN (Chỉ xuất hiện sau khi đăng nhập) -->
     <div id="adminTopBar" class="hidden bg-amberGold text-black px-4 sm:px-6 py-2.5 sticky top-0 z-50 shadow-xl flex justify-between items-center text-sm font-bold">
         <div class="flex items-center gap-2">
             <span class="bg-black text-amberGold px-2.5 py-0.5 rounded text-xs uppercase tracking-wider">Admin Session</span>
@@ -75,7 +75,7 @@
         </div>
         <div class="flex items-center gap-2">
             <button onclick="toggleAdminDashboard()" class="bg-black text-white hover:bg-slate-900 px-3.5 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
-                ⚙️ Mở Bảng Gắn Thẻ Hàng & Video
+                ⚙️ Mở Bảng Thêm Thẻ Hàng & Video
             </button>
             <button onclick="logoutAdmin()" class="bg-red-700 text-white hover:bg-red-800 px-3 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
                 Đăng Xuất
@@ -122,29 +122,27 @@
 
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
-        
-        <!-- HERO BANNER (DẠNG ẢNH NỀN CHẤT LƯỢNG CAO - ỔN ĐỊNH 100%, KHÔNG BAO GIỜ ĐEN XÌ) -->
         <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center">
             <div class="max-w-4xl mx-auto">
-                <span class="bg-amberGold/15 backdrop-blur-md text-amberGold border border-amberGold/40 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6 shadow-lg">
-                    XƯỞNG ĐỘ ĐÈN TRỢ SÁNG Ô TÔ & XE MÁY CHUYÊN NGHIỆP
+                <span class="bg-amberGold/10 text-amberGold border border-amberGold/30 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6">
+                    Xưởng Độ Đèn Trợ Sáng Ô Tô & Xe Máy Chuyên Nghiệp
                 </span>
                 
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading uppercase text-white leading-tight mb-6 tracking-wide drop-shadow-2xl">
-                    ĐỘT PHÁ ÁNH SÁNG <br>
-                    <span class="text-amberGold glow-amber">CHO CẢ Ô TÔ & XE MÁY</span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading uppercase text-white leading-tight mb-6 tracking-wide">
+                    Đột Phá Ánh Sáng <br>
+                    <span class="text-amberGold glow-amber">Cho Cả Ô Tô & Xe Máy</span>
                 </h1>
 
-                <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
                     Chuyên đèn nóc Future Eyes Laser, bi gầm phá sương 3000K, bi cầu mini trợ sáng xe máy, mâm đĩa tản nhiệt. Bấm vào bất kỳ thẻ hàng nào để mua trực tiếp trên TikTok Shop.
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black/90 hover:bg-black border-2 border-red-500 text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-red-500/30 transition uppercase tracking-wide flex items-center gap-2.5 backdrop-blur-sm active:scale-95">
+                    <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-red-500/25 transition uppercase tracking-wide flex items-center gap-2.5">
                         <span class="text-red-500 text-2xl font-extrabold">♪</span> VÀO GIAN HÀNG TIKTOK SHOP
                     </a>
-                    <a href="#products-section" class="bg-card/80 hover:bg-slate-800 border border-borderSubtle text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide backdrop-blur-sm">
-                        XEM CÁC THẺ SẢN PHẨM
+                    <a href="#products-section" class="bg-card hover:bg-slate-800 border border-borderSubtle text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide">
+                        Xem Các Thẻ Sản Phẩm
                     </a>
                 </div>
             </div>
@@ -174,7 +172,7 @@
             </div>
         </section>
 
-        <!-- KHO THẺ SẢN PHẨM -->
+        <!-- KHO THẺ SẢN PHẨM (MỖI THẺ DẪN VÀO LINK TIKTOK SHOP RIÊNG) -->
         <section id="products-section" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-6 border-b border-borderSubtle">
                 <div>
@@ -325,7 +323,7 @@
         </footer>
     </main>
 
-    <!-- ================= BẢNG QUẢN TRỊ ADMIN ================= -->
+    <!-- ================= BẢNG QUẢN TRỊ ADMIN (CHỖ GẮN THẺ SẢN PHẨM SIÊU TỐC) ================= -->
     <div id="adminDashboardView" class="hidden min-h-screen bg-obsidian py-10 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto space-y-10">
             
@@ -340,7 +338,7 @@
                 </button>
             </div>
 
-            <!-- MỤC 1: CHỖ GẮN THẺ SẢN PHẨM TIKTOK SHOP -->
+            <!-- MỤC 1: CHỖ GẮN THẺ SẢN PHẨM TIKTOK SHOP SIÊU TỐC (CHỈ CẦN 2 DÒNG) -->
             <section class="bg-panel border-2 border-red-500/50 p-6 sm:p-8 rounded-3xl shadow-xl">
                 <div class="flex items-center gap-3 mb-6 pb-3 border-b border-borderSubtle">
                     <span class="text-3xl text-red-500">🏷️</span>
@@ -351,6 +349,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Form gắn thẻ chỉ 2 dòng cốt lõi -->
                     <div class="bg-obsidian border border-borderSubtle p-6 rounded-2xl h-fit">
                         <h4 id="cardFormTitle" class="text-base font-heading font-bold uppercase text-amberGold mb-4 flex items-center gap-2">
                             <span>➕</span> Gắn Thẻ Hàng Mới
@@ -358,6 +357,7 @@
                         <form onsubmit="handleQuickAddCard(event)" class="space-y-4">
                             <input type="hidden" id="editCardId" value="">
 
+                            <!-- DÒNG 1: TÊN / TIÊU ĐỀ -->
                             <div>
                                 <label class="block text-xs font-heading uppercase text-amberGold font-bold mb-1">
                                     1. Tiêu Đề / Tên Món Đồ *
@@ -365,13 +365,16 @@
                                 <input type="text" id="quickCardName" required placeholder="VD: Bi cầu mini 2 màu xe máy..." class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                             </div>
 
+                            <!-- DÒNG 2: LINK TIKTOK SHOP -->
                             <div>
                                 <label class="block text-xs font-heading uppercase text-red-400 font-bold mb-1">
                                     2. Dán Link Sản Phẩm TikTok Shop *
                                 </label>
                                 <input type="url" id="quickCardUrl" required placeholder="Dán link sản phẩm (VD: https://vt.tiktok.com/...)" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-red-400">
+                                <p class="text-[11px] text-slate-400 mt-1">Khách bấm vào thẻ này trên web sẽ nhảy thẳng vào mua món này.</p>
                             </div>
 
+                            <!-- PHÂN LOẠI NHANH -->
                             <div>
                                 <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Phân Loại Món Này</label>
                                 <select id="quickCardCat" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
@@ -382,6 +385,7 @@
                                 </select>
                             </div>
 
+                            <!-- TÙY CHỌN KHÔNG BẮT BUỘC (ẢNH & GIÁ) -->
                             <details class="bg-panel p-3 rounded-xl border border-borderSubtle text-xs">
                                 <summary class="cursor-pointer text-slate-400 hover:text-amberGold font-semibold">Tùy chọn thêm ảnh / giá (nếu thích)</summary>
                                 <div class="mt-3 space-y-3">
@@ -407,6 +411,7 @@
                         </form>
                     </div>
 
+                    <!-- Bảng Danh Sách Thẻ Hàng Đang Hiển Thị Ngoài Web -->
                     <div class="lg:col-span-2 bg-obsidian border border-borderSubtle p-6 rounded-2xl">
                         <h4 class="text-base font-heading font-bold uppercase text-white mb-4">Danh Sách Thẻ Hàng Đang Hiển Thị</h4>
                         <div class="overflow-x-auto">
@@ -494,6 +499,7 @@
             }
         }
 
+        // Dữ liệu mẫu ban đầu
         const initialProducts = [
             {
                 id: 101,
@@ -572,6 +578,7 @@
                                 <p class="text-amberGold font-heading font-extrabold text-xl mt-1 mb-4">${formatMoney(p.price)}</p>
                             </div>
                             
+                            <!-- NÚT CHUYỂN SANG TIKTOK SHOP -->
                             <div class="space-y-2">
                                 <a href="${targetLink}" target="_blank" class="w-full bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-lg shadow-red-500/20 active:scale-95">
                                     <span class="text-red-500 font-extrabold text-sm">♪</span> MUA TRÊN TIKTOK SHOP ↗
@@ -597,6 +604,7 @@
             renderProducts();
         }
 
+        // ================= GẮN THẺ SẢN PHẨM SIÊU TỐC TRONG ADMIN =================
         function handleQuickAddCard(e) {
             e.preventDefault();
             const editId = document.getElementById('editCardId').value;
@@ -646,7 +654,7 @@
                         <td class="py-3 text-xs text-slate-400 font-heading">${catName}</td>
                         <td class="py-3 text-right space-x-1">
                             <button onclick="editCard(${p.id})" class="bg-amberGold/20 text-amberGold hover:bg-amberGold/30 px-2.5 py-1 rounded text-xs font-bold">Sửa</button>
-                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2 py-1 rounded text-xs">Xóa</button>
+                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2.5 py-1 rounded text-xs">Xóa</button>
                         </td>
                     </tr>
                 `;
@@ -817,7 +825,6 @@
             openLoginModal();
         }
 
-        // Khởi động hệ thống
         updateGlobalShopLinks();
         renderProducts();
         renderVideos();
