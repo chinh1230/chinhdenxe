@@ -123,9 +123,17 @@
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
         
-        <!-- HERO BANNER (DẠNG ẢNH NỀN CHẤT LƯỢNG CAO - ỔN ĐỊNH 100%, KHÔNG BAO GIỜ ĐEN XÌ) -->
-        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center">
-            <div class="max-w-4xl mx-auto">
+        <!-- HERO BANNER CÓ CHỮ NỔI NGHỆ THUẬT PHÍA SAU -->
+        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center relative overflow-hidden">
+            <!-- Chữ nổi mờ khổng lồ phía sau (Background Floating Watermark Text) -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0">
+                <span class="text-[14vw] font-black font-heading uppercase tracking-widest text-amberGold/[0.04] whitespace-nowrap">
+                    CHINH DENXE 4X4
+                </span>
+            </div>
+
+            <!-- Nội dung chính đè lên trên -->
+            <div class="relative z-10 max-w-4xl mx-auto">
                 <span class="bg-amberGold/15 backdrop-blur-md text-amberGold border border-amberGold/40 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6 shadow-lg">
                     XƯỞNG ĐỘ ĐÈN TRỢ SÁNG Ô TÔ & XE MÁY CHUYÊN NGHIỆP
                 </span>
