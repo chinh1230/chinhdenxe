@@ -1,94 +1,200 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Quản Lý Cửa Hàng Đèn Xe</title>
+    <title>CHINH DENXE - Độ Đèn & Giải Pháp Điện Xe Off-Road</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Oswald & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Tùy chỉnh màu vàng Amber đặc trưng của đèn xe */
-        .text-amber { color: #fbbf24; }
-        .bg-amber { background-color: #fbbf24; }
-        .border-amber { border-color: #fbbf24; }
-        .hover-bg-amber:hover { background-color: #f59e0b; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+        h1, h2, h3, .font-heading { font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
+        
+        /* Hiệu ứng Ánh sáng Neon & Shadow hầm hố */
+        .neon-glow {
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.25);
+            border-color: #fbbf24;
+            transform: translateY(-4px);
+        }
+        /* Hiệu ứng chuyển động chữ Slogan */
+        .fade-slide {
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans">
+<body class="bg-[#0b0f19] text-gray-100 selection:bg-amber-500 selection:text-gray-900">
 
-    <!-- Thanh Điều Hướng chung -->
-    <nav class="bg-gray-800 border-b border-gray-700 p-4 sticky top-0 z-50">
+    <!-- Thanh Điều Hướng (Navbar) -->
+    <nav class="bg-[#0f172a]/90 backdrop-blur-md border-b border-gray-800 p-4 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-amber tracking-wider">AUTO<span class="text-white">LIGHTS</span></h1>
+            <a href="#" class="text-3xl font-bold font-heading text-amber-400 tracking-wider flex items-center gap-2">
+                <span>⚡ CHINH</span><span class="text-white">DENXE</span>
+            </a>
             
-            <!-- Nút chuyển đổi giữa giao diện Khách và Admin -->
-            <button id="toggleViewBtn" onclick="toggleView()" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded border border-gray-600 transition">
-                ⚙️ Chuyển sang Trang Quản Trị
-            </button>
+            <div class="flex items-center gap-4">
+                <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="hidden sm:flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-1.5 rounded-full border border-gray-700 text-sm transition">
+                    <span class="text-amber-400 font-bold">TikTok</span> @chinh0966
+                </a>
+                <!-- Nút Quản Trị -->
+                <button id="toggleViewBtn" onclick="toggleView()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-gray-950 font-bold py-2 px-5 rounded-lg shadow-lg shadow-amber-500/20 transition transform active:scale-95">
+                    ⚙️ Quản Trị
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- ========================================== -->
     <!-- 1. GIAO DIỆN KHÁCH HÀNG (CỬA HÀNG) -->
     <!-- ========================================== -->
-    <main id="storeView" class="max-w-7xl mx-auto p-6 block">
-        <div class="text-center my-10">
-            <h2 class="text-4xl font-extrabold uppercase mb-4">Sản Phẩm <span class="text-amber">Nổi Bật</span></h2>
-            <p class="text-gray-400">Chuyên các dòng đèn trợ sáng Future Eyes và giải pháp tăng sáng cho Raptor, Hilux.</p>
-        </div>
+    <main id="storeView" class="block">
+        
+        <!-- Hero Section với Slogan Chạy Tự Động -->
+        <header class="relative bg-gradient-to-b from-[#111827] to-[#0b0f19] py-20 px-6 text-center border-b border-gray-800 overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fbbf24_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-4xl mx-auto relative z-10">
+                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-4">
+                    Chuyên Gia Độ Đèn & Giải Pháp Điện Ô Tô
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold font-heading uppercase mb-6 tracking-wide text-white">
+                    Nâng Tầm Ánh Sáng <br><span class="text-amber-400 neon-glow">Bứt Phá Mọi Địa Hình</span>
+                </h1>
+                
+                <!-- Khung Slogan Thay Đổi Tự Động -->
+                <div class="h-20 flex items-center justify-center">
+                    <p id="sloganText" class="text-lg md:text-xl text-gray-300 font-medium max-w-2xl mx-auto fade-slide opacity-100">
+                        CHINH DENXE – Xé toạc màn đêm, bứt phá mọi địa hình với đèn Future Eyes và Pin Lithium cao cấp.
+                    </p>
+                </div>
 
-        <!-- Lưới hiển thị sản phẩm -->
-        <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Sản phẩm sẽ được Javascript tự động nạp vào đây -->
-        </div>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#products" class="bg-amber-400 hover:bg-amber-300 text-gray-950 font-bold font-heading text-lg px-8 py-3 rounded-xl shadow-lg shadow-amber-500/30 transition transform hover:-translate-y-0.5">
+                        🔥 XEM SẢN PHẨM NGAY
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Danh Sách Sản Phẩm -->
+        <section id="products" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold font-heading uppercase tracking-wide">Sản Phẩm <span class="text-amber-400">Nổi Bật</span></h2>
+                <div class="w-24 h-1 bg-amber-400 mx-auto mt-2 rounded-full"></div>
+                <p class="text-gray-400 mt-3">Thiết bị chính hãng, tương thích hoàn hảo cho các dòng xe bán tải, Hilux, Raptor.</p>
+            </div>
+
+            <!-- Lưới hiển thị sản phẩm -->
+            <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript sẽ render sản phẩm vào đây -->
+            </div>
+        </section>
+
+        <!-- Khu vực Video Thực Tế TikTok -->
+        <section class="bg-[#111827] py-16 px-6 border-t border-b border-gray-800">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="text-amber-400 font-bold uppercase tracking-wider text-sm">Góc Thực Tế</span>
+                    <h2 class="text-3xl font-heading uppercase mt-1">Video Test Ánh Sáng & Lắp Đặt</h2>
+                </div>
+                
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow-xl flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-2xl font-heading text-amber-400 mb-3">Xem Trực Tiếp Trên TikTok</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Khám phá thực tế độ sáng bứt phá của đèn Future Eyes, cách đi dây rơ-le an toàn và hiệu năng của các trạm pin Lithium trên kênh chính thức của CHINH DENXE.
+                        </p>
+                        <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="inline-flex items-center gap-3 bg-white text-gray-950 font-bold px-6 py-3 rounded-xl hover:bg-amber-400 transition shadow-md">
+                            🎬 Ghé thăm kênh TikTok @chinh0966
+                        </a>
+                    </div>
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <div class="bg-gray-800 p-4 rounded-xl border border-gray-700 text-center w-full max-w-xs">
+                            <p class="text-sm text-gray-400 mb-2">Quét hoặc nhấn để xem video mới nhất</p>
+                            <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="block text-amber-400 font-bold hover:underline text-lg">tiktok.com/@chinh0966</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chân trang (Footer) -->
+        <footer class="bg-[#070a10] text-gray-400 py-12 px-6 border-t border-gray-900">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-heading text-white mb-3">CHINH <span class="text-amber-400">DENXE</span></h3>
+                    <p class="text-sm leading-relaxed">Chuyên độ đèn trợ sáng, đi dây rơ-le chuyên nghiệp và cung cấp pin Lithium chất lượng cao cho anh em mê xe.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-heading text-lg mb-3">Liên Hệ Tư Vấn</h4>
+                    <p class="text-sm mb-2">📞 Hotline / Zalo: <strong class="text-amber-400">0868 770 966</strong></p>
+                    <p class="text-sm mb-2">📍 Địa chỉ: Hồng Sơn, Tuyên Quang</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-heading text-lg mb-3">Kênh Trực Tuyến</h4>
+                    <p class="text-sm mb-2">TikTok: <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="text-amber-400 hover:underline">@chinh0966</a></p>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+                © 2026 CHINH DENXE. All rights reserved. Designed for Off-Road Enthusiasts.
+            </div>
+        </footer>
     </main>
 
     <!-- ========================================== -->
     <!-- 2. GIAO DIỆN QUẢN TRỊ (ADMIN) -->
     <!-- ========================================== -->
-    <main id="adminView" class="max-w-7xl mx-auto p-6 hidden">
-        <div class="mb-8">
-            <h2 class="text-3xl font-bold text-amber mb-2">Bảng Điều Khiển (Admin)</h2>
-            <p class="text-gray-400">Thêm, sửa, xóa sản phẩm tại đây. Dữ liệu sẽ tự cập nhật ra ngoài cửa hàng.</p>
+    <main id="adminView" class="max-w-7xl mx-auto p-6 hidden min-h-screen py-10">
+        <div class="mb-8 flex justify-between items-center">
+            <div>
+                <h2 class="text-3xl font-heading text-amber-400 mb-1 uppercase tracking-wide">Bảng Quản Trị Sản Phẩm</h2>
+                <p class="text-gray-400 text-sm">Thêm hoặc xóa sản phẩm. Cửa hàng bên ngoài sẽ tự động cập nhật ngay lập tức.</p>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Cột Trái: Form thêm sản phẩm -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 lg:col-span-1 h-fit">
-                <h3 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">➕ Thêm Sản Phẩm Mới</h3>
+            <!-- Form thêm sản phẩm -->
+            <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 h-fit shadow-xl">
+                <h3 class="text-xl font-heading text-white mb-4 border-b border-gray-800 pb-3 flex items-center gap-2">
+                    <span>➕</span> Thêm Sản Phẩm Mới
+                </h3>
                 <form id="addProductForm" onsubmit="addProduct(event)">
                     <div class="mb-4">
-                        <label class="block text-sm font-medium mb-1">Tên Sản Phẩm</label>
-                        <input type="text" id="prodName" required class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white focus:outline-none focus:border-amber" placeholder="VD: Đèn Nóc Future Eyes">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tên Sản Phẩm</label>
+                        <input type="text" id="prodName" required class="w-full bg-gray-950 border border-gray-800 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400 transition" placeholder="VD: Đèn Nóc Future Eyes">
                     </div>
                     <div class="mb-4">
-                        <label class="block text-sm font-medium mb-1">Giá Bán (VNĐ)</label>
-                        <input type="number" id="prodPrice" required class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white focus:outline-none focus:border-amber" placeholder="VD: 3500000">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Giá Bán (VNĐ)</label>
+                        <input type="number" id="prodPrice" required class="w-full bg-gray-950 border border-gray-800 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400 transition" placeholder="VD: 4500000">
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium mb-1">Đường dẫn hình ảnh (Link URL)</label>
-                        <input type="url" id="prodImage" required class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white focus:outline-none focus:border-amber" placeholder="https://link-anh-cua-ban.jpg">
+                    <div class="mb-6">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Link Hình Ảnh (URL)</label>
+                        <input type="url" id="prodImage" required class="w-full bg-gray-950 border border-gray-800 rounded-xl p-3 text-white focus:outline-none focus:border-amber-400 transition" placeholder="https://link-anh.jpg">
                     </div>
-                    <button type="submit" class="w-full bg-amber hover-bg-amber text-gray-900 font-bold py-2 px-4 rounded transition">
-                        Đăng Sản Phẩm
+                    <button type="submit" class="w-full bg-amber-400 hover:bg-amber-300 text-gray-950 font-bold font-heading uppercase tracking-wide py-3 px-4 rounded-xl shadow-lg transition">
+                        Đăng Sản Phẩm Lên Web
                     </button>
                 </form>
             </div>
 
-            <!-- Cột Phải: Danh sách sản phẩm đang có -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 lg:col-span-2">
-                <h3 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">📦 Danh Sách Sản Phẩm Đang Bán</h3>
+            <!-- Danh sách quản lý -->
+            <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800 lg:col-span-2 shadow-xl">
+                <h3 class="text-xl font-heading text-white mb-4 border-b border-gray-800 pb-3">📦 Danh Sách Sản Phẩm Đang Hiển Thị</h3>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead>
-                            <tr class="bg-gray-900 text-gray-400">
-                                <th class="p-3 border-b border-gray-700">Hình ảnh</th>
-                                <th class="p-3 border-b border-gray-700">Tên SP</th>
-                                <th class="p-3 border-b border-gray-700">Giá</th>
-                                <th class="p-3 border-b border-gray-700 text-right">Thao tác</th>
+                            <tr class="bg-gray-950 text-gray-400 text-xs uppercase tracking-wider">
+                                <th class="p-3 rounded-l-lg">Hình Ảnh</th>
+                                <th class="p-3">Tên Sản Phẩm</th>
+                                <th class="p-3">Giá Bán</th>
+                                <th class="p-3 text-right rounded-r-lg">Thao Tác</th>
                             </tr>
                         </thead>
-                        <tbody id="adminProductTable">
-                            <!-- Danh sách sản phẩm Admin sẽ hiện ở đây -->
+                        <tbody id="adminProductTable" class="divide-y divide-gray-800">
+                            <!-- Javascript điền dữ liệu -->
                         </tbody>
                     </table>
                 </div>
@@ -96,9 +202,31 @@
         </div>
     </main>
 
-    <!-- MÃ JAVASCRIPT XỬ LÝ LƯU TRỮ VÀ HIỂN THỊ DỮ LIỆU -->
+    <!-- MÃ JAVASCRIPT XỬ LÝ -->
     <script>
-        // Dữ liệu mẫu ban đầu (Nếu website chưa có dữ liệu)
+        // Danh sách slogan tự động thay đổi
+        const slogans = [
+            "CHINH DENXE – Xé toạc màn đêm, bứt phá mọi địa hình với đèn Future Eyes và Pin Lithium cao cấp.",
+            "Nâng tầm ánh sáng - Vững bước đam mê cùng giải pháp điện ô tô chuyên sâu.",
+            "Chuyên thi công đèn nóc, đi dây rơ-le thẩm mỹ, an toàn tuyệt đối cho Hilux và Raptor.",
+            "Trạm năng lượng Pin Lithium bền bỉ, sẵn sàng cho mọi hành trình off-road dài ngày."
+        ];
+        
+        let currentSloganIndex = 0;
+        const sloganElement = document.getElementById('sloganText');
+
+        setInterval(() => {
+            sloganElement.style.opacity = 0;
+            sloganElement.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                currentSloganIndex = (currentSloganIndex + 1) % slogans.length;
+                sloganElement.textContent = slogans[currentSloganIndex];
+                sloganElement.style.opacity = 1;
+                sloganElement.style.transform = 'translateY(0)';
+            }, 400);
+        }, 4000);
+
+        // Dữ liệu sản phẩm mẫu mặc định
         const defaultProducts = [
             {
                 id: 1,
@@ -108,70 +236,84 @@
             },
             {
                 id: 2,
-                name: "Bi Cầu LED Trợ Sáng Hilux Đi Sương",
+                name: "Bi Cầu LED Trợ Sáng Hilux Phá Sương",
                 price: 2200000,
                 image: "https://images.unsplash.com/photo-1629853909789-705a60c0422c?auto=format&fit=crop&q=80&w=800"
             },
             {
                 id: 3,
-                name: "Bộ Rơ-le & Công Tắc Không Dây",
+                name: "Bộ Rơ-le & Công Tắc Không Dây Cao Cấp",
                 price: 850000,
                 image: "https://images.unsplash.com/photo-1616422285623-22dc9cb463c5?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 4,
+                name: "Hộp Pin Lithium 12V 100Ah (25x15x17cm)",
+                price: 6800000,
+                image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&q=80&w=800"
             }
         ];
 
-        // Khởi tạo mảng sản phẩm từ bộ nhớ trình duyệt (localStorage), nếu không có thì lấy dữ liệu mẫu
-        let products = JSON.parse(localStorage.getItem("myProducts")) || defaultProducts;
+        let products = JSON.parse(localStorage.getItem("chinhDenXeProducts")) || defaultProducts;
 
-        // Hàm Lưu dữ liệu
         function saveToStorage() {
-            localStorage.setItem("myProducts", JSON.stringify(products));
+            localStorage.setItem("chinhDenXeProducts", JSON.stringify(products));
         }
 
-        // Định dạng tiền tệ VNĐ
         function formatMoney(amount) {
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
         }
 
-        // 1. Render giao diện Khách Hàng
+        // Render trang chủ khách hàng
         function renderStore() {
             const grid = document.getElementById('productGrid');
             grid.innerHTML = '';
             
             if (products.length === 0) {
-                grid.innerHTML = '<p class="text-gray-400 col-span-full text-center">Chưa có sản phẩm nào. Hãy vào trang Quản Trị để thêm!</p>';
+                grid.innerHTML = '<p class="text-gray-400 col-span-full text-center py-10">Cửa hàng đang cập nhật sản phẩm mới...</p>';
                 return;
             }
 
             products.forEach(p => {
+                // Tạo liên kết nhắn Zalo tự động kèm tên sản phẩm
+                const zaloMessage = encodeURIComponent(`Chào anh Chinh, tôi muốn tư vấn mua sản phẩm: ${p.name} (${formatMoney(p.price)})`);
+                const zaloLink = `https://zalo.me/0868770966?text=${zaloMessage}`;
+
                 grid.innerHTML += `
-                    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-amber transition duration-300">
-                        <img src="${p.image}" alt="${p.name}" class="w-full h-56 object-cover">
-                        <div class="p-5">
-                            <h3 class="text-xl font-bold mb-2 truncate">${p.name}</h3>
-                            <p class="text-amber font-extrabold text-2xl mb-4">${formatMoney(p.price)}</p>
-                            <button class="w-full bg-transparent border border-amber text-amber hover:bg-amber hover:text-gray-900 font-bold py-2 px-4 rounded transition">
-                                Đặt Hàng Ngay
-                            </button>
+                    <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 card-glow transition duration-300 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-gray-950">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-amber-400 text-gray-950 font-bold font-heading text-xs px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
+                                Chính Hãng
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold font-heading text-white mb-2 line-clamp-1 group-hover:text-amber-400 transition">${p.name}</h3>
+                                <p class="text-amber-400 font-extrabold font-heading text-2xl mb-6">${formatMoney(p.price)}</p>
+                            </div>
+                            <a href="${zaloLink}" target="_blank" class="w-full bg-amber-400 hover:bg-amber-300 text-gray-950 font-bold font-heading uppercase tracking-wide py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-amber-400/20 active:scale-95">
+                                💬 Đặt Mua Qua Zalo
+                            </a>
                         </div>
                     </div>
                 `;
             });
         }
 
-        // 2. Render giao diện Admin
+        // Render bảng quản trị Admin
         function renderAdminTable() {
             const table = document.getElementById('adminProductTable');
             table.innerHTML = '';
             
             products.forEach(p => {
                 table.innerHTML += `
-                    <tr class="hover:bg-gray-700 border-b border-gray-700 transition">
-                        <td class="p-3"><img src="${p.image}" class="w-16 h-16 object-cover rounded border border-gray-600"></td>
-                        <td class="p-3 font-semibold">${p.name}</td>
-                        <td class="p-3 text-amber font-bold">${formatMoney(p.price)}</td>
+                    <tr class="hover:bg-gray-950/50 transition">
+                        <td class="p-3"><img src="${p.image}" class="w-14 h-14 object-cover rounded-xl border border-gray-800"></td>
+                        <td class="p-3 font-medium text-white">${p.name}</td>
+                        <td class="p-3 text-amber-400 font-bold">${formatMoney(p.price)}</td>
                         <td class="p-3 text-right">
-                            <button onclick="deleteProduct(${p.id})" class="text-red-400 hover:text-red-300 bg-red-900 bg-opacity-30 p-2 rounded">
+                            <button onclick="deleteProduct(${p.id})" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 font-semibold px-3 py-1.5 rounded-lg border border-red-500/20 transition text-sm">
                                 🗑️ Xóa
                             </button>
                         </td>
@@ -180,33 +322,29 @@
             });
         }
 
-        // 3. Xử lý sự kiện Thêm Sản Phẩm
         function addProduct(e) {
-            e.preventDefault(); // Ngăn trang tải lại
+            e.preventDefault();
             const name = document.getElementById('prodName').value;
             const price = document.getElementById('prodPrice').value;
             const image = document.getElementById('prodImage').value;
 
             const newProduct = {
-                id: Date.now(), // Tạo ID ngẫu nhiên bằng thời gian thực
+                id: Date.now(),
                 name: name,
                 price: parseInt(price),
                 image: image
             };
 
             products.push(newProduct);
-            saveToStorage(); // Lưu vào bộ nhớ
-            
-            renderStore();      // Cập nhật cửa hàng
-            renderAdminTable(); // Cập nhật bảng Admin
-            
-            document.getElementById('addProductForm').reset(); // Xóa trắng form
-            alert("Đã thêm sản phẩm thành công!");
+            saveToStorage();
+            renderStore();
+            renderAdminTable();
+            document.getElementById('addProductForm').reset();
+            alert("Thêm sản phẩm thành công!");
         }
 
-        // 4. Xử lý sự kiện Xóa Sản Phẩm
         function deleteProduct(id) {
-            if(confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+            if(confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
                 products = products.filter(p => p.id !== id);
                 saveToStorage();
                 renderStore();
@@ -214,7 +352,6 @@
             }
         }
 
-        // 5. Tính năng chuyển đổi qua lại giữa Store và Admin
         let isAdminView = false;
         function toggleView() {
             isAdminView = !isAdminView;
@@ -225,19 +362,20 @@
             if (isAdminView) {
                 storeView.classList.add('hidden');
                 adminView.classList.remove('hidden');
-                btn.innerHTML = "👀 Trở về Cửa Hàng";
-                btn.classList.replace('bg-gray-700', 'bg-amber');
-                btn.classList.replace('text-white', 'text-gray-900');
+                btn.innerHTML = "👀 Xem Cửa Hàng";
+                btn.classList.replace('from-amber-500', 'from-gray-700');
+                btn.classList.replace('to-amber-600', 'to-gray-800');
+                btn.classList.replace('text-gray-950', 'text-white');
             } else {
                 storeView.classList.remove('hidden');
                 adminView.classList.add('hidden');
-                btn.innerHTML = "⚙️ Chuyển sang Trang Quản Trị";
-                btn.classList.replace('bg-amber', 'bg-gray-700');
-                btn.classList.replace('text-gray-900', 'text-white');
+                btn.innerHTML = "⚙️ Quản Trị";
+                btn.classList.replace('from-gray-700', 'from-amber-500');
+                btn.classList.replace('to-gray-800', 'to-amber-600');
+                btn.classList.replace('text-white', 'text-gray-950');
             }
         }
 
-        // Khởi động giao diện lần đầu tiên
         renderStore();
         renderAdminTable();
     </script>
