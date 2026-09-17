@@ -18,13 +18,14 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#070A0F',
-                        panel: '#0D131D',
-                        card: '#121A26',
-                        borderSubtle: '#1F2B3E',
+                        garageDark: '#0B0F17',
+                        garagePanel: '#131C2E',
+                        garageCard: '#1A253A',
+                        garageBorder: '#2A3B5E',
                         amberGold: '#F59E0B',
-                        amberGlow: '#D97706',
-                        tiktokRed: '#FE2C55',
+                        amberGlow: '#FBBF24',
+                        neonRed: '#FF2A5F',
+                        neonCyan: '#06B6D4'
                     },
                     fontFamily: {
                         heading: ['"Barlow Condensed"', 'sans-serif'],
@@ -38,63 +39,70 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #070A0F;
+            background-color: #0B0F17;
             color: #E2E8F0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 42, 95, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);
+            background-attachment: fixed;
         }
         .font-heading {
             font-family: 'Barlow Condensed', sans-serif;
             letter-spacing: 0.04em;
         }
-        /* Khôi phục nền ảnh xe độ cao cấp, sắc nét và sang trọng */
         .hero-banner {
-            background: linear-gradient(180deg, rgba(7, 10, 15, 0.45) 0%, rgba(7, 10, 15, 0.95) 100%), 
+            background: linear-gradient(180deg, rgba(11, 15, 23, 0.4) 0%, rgba(11, 15, 23, 0.92) 100%), 
                         url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
         }
         .glow-amber {
-            text-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+            text-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
+        }
+        .glow-red {
+            text-shadow: 0 0 25px rgba(255, 42, 95, 0.7);
         }
         .card-hover:hover {
-            border-color: #FE2C55;
-            box-shadow: 0 10px 30px -10px rgba(254, 44, 85, 0.35);
-            transform: translateY(-4px);
+            border-color: #F59E0B;
+            box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.3);
+            transform: translateY(-5px);
         }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #070A0F; }
-        ::-webkit-scrollbar-thumb { background: #1F2B3E; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #0B0F17; }
+        ::-webkit-scrollbar-thumb { background: #2A3B5E; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
     </style>
 </head>
-<body class="bg-obsidian text-slate-200 antialiased selection:bg-amberGold selection:text-black">
+<body class="bg-garageDark text-slate-200 antialiased selection:bg-amberGold selection:text-black">
 
     <!-- THANH QUẢN TRỊ ADMIN -->
-    <div id="adminTopBar" class="hidden bg-amberGold text-black px-4 sm:px-6 py-2.5 sticky top-0 z-50 shadow-xl flex justify-between items-center text-sm font-bold">
+    <div id="adminTopBar" class="hidden bg-gradient-to-r from-amberGold to-amberGlow text-black px-4 sm:px-6 py-2.5 sticky top-0 z-50 shadow-2xl flex justify-between items-center text-sm font-bold">
         <div class="flex items-center gap-2">
-            <span class="bg-black text-amberGold px-2.5 py-0.5 rounded text-xs uppercase tracking-wider">Admin Session</span>
+            <span class="bg-black text-amberGold px-2.5 py-0.5 rounded text-xs uppercase tracking-wider shadow">Admin Mode</span>
             <span class="hidden sm:inline">ANH CHINH (0868 770 966)</span>
         </div>
         <div class="flex items-center gap-2">
-            <button onclick="toggleAdminDashboard()" class="bg-black text-white hover:bg-slate-900 px-3.5 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
+            <button onclick="toggleAdminDashboard()" class="bg-black text-white hover:bg-slate-900 px-3.5 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition shadow">
                 ⚙️ Mở Bảng Gắn Thẻ Hàng & Video
             </button>
-            <button onclick="logoutAdmin()" class="bg-red-700 text-white hover:bg-red-800 px-3 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition">
+            <button onclick="logoutAdmin()" class="bg-red-700 text-white hover:bg-red-800 px-3 py-1.5 rounded-lg text-xs uppercase font-heading tracking-wider transition shadow">
                 Đăng Xuất
             </button>
         </div>
     </div>
 
     <!-- THANH ĐIỀU HƯỚNG CÔNG KHAI -->
-    <nav class="bg-panel/95 backdrop-blur-md border-b border-borderSubtle sticky top-0 z-40">
+    <nav class="bg-garagePanel/90 backdrop-blur-md border-b border-garageBorder sticky top-0 z-40 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
             <!-- Logo: Nhấp 3 lần nhanh vào tia sét để mở đăng nhập Admin -->
             <div onclick="handleLogoTripleClick()" class="flex items-center gap-3 cursor-pointer select-none group" title="Bấm 3 lần để vào Admin">
-                <div class="w-12 h-12 rounded-xl bg-amberGold/10 border border-amberGold/30 flex items-center justify-center text-amberGold text-2xl group-hover:scale-105 transition">
+                <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/40 flex items-center justify-center text-amberGold text-2xl group-hover:scale-110 group-hover:bg-amberGold group-hover:text-black transition duration-300 shadow-lg shadow-amberGold/20">
                     ⚡
                 </div>
                 <div>
                     <span class="text-3xl font-extrabold font-heading tracking-wider text-white flex items-center">
-                        CHINH <span class="text-amberGold ml-1.5">DENXE</span>
+                        CHINH <span class="text-amberGold ml-1.5 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]">DENXE</span>
                     </span>
                     <span class="block text-[10px] uppercase font-bold text-slate-400 tracking-widest -mt-1">
                         Độ Đèn Ô Tô & Xe Máy • Tuyên Quang
@@ -105,17 +113,17 @@
             <div class="hidden md:flex items-center gap-8 font-heading text-sm uppercase tracking-wider font-semibold text-slate-300">
                 <a href="#products-section" class="hover:text-amberGold transition">Thẻ Hàng TikTok Shop</a>
                 <a href="#video-section" class="hover:text-amberGold transition text-amber-400 flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> Video Test Xe
+                    <span class="w-2 h-2 rounded-full bg-neonRed animate-ping"></span> Video Test Xe
                 </a>
                 <a href="#order-section" class="hover:text-amberGold transition">Order Theo Xe</a>
                 <a href="#showcase-section" class="hover:text-amberGold transition">Dự Án Đã Độ</a>
             </div>
 
             <div class="flex items-center gap-3">
-                <a id="navShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black hover:bg-slate-900 border border-red-500/80 text-white font-heading font-extrabold px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition shadow-lg shadow-red-500/20 active:scale-95 flex items-center gap-2">
-                    <span class="text-red-500 font-extrabold text-base">♪</span>
+                <a id="navShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-gradient-to-r from-slate-900 to-black hover:from-black hover:to-slate-900 border border-neonRed/60 text-white font-heading font-extrabold px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition shadow-lg shadow-neonRed/20 active:scale-95 flex items-center gap-2">
+                    <span class="text-neonRed font-extrabold text-base">♪</span>
                     <span>VÀO TIKTOK SHOP</span>
-                    <span class="text-[10px] bg-red-600/30 text-red-400 px-1.5 py-0.5 rounded uppercase hidden sm:inline">Mở Gian Hàng</span>
+                    <span class="text-[10px] bg-neonRed/20 text-neonRed px-1.5 py-0.5 rounded uppercase hidden sm:inline border border-neonRed/30">Mở Gian Hàng</span>
                 </a>
             </div>
         </div>
@@ -124,11 +132,14 @@
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
         
-        <!-- HERO BANNER ĐỈNH CAO (ẢNH NỀN XE ĐỘ CHUYÊN NGHIỆP) -->
-        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-borderSubtle text-center relative overflow-hidden">
+        <!-- HERO BANNER SANG TRỌNG VÀ RỰC RỠ -->
+        <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-garageBorder text-center relative overflow-hidden">
+            <!-- Vòng sáng trang trí nền -->
+            <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amberGold/15 blur-[120px] rounded-full pointer-events-none"></div>
+
             <div class="max-w-4xl mx-auto relative z-10">
                 <span class="bg-amberGold/15 backdrop-blur-md text-amberGold border border-amberGold/40 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-6 shadow-lg">
-                    XƯỞNG ĐỘ ĐÈN TRỢ SÁNG Ô TÔ & XE MÁY CHUYÊN NGHIỆP
+                    ⚡ XƯỞNG ĐỘ ĐÈN TRỢ SÁNG Ô TÔ & XE MÁY CHUYÊN NGHIỆP ⚡
                 </span>
                 
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading uppercase text-white leading-tight mb-6 tracking-wide drop-shadow-2xl">
@@ -136,15 +147,15 @@
                     <span class="text-amberGold glow-amber">CHO CẢ Ô TÔ & XE MÁY</span>
                 </h1>
 
-                <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
                     Chuyên đèn nóc Future Eyes Laser, bi gầm phá sương 3000K, bi cầu mini trợ sáng xe máy, mâm đĩa tản nhiệt. Bấm vào bất kỳ thẻ hàng nào để mua trực tiếp trên TikTok Shop.
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-black/90 hover:bg-black border-2 border-red-500 text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-red-500/30 transition uppercase tracking-wide flex items-center gap-2.5 backdrop-blur-sm active:scale-95">
-                        <span class="text-red-500 text-2xl font-extrabold">♪</span> VÀO GIAN HÀNG TIKTOK SHOP
+                    <a id="heroShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="bg-gradient-to-r from-neonRed to-rose-700 hover:from-rose-600 hover:to-neonRed text-white font-heading font-extrabold text-lg px-8 py-3.5 rounded-xl shadow-xl shadow-neonRed/30 transition uppercase tracking-wide flex items-center gap-2.5 active:scale-95 border border-neonRed/40">
+                        <span class="text-white text-2xl font-extrabold">♪</span> VÀO GIAN HÀNG TIKTOK SHOP
                     </a>
-                    <a href="#products-section" class="bg-card/90 hover:bg-slate-800 border border-borderSubtle text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide backdrop-blur-sm">
+                    <a href="#products-section" class="bg-garageCard hover:bg-garageBorder border border-garageBorder text-slate-200 font-heading font-bold text-lg px-8 py-3.5 rounded-xl transition uppercase tracking-wide shadow-lg">
                         XEM CÁC THẺ SẢN PHẨM
                     </a>
                 </div>
@@ -152,12 +163,12 @@
         </header>
 
         <!-- VIDEO TEST THỰC TẾ -->
-        <section id="video-section" class="py-20 px-4 sm:px-6 border-b border-borderSubtle bg-panel relative overflow-hidden">
+        <section id="video-section" class="py-20 px-4 sm:px-6 border-b border-garageBorder bg-garagePanel/60 relative overflow-hidden">
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
                     <div>
                         <div class="flex items-center gap-2 text-amberGold text-xs font-bold uppercase tracking-widest mb-1">
-                            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-neonRed animate-pulse"></span>
                             Video Trực Tiếp Tại Xưởng
                         </div>
                         <h2 class="text-3xl sm:text-4xl font-extrabold font-heading uppercase text-white tracking-wide">
@@ -166,7 +177,7 @@
                         <p class="text-slate-400 text-sm mt-1">Xem video thực tế và bấm nút chuyển thẳng sang TikTok Shop để mua đúng món đồ đang xem.</p>
                     </div>
 
-                    <a id="videoHeaderShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="mt-4 md:mt-0 inline-flex items-center gap-2 bg-card hover:bg-slate-800 border border-borderSubtle text-white px-5 py-2.5 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition">
+                    <a id="videoHeaderShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="mt-4 md:mt-0 inline-flex items-center gap-2 bg-garageCard hover:bg-garageBorder border border-garageBorder text-white px-5 py-2.5 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition shadow">
                         <span>🎬 Kênh TikTok:</span> <strong class="text-amberGold">@chinh0966</strong> ↗
                     </a>
                 </div>
@@ -177,20 +188,20 @@
 
         <!-- KHO THẺ SẢN PHẨM -->
         <section id="products-section" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-6 border-b border-borderSubtle">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-6 border-b border-garageBorder">
                 <div>
                     <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Danh Mục Thẻ Hàng</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold font-heading uppercase text-white mt-1">
-                        Thẻ Sản Phẩm <span class="text-red-500">TikTok Shop</span>
+                        Thẻ Sản Phẩm <span class="text-neonRed">TikTok Shop</span>
                     </h2>
                 </div>
 
                 <div class="mt-4 md:mt-0 flex flex-wrap gap-2" id="categoryFilters">
-                    <button onclick="filterCategory('all')" class="cat-btn active bg-amberGold text-black font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition">Tất Cả</button>
-                    <button onclick="filterCategory('moto-lighting')" class="cat-btn bg-card hover:bg-slate-800 text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition">🏍️ Đèn Xe Máy</button>
-                    <button onclick="filterCategory('lighting')" class="cat-btn bg-card hover:bg-slate-800 text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition">🚗 Đèn Ô Tô</button>
-                    <button onclick="filterCategory('wheels')" class="cat-btn bg-card hover:bg-slate-800 text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition">Vành Mâm</button>
-                    <button onclick="filterCategory('brakes')" class="cat-btn bg-card hover:bg-slate-800 text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition">Đĩa Phanh & Spacer</button>
+                    <button onclick="filterCategory('all')" class="cat-btn active bg-amberGold text-black font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition shadow-md">Tất Cả</button>
+                    <button onclick="filterCategory('moto-lighting')" class="cat-btn bg-garageCard hover:bg-garageBorder text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition border border-garageBorder">🏍️ Đèn Xe Máy</button>
+                    <button onclick="filterCategory('lighting')" class="cat-btn bg-garageCard hover:bg-garageBorder text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition border border-garageBorder">🚗 Đèn Ô Tô</button>
+                    <button onclick="filterCategory('wheels')" class="cat-btn bg-garageCard hover:bg-garageBorder text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition border border-garageBorder">Vành Mâm</button>
+                    <button onclick="filterCategory('brakes')" class="cat-btn bg-garageCard hover:bg-garageBorder text-slate-300 font-heading font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider transition border border-garageBorder">Đĩa Phanh & Spacer</button>
                 </div>
             </div>
 
@@ -198,9 +209,11 @@
         </section>
 
         <!-- ORDER THEO YÊU CẦU -->
-        <section id="order-section" class="py-20 px-4 sm:px-6 bg-panel border-t border-b border-borderSubtle">
-            <div class="max-w-4xl mx-auto bg-card border border-borderSubtle p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
-                <div class="text-center mb-8">
+        <section id="order-section" class="py-20 px-4 sm:px-6 bg-garagePanel/60 border-t border-b border-garageBorder">
+            <div class="max-w-4xl mx-auto bg-garageCard border border-garageBorder p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-amberGold/10 blur-3xl rounded-full pointer-events-none"></div>
+
+                <div class="text-center mb-8 relative z-10">
                     <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Dịch Vụ Độc Quyền</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold font-heading uppercase text-white mt-1">
                         Nhận Order Đèn & Đồ Chơi <span class="text-amberGold">Cho Ô Tô & Xe Máy</span>
@@ -210,25 +223,25 @@
                     </p>
                 </div>
 
-                <form onsubmit="handleCustomOrder(event)" class="space-y-4">
+                <form onsubmit="handleCustomOrder(event)" class="space-y-4 relative z-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Dòng xe & Đời xe</label>
-                            <input type="text" id="orderCarModel" required placeholder="VD: Winner X, SH 150i, Hilux, Ranger..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none">
+                            <input type="text" id="orderCarModel" required placeholder="VD: Winner X, SH 150i, Hilux, Ranger..." class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none">
                         </div>
                         <div>
                             <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Món đồ cần tìm</label>
-                            <input type="text" id="orderItemName" required placeholder="VD: Bi cầu mini 2 màu, Đèn nóc Laser..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none">
+                            <input type="text" id="orderItemName" required placeholder="VD: Bi cầu mini 2 màu, Đèn nóc Laser..." class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-heading font-bold uppercase text-slate-400 mb-1">Ghi chú thêm</label>
-                        <textarea id="orderNote" rows="2" placeholder="Ghi chú vị trí bắt đèn (chân gương, phuộc, mặt nạ)..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none"></textarea>
+                        <textarea id="orderNote" rows="2" placeholder="Ghi chú vị trí bắt đèn (chân gương, phuộc, mặt nạ)..." class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm focus:border-amberGold outline-none"></textarea>
                     </div>
 
                     <div class="pt-2">
-                        <button type="submit" class="w-full bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold text-base py-3.5 rounded-xl uppercase tracking-wider transition shadow-lg shadow-amberGold/20 active:scale-98 flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full bg-gradient-to-r from-amberGold to-amberGlow hover:from-amberGlow hover:to-amberGold text-black font-heading font-extrabold text-base py-3.5 rounded-xl uppercase tracking-wider transition shadow-lg shadow-amberGold/20 active:scale-98 flex items-center justify-center gap-2">
                             <span>🚀 Gửi Yêu Cầu Báo Giá Sang Zalo Anh Chinh</span>
                         </button>
                     </div>
@@ -247,11 +260,11 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle group">
+                <div class="bg-garageCard rounded-2xl overflow-hidden border border-garageBorder group shadow-xl">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-amberGold text-black font-heading font-bold text-xs px-2.5 py-1 rounded">Xe Máy / Đi Phượt</span>
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-garageCard via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 bg-amberGold text-black font-heading font-bold text-xs px-2.5 py-1 rounded shadow">Xe Máy / Đi Phượt</span>
                     </div>
                     <div class="p-5">
                         <h3 class="font-heading font-bold text-lg text-white">Bi Cầu Mini 2 Màu Vàng Trắng</h3>
@@ -259,11 +272,11 @@
                     </div>
                 </div>
 
-                <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle group">
+                <div class="bg-garageCard rounded-2xl overflow-hidden border border-garageBorder group shadow-xl">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-amberGold text-black font-heading font-bold text-xs px-2.5 py-1 rounded">Ranger Raptor</span>
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-garageCard via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 bg-amberGold text-black font-heading font-bold text-xs px-2.5 py-1 rounded shadow">Ranger Raptor</span>
                     </div>
                     <div class="p-5">
                         <h3 class="font-heading font-bold text-lg text-white">Full Combo Đèn Nóc & Bi Laser Gầm</h3>
@@ -271,11 +284,11 @@
                     </div>
                 </div>
 
-                <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle group">
+                <div class="bg-garageCard rounded-2xl overflow-hidden border border-garageBorder group shadow-xl">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-4 bg-amberGold text-black font-heading font-bold text-xs px-2.5 py-1 rounded">Toyota Hilux</span>
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-garageCard via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-4 bg-amberGold text-black font-heading font-bold text-xs px-2.5 py-1 rounded shadow">Toyota Hilux</span>
                     </div>
                     <div class="p-5">
                         <h3 class="font-heading font-bold text-lg text-white">Lên Mâm 17 Inch & Bi Cầu Phá Sương</h3>
@@ -286,7 +299,7 @@
         </section>
 
         <!-- CHÂN TRANG -->
-        <footer class="bg-panel border-t border-borderSubtle py-14 px-4 sm:px-6">
+        <footer class="bg-garagePanel border-t border-garageBorder py-14 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
                     <span class="text-2xl font-extrabold font-heading text-white flex items-center mb-3">
@@ -312,7 +325,7 @@
                 <div>
                     <h4 class="text-sm font-heading font-bold uppercase text-white tracking-wider mb-3">Gian Hàng TikTok Shop</h4>
                     <div class="flex flex-col gap-2.5">
-                        <a id="footerShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="text-xs text-slate-300 hover:text-red-400 flex items-center gap-2">
+                        <a id="footerShopBtn" href="https://www.tiktok.com/@chinh0966" target="_blank" class="text-xs text-slate-300 hover:text-neonRed flex items-center gap-2">
                             <span class="w-6 h-6 rounded-full bg-white/10 text-white flex items-center justify-center font-bold text-[10px]">♪</span>
                             TikTok Shop: @chinh0966 (Mở Tab Giỏ Hàng)
                         </a>
@@ -327,10 +340,10 @@
     </main>
 
     <!-- ================= BẢNG QUẢN TRỊ ADMIN ================= -->
-    <div id="adminDashboardView" class="hidden min-h-screen bg-obsidian py-10 px-4 sm:px-6">
+    <div id="adminDashboardView" class="hidden min-h-screen bg-garageDark py-10 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto space-y-10">
             
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-borderSubtle">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-garageBorder">
                 <div>
                     <span class="text-amberGold text-xs font-bold uppercase tracking-widest">Trung Tâm Quản Lý Hệ Thống</span>
                     <h2 class="text-3xl font-heading font-extrabold uppercase text-white">Bảng Gắn Thẻ Hàng & Video</h2>
@@ -342,9 +355,9 @@
             </div>
 
             <!-- MỤC 1: CHỖ GẮN THẺ SẢN PHẨM TIKTOK SHOP -->
-            <section class="bg-panel border-2 border-red-500/50 p-6 sm:p-8 rounded-3xl shadow-xl">
-                <div class="flex items-center gap-3 mb-6 pb-3 border-b border-borderSubtle">
-                    <span class="text-3xl text-red-500">🏷️</span>
+            <section class="bg-garagePanel border-2 border-neonRed/50 p-6 sm:p-8 rounded-3xl shadow-xl">
+                <div class="flex items-center gap-3 mb-6 pb-3 border-b border-garageBorder">
+                    <span class="text-3xl text-neonRed">🏷️</span>
                     <div>
                         <h3 class="text-xl font-heading font-extrabold uppercase text-white">CHỖ GẮN THẺ HÀNG TIKTOK SHOP (SIÊU TỐC)</h3>
                         <p class="text-xs text-slate-400">Chỉ cần gõ tên món đồ và dán link TikTok Shop, web sẽ tự tạo thẻ hàng hiển thị ra trang chủ ngay lập tức!</p>
@@ -352,7 +365,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="bg-obsidian border border-borderSubtle p-6 rounded-2xl h-fit">
+                    <div class="bg-garageCard border border-garageBorder p-6 rounded-2xl h-fit">
                         <h4 id="cardFormTitle" class="text-base font-heading font-bold uppercase text-amberGold mb-4 flex items-center gap-2">
                             <span>➕</span> Gắn Thẻ Hàng Mới
                         </h4>
@@ -363,19 +376,19 @@
                                 <label class="block text-xs font-heading uppercase text-amberGold font-bold mb-1">
                                     1. Tiêu Đề / Tên Món Đồ *
                                 </label>
-                                <input type="text" id="quickCardName" required placeholder="VD: Bi cầu mini 2 màu xe máy..." class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                                <input type="text" id="quickCardName" required placeholder="VD: Bi cầu mini 2 màu xe máy..." class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                             </div>
 
                             <div>
-                                <label class="block text-xs font-heading uppercase text-red-400 font-bold mb-1">
+                                <label class="block text-xs font-heading uppercase text-neonRed font-bold mb-1">
                                     2. Dán Link Sản Phẩm TikTok Shop *
                                 </label>
-                                <input type="url" id="quickCardUrl" required placeholder="Dán link sản phẩm (VD: https://vt.tiktok.com/...)" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-red-400">
+                                <input type="url" id="quickCardUrl" required placeholder="Dán link sản phẩm (VD: https://vt.tiktok.com/...)" class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-neonRed">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Phân Loại Món Này</label>
-                                <select id="quickCardCat" class="w-full bg-panel border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                                <select id="quickCardCat" class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                                     <option value="moto-lighting">🏍️ Đèn Xe Máy</option>
                                     <option value="lighting">🚗 Đèn Ô Tô</option>
                                     <option value="wheels">Vành Mâm Thể Thao</option>
@@ -383,22 +396,22 @@
                                 </select>
                             </div>
 
-                            <details class="bg-panel p-3 rounded-xl border border-borderSubtle text-xs">
+                            <details class="bg-garagePanel p-3 rounded-xl border border-garageBorder text-xs">
                                 <summary class="cursor-pointer text-slate-400 hover:text-amberGold font-semibold">Tùy chọn thêm ảnh / giá (nếu thích)</summary>
                                 <div class="mt-3 space-y-3">
                                     <div>
                                         <label class="block text-slate-400 mb-1">Giá bán hiển thị (để trống tự hiện Xem giá trên TikTok)</label>
-                                        <input type="number" id="quickCardPrice" placeholder="VD: 650000" class="w-full bg-obsidian border border-borderSubtle rounded-lg p-2.5 text-white text-xs outline-none">
+                                        <input type="number" id="quickCardPrice" placeholder="VD: 650000" class="w-full bg-garageDark border border-garageBorder rounded-lg p-2.5 text-white text-xs outline-none">
                                     </div>
                                     <div>
                                         <label class="block text-slate-400 mb-1">Link ảnh món đồ (để trống tự gắn ảnh mặc định đẹp)</label>
-                                        <input type="url" id="quickCardImg" placeholder="https://..." class="w-full bg-obsidian border border-borderSubtle rounded-lg p-2.5 text-white text-xs outline-none">
+                                        <input type="url" id="quickCardImg" placeholder="https://..." class="w-full bg-garageDark border border-garageBorder rounded-lg p-2.5 text-white text-xs outline-none">
                                     </div>
                                 </div>
                             </details>
 
                             <div class="flex gap-2 pt-2">
-                                <button type="submit" id="cardSubmitBtn" class="flex-grow bg-red-600 hover:bg-red-500 text-white font-heading font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-sm transition shadow-lg shadow-red-600/20 active:scale-95">
+                                <button type="submit" id="cardSubmitBtn" class="flex-grow bg-neonRed hover:bg-rose-600 text-white font-heading font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-sm transition shadow-lg shadow-neonRed/20 active:scale-95">
                                     Tạo & Gắn Thẻ Hàng Lên Web
                                 </button>
                                 <button type="button" onclick="resetCardForm()" id="cardCancelBtn" class="hidden bg-slate-800 hover:bg-slate-700 text-slate-300 font-heading font-bold px-4 rounded-xl uppercase text-xs transition">
@@ -408,19 +421,19 @@
                         </form>
                     </div>
 
-                    <div class="lg:col-span-2 bg-obsidian border border-borderSubtle p-6 rounded-2xl">
+                    <div class="lg:col-span-2 bg-garageCard border border-garageBorder p-6 rounded-2xl">
                         <h4 class="text-base font-heading font-bold uppercase text-white mb-4">Danh Sách Thẻ Hàng Đang Hiển Thị</h4>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-sm">
                                 <thead>
-                                    <tr class="text-xs uppercase font-heading text-slate-400 border-b border-borderSubtle">
+                                    <tr class="text-xs uppercase font-heading text-slate-400 border-b border-garageBorder">
                                         <th class="pb-3">Hình Ảnh</th>
                                         <th class="pb-3">Tên Món Đồ</th>
                                         <th class="pb-3">Phân Loại</th>
                                         <th class="pb-3 text-right">Thao Tác</th>
                                     </tr>
                                 </thead>
-                                <tbody id="adminTableBody" class="divide-y border-borderSubtle/60"></tbody>
+                                <tbody id="adminTableBody" class="divide-y divide-garageBorder"></tbody>
                             </table>
                         </div>
                     </div>
@@ -428,11 +441,11 @@
             </section>
 
             <!-- MỤC 2: CÀI ĐẶT LINK GIAN HÀNG TỔNG -->
-            <section class="bg-panel border border-borderSubtle p-6 rounded-3xl">
+            <section class="bg-garagePanel border border-garageBorder p-6 rounded-3xl">
                 <h4 class="text-sm font-heading font-bold uppercase text-amberGold mb-2">Link Gian Hàng TikTok Shop Tổng (Dành cho nút bấm to ở Menu & Banner)</h4>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <input type="url" id="globalShopUrlInput" placeholder="VD: https://www.tiktok.com/@chinh0966" class="flex-grow bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
-                    <button onclick="saveGlobalShopUrl()" class="bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold px-6 py-3 rounded-xl uppercase tracking-wider text-xs transition">
+                    <input type="url" id="globalShopUrlInput" placeholder="VD: https://www.tiktok.com/@chinh0966" class="flex-grow bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                    <button onclick="saveGlobalShopUrl()" class="bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold px-6 py-3 rounded-xl uppercase tracking-wider text-xs transition shadow">
                         Lưu Link Tổng
                     </button>
                 </div>
@@ -443,7 +456,7 @@
 
     <!-- CỬA SỔ ĐĂNG NHẬP ADMIN -->
     <div id="loginModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-panel border border-borderSubtle w-full max-w-md p-8 rounded-3xl shadow-2xl relative">
+        <div class="bg-garagePanel border border-garageBorder w-full max-w-md p-8 rounded-3xl shadow-2xl relative">
             <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
 
             <div class="text-center mb-6">
@@ -455,13 +468,13 @@
             <form onsubmit="handleAdminLogin(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Tài Khoản</label>
-                    <input type="text" id="adminUserInput" required placeholder="Nhập tài khoản..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                    <input type="text" id="adminUserInput" required placeholder="Nhập tài khoản..." class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                 </div>
                 <div>
                     <label class="block text-xs font-heading uppercase text-slate-400 mb-1">Mật Khẩu</label>
-                    <input type="password" id="adminPassInput" required placeholder="Nhập mật khẩu..." class="w-full bg-obsidian border border-borderSubtle rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                    <input type="password" id="adminPassInput" required placeholder="Nhập mật khẩu..." class="w-full bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
                 </div>
-                <button type="submit" class="w-full bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-sm transition">
+                <button type="submit" class="w-full bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-sm transition shadow">
                     Đăng Nhập Vào Kho
                 </button>
             </form>
@@ -552,18 +565,18 @@
 
             filtered.forEach(p => {
                 const tagBadge = p.category === 'moto-lighting' 
-                    ? '<span class="absolute top-3 left-3 bg-blue-600 text-white font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase">Xe Máy</span>'
-                    : '<span class="absolute top-3 left-3 bg-slate-800 text-amberGold font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase">Ô Tô</span>';
+                    ? '<span class="absolute top-3 left-3 bg-blue-600 text-white font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase shadow">Xe Máy</span>'
+                    : '<span class="absolute top-3 left-3 bg-garageCard text-amberGold font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase border border-amberGold/30 shadow">Ô Tô</span>';
 
                 const targetLink = p.tiktokShopUrl || globalShopUrl;
                 const zaloLink = `https://zalo.me/0868770966?text=${encodeURIComponent('Chào anh Chinh, tôi muốn hỏi kỹ thuật món: ' + p.name)}`;
 
                 grid.innerHTML += `
-                    <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle card-hover flex flex-col justify-between group">
+                    <div class="bg-garageCard rounded-2xl overflow-hidden border border-garageBorder card-hover flex flex-col justify-between group shadow-xl">
                         <div class="relative h-52 overflow-hidden bg-black cursor-pointer" onclick="window.open('${targetLink}', '_blank')">
                             <img src="${p.image || DEFAULT_IMG}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             ${tagBadge}
-                            <span class="absolute top-3 right-3 bg-red-600 text-white font-heading font-extrabold text-[10px] px-2 py-0.5 rounded uppercase flex items-center gap-1">
+                            <span class="absolute top-3 right-3 bg-neonRed text-white font-heading font-extrabold text-[10px] px-2.5 py-0.5 rounded uppercase flex items-center gap-1 shadow">
                                 <span>♪</span> TikTok Shop
                             </span>
                         </div>
@@ -574,10 +587,10 @@
                             </div>
                             
                             <div class="space-y-2">
-                                <a href="${targetLink}" target="_blank" class="w-full bg-black hover:bg-slate-900 border-2 border-red-500 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-lg shadow-red-500/20 active:scale-95">
-                                    <span class="text-red-500 font-extrabold text-sm">♪</span> MUA TRÊN TIKTOK SHOP ↗
+                                <a href="${targetLink}" target="_blank" class="w-full bg-gradient-to-r from-neonRed to-rose-700 hover:from-rose-600 hover:to-neonRed text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-md shadow-neonRed/20 active:scale-95 border border-neonRed/40">
+                                    <span class="text-white font-extrabold text-sm">♪</span> MUA TRÊN TIKTOK SHOP ↗
                                 </a>
-                                <a href="${zaloLink}" target="_blank" class="w-full block bg-card hover:bg-slate-800 border border-borderSubtle text-slate-300 font-heading font-bold text-xs py-2 rounded-xl uppercase tracking-wider text-center transition">
+                                <a href="${zaloLink}" target="_blank" class="w-full block bg-garageDark hover:bg-garageBorder border border-garageBorder text-slate-300 font-heading font-bold text-xs py-2 rounded-xl uppercase tracking-wider text-center transition">
                                     💬 Tư Vấn Lắp Đặt (Zalo)
                                 </a>
                             </div>
@@ -590,11 +603,11 @@
         function filterCategory(cat) {
             currentFilter = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-amberGold', 'text-black');
-                btn.classList.add('bg-card', 'text-slate-300');
+                btn.classList.remove('bg-amberGold', 'text-black', 'shadow-md');
+                btn.classList.add('bg-garageCard', 'text-slate-300', 'border', 'border-garageBorder');
             });
-            event.target.classList.remove('bg-card', 'text-slate-300');
-            event.target.classList.add('bg-amberGold', 'text-black');
+            event.target.classList.remove('bg-garageCard', 'text-slate-300', 'border', 'border-garageBorder');
+            event.target.classList.add('bg-amberGold', 'text-black', 'shadow-md');
             renderProducts();
         }
 
@@ -641,13 +654,13 @@
             products.forEach(p => {
                 const catName = p.category === 'moto-lighting' ? '🏍️ Đèn Xe Máy' : (p.category === 'lighting' ? '🚗 Đèn Ô Tô' : 'Phụ kiện');
                 tbody.innerHTML += `
-                    <tr class="hover:bg-slate-900/50">
-                        <td class="py-3"><img src="${p.image || DEFAULT_IMG}" class="w-12 h-12 object-cover rounded-lg border border-borderSubtle"></td>
+                    <tr class="hover:bg-garageDark/50">
+                        <td class="py-3"><img src="${p.image || DEFAULT_IMG}" class="w-12 h-12 object-cover rounded-lg border border-garageBorder"></td>
                         <td class="py-3 font-semibold text-white max-w-xs truncate">${p.name}</td>
                         <td class="py-3 text-xs text-slate-400 font-heading">${catName}</td>
                         <td class="py-3 text-right space-x-1">
-                            <button onclick="editCard(${p.id})" class="bg-amberGold/20 text-amberGold hover:bg-amberGold/30 px-2.5 py-1 rounded text-xs font-bold">Sửa</button>
-                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2 py-1 rounded text-xs">Xóa</button>
+                            <button onclick="editCard(${p.id})" class="bg-amberGold/20 text-amberGold hover:bg-amberGold/30 px-2.5 py-1 rounded text-xs font-bold border border-amberGold/30">Sửa</button>
+                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-neonRed hover:bg-red-500/30 px-2.5 py-1 rounded text-xs border border-neonRed/30">Xóa</button>
                         </td>
                     </tr>
                 `;
@@ -714,7 +727,7 @@
 
             videos.forEach(v => {
                 grid.innerHTML += `
-                    <div class="bg-card rounded-2xl overflow-hidden border border-borderSubtle shadow-xl flex flex-col group relative">
+                    <div class="bg-garageCard rounded-2xl overflow-hidden border border-garageBorder shadow-xl flex flex-col group relative">
                         <div class="relative w-full h-[380px] bg-black overflow-hidden">
                             <video id="vid_${v.id}" autoplay loop muted playsinline poster="${v.thumbnail || ''}" class="w-full h-full object-cover">
                                 <source src="${v.videoUrl}" type="video/mp4">
@@ -724,11 +737,11 @@
                                 <h3 class="text-base font-bold font-heading text-white line-clamp-1">${v.title}</h3>
                             </div>
                         </div>
-                        <div class="p-4 bg-card flex flex-col gap-2.5 flex-grow justify-between">
+                        <div class="p-4 bg-garageCard flex flex-col gap-2.5 flex-grow justify-between">
                             <p class="text-xs text-slate-400 line-clamp-2">${v.title}</p>
-                            <div class="pt-2 border-t border-borderSubtle/60">
-                                <a href="${globalShopUrl}" target="_blank" class="w-full bg-black hover:bg-slate-900 border border-red-500/60 text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-md active:scale-95">
-                                    <span class="text-red-500 font-extrabold text-sm">♪</span> Mua Món Này Trên TikTok Shop ↗
+                            <div class="pt-2 border-t border-garageBorder">
+                                <a href="${globalShopUrl}" target="_blank" class="w-full bg-gradient-to-r from-neonRed to-rose-700 hover:from-rose-600 hover:to-neonRed text-white font-heading font-extrabold text-xs py-2.5 rounded-xl uppercase tracking-wider text-center transition flex items-center justify-center gap-1.5 shadow-md active:scale-95 border border-neonRed/40">
+                                    <span class="text-white font-extrabold text-sm">♪</span> MUA MÓN NÀY TRÊN TIKTOK SHOP ↗
                                 </a>
                             </div>
                         </div>
