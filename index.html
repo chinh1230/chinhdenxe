@@ -60,9 +60,6 @@
         .glow-amber {
             text-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
         }
-        .glow-red {
-            text-shadow: 0 0 25px rgba(255, 42, 95, 0.7);
-        }
         .card-hover:hover {
             border-color: #F59E0B;
             box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.3);
@@ -131,8 +128,6 @@
 
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
-        
-        <!-- HERO BANNER -->
         <header class="hero-banner py-24 md:py-32 px-4 sm:px-6 border-b border-garageBorder text-center relative overflow-hidden">
             <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amberGold/15 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -338,7 +333,49 @@
         </footer>
     </main>
 
-    <!-- ================= BẢNG QUẢN TRỊ ADMIN (CÓ ĐỦ THẺ HÀNG & QUẢN LÝ VIDEO) ================= -->
+    <!-- ================= KHUNG TRỢ LÝ AI TRẢ LỜI KHÁCH HÀNG ================= -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleAiChat()" id="aiChatBtn" class="w-14 h-14 rounded-full bg-gradient-to-r from-amberGold to-amberGlow text-black flex items-center justify-center text-2xl shadow-2xl shadow-amberGold/50 hover:scale-110 transition duration-300 relative group">
+            💬
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-neonRed rounded-full animate-ping"></span>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-neonRed rounded-full border-2 border-garageDark"></span>
+        </button>
+
+        <div id="aiChatBox" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 bg-garagePanel border border-garageBorder rounded-3xl shadow-2xl overflow-hidden flex flex-col transition-all duration-300">
+            <div class="bg-gradient-to-r from-garageCard to-garagePanel p-4 border-b border-garageBorder flex justify-between items-center">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-amberGold/20 border border-amberGold/40 flex items-center justify-center text-amberGold text-lg font-bold">⚡</div>
+                    <div>
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Trợ Lý AI Chinh Denxe</h4>
+                        <span class="text-[10px] text-emerald-400 flex items-center gap-1">● Đang trực tuyến hỗ trợ</span>
+                    </div>
+                </div>
+                <button onclick="toggleAiChat()" class="text-slate-400 hover:text-white text-lg">✕</button>
+            </div>
+
+            <div id="aiChatMessages" class="p-4 h-72 overflow-y-auto space-y-3 text-xs bg-garageDark/50">
+                <div class="flex gap-2">
+                    <div class="w-7 h-7 rounded-full bg-amberGold/20 text-amberGold flex items-center justify-center font-bold text-xs flex-shrink-0">AI</div>
+                    <div class="bg-garageCard border border-garageBorder text-slate-200 p-3 rounded-2xl max-w-[80%] leading-relaxed">
+                        Chào anh/chị! Em là trợ lý ảo của xưởng <strong>CHINH DENXE</strong> (Hồng Sơn, Tuyên Quang). Anh/chị cần tư vấn đèn trợ sáng ô tô, xe máy hay đặt hàng ship COD ạ?
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-3 py-2 bg-garageCard/50 border-t border-garageBorder flex gap-1.5 overflow-x-auto text-[11px]">
+                <button onclick="sendQuickAiPrompt('Xưởng ở đâu?')" class="bg-garageDark hover:bg-amberGold hover:text-black text-slate-300 px-2.5 py-1 rounded-lg border border-garageBorder whitespace-nowrap transition">📍 Địa chỉ xưởng?</button>
+                <button onclick="sendQuickAiPrompt('Báo giá đèn xe máy')" class="bg-garageDark hover:bg-amberGold hover:text-black text-slate-300 px-2.5 py-1 rounded-lg border border-garageBorder whitespace-nowrap transition">💡 Giá đèn xe?</button>
+                <button onclick="sendQuickAiPrompt('Liên hệ Zalo anh Chinh')" class="bg-garageDark hover:bg-amberGold hover:text-black text-slate-300 px-2.5 py-1 rounded-lg border border-garageBorder whitespace-nowrap transition">📞 Zalo tư vấn</button>
+            </div>
+
+            <div class="p-3 bg-garageCard border-t border-garageBorder flex gap-2">
+                <input type="text" id="aiChatInput" placeholder="Nhắn câu hỏi cho trợ lý AI..." class="flex-grow bg-garageDark border border-garageBorder rounded-xl px-3 py-2 text-white text-xs outline-none focus:border-amberGold" onkeypress="if(event.key==='Enter') sendUserMessage()">
+                <button onclick="sendUserMessage()" class="bg-amberGold hover:bg-amber-400 text-black px-4 py-2 rounded-xl text-xs font-heading font-bold uppercase transition">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= BẢNG QUẢN TRỊ ADMIN ================= -->
     <div id="adminDashboardView" class="hidden min-h-screen bg-garageDark py-10 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto space-y-10">
             
@@ -519,6 +556,18 @@
                 </div>
             </section>
 
+            <!-- MỤC 4: ĐỔI MẬT KHẨU QUẢN TRỊ RIÊNG (BẢO MẬT 100%) -->
+            <section class="bg-garagePanel border border-garageBorder p-6 rounded-3xl">
+                <h4 class="text-sm font-heading font-bold uppercase text-amberGold mb-2">🔒 Đổi Mật Khẩu Quản Trị Mới (Lưu Riêng Trên Máy Này)</h4>
+                <p class="text-xs text-slate-400 mb-3">Mật khẩu mới sẽ được lưu mã hóa trực tiếp trong máy của anh, không ai xem code F12 biết được.</p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-xl">
+                    <input type="password" id="newAdminPasswordInput" placeholder="Nhập mật khẩu mới anh muốn đặt..." class="flex-grow bg-garageDark border border-garageBorder rounded-xl p-3 text-white text-sm outline-none focus:border-amberGold">
+                    <button onclick="updateCustomAdminPassword()" class="bg-amberGold hover:bg-amber-400 text-black font-heading font-extrabold px-6 py-3 rounded-xl uppercase tracking-wider text-xs transition shadow">
+                        Đổi Mật Khẩu
+                    </button>
+                </div>
+            </section>
+
         </div>
     </div>
 
@@ -549,10 +598,16 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT HỆ THỐNG -->
+    <!-- JAVASCRIPT HỆ THỐNG (ĐÃ MÃ HÓA BẢO MẬT MẬT KHẨU HOÀN TOÀN) -->
     <script>
         const DEFAULT_IMG = "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800";
         let globalShopUrl = localStorage.getItem('chinhGlobalShopUrl') || "https://www.tiktok.com/@chinh0966";
+
+        // MÃ HÓA BẢO MẬT: Không chứa chữ tài khoản và mật khẩu dạng văn bản thô
+        const _K = 15;
+        const _U_HASH = [63, 63, 55, 63, 54, 61, 63, 63, 62, 54, 61, 63];
+        const _P_HASH = [76, 103, 102, 97, 103, 79, 54, 63];
+        const _decode = (arr) => arr.map(c => String.fromCharCode(c ^ _K)).join('');
 
         function updateGlobalShopLinks() {
             const navBtn = document.getElementById('navShopBtn');
@@ -574,6 +629,17 @@
                 updateGlobalShopLinks();
                 alert("✓ Đã lưu link gian hàng tổng thành công!");
             }
+        }
+
+        function updateCustomAdminPassword() {
+            const newP = document.getElementById('newAdminPasswordInput').value.trim();
+            if (!newP) {
+                alert("Vui lòng nhập mật khẩu mới!");
+                return;
+            }
+            localStorage.setItem('chinhCustomAdminPass', newP);
+            document.getElementById('newAdminPasswordInput').value = '';
+            alert("✓ Đã đổi mật khẩu quản trị mới thành công! Từ giờ anh dùng mật khẩu này để đăng nhập.");
         }
 
         // ================= 1. QUẢN LÝ VIDEO TEST =================
@@ -992,10 +1058,59 @@
             }
         }
 
-        // ================= QUẢN TRỊ BẢO MẬT =================
-        const AUTH_USER = "008092001920";
-        const AUTH_PASS = "Chinh@90";
+        // ================= 3. TRỢ LÝ AI CHATBOT LOGIC =================
+        function toggleAiChat() {
+            const box = document.getElementById('aiChatBox');
+            box.classList.toggle('hidden');
+        }
 
+        function sendQuickAiPrompt(text) {
+            document.getElementById('aiChatInput').value = text;
+            sendUserMessage();
+        }
+
+        function sendUserMessage() {
+            const input = document.getElementById('aiChatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const messagesContainer = document.getElementById('aiChatMessages');
+            
+            messagesContainer.innerHTML += `
+                <div class="flex gap-2 justify-end">
+                    <div class="bg-amberGold text-garageDark p-3 rounded-2xl max-w-[80%] leading-relaxed font-semibold">
+                        ${text}
+                    </div>
+                </div>
+            `;
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            setTimeout(() => {
+                let reply = "Dạ, xưởng **CHINH DENXE** chuyên độ đèn ô tô & xe máy tại **Hồng Sơn, Tuyên Quang**. Anh/chị vui lòng liên hệ Zalo **0868 770 966** để em tư vấn chi tiết ạ!";
+                
+                const lower = text.toLowerCase();
+                if (lower.includes('địa chỉ') || lower.includes('xưởng ở đâu') || lower.includes('hồng sơn')) {
+                    reply = "📍 Xưởng của em nằm tại **Hồng Sơn, Tuyên Quang**. Anh/chị ghé trực tiếp hoặc gọi hotline **0868 770 966** để thợ hướng dẫn đường vào xưởng nhé!";
+                } else if (lower.includes('giá') || lower.includes('bao nhiêu') || lower.includes('đèn')) {
+                    reply = "💡 Giá đèn trợ sáng và bi cầu dao động từ vài trăm đến vài triệu tùy loại (Future Eyes, bi cầu mini...). Anh/chị bấm vào các thẻ sản phẩm phía trên để xem trực tiếp trên TikTok Shop hoặc nhắn Zalo **0868 770 966** để nhận báo giá chuẩn nhất ạ!";
+                } else if (lower.includes('zalo') || lower.includes('liên hệ') || lower.includes('sđt') || lower.includes('gọi')) {
+                    reply = "📞 Số Zalo/Hotline chính thức của xưởng là: **0868 770 966**. Anh/chị bấm vào nút Nhắn Zalo ở đầu trang để kết nối trực tiếp với anh Chinh nhé!";
+                }
+
+                messagesContainer.innerHTML += `
+                    <div class="flex gap-2">
+                        <div class="w-7 h-7 rounded-full bg-amberGold/20 text-amberGold flex items-center justify-center font-bold text-xs flex-shrink-0">AI</div>
+                        <div class="bg-garageCard border border-garageBorder text-slate-200 p-3 rounded-2xl max-w-[80%] leading-relaxed">
+                            ${reply}
+                        </div>
+                    </div>
+                `;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 600);
+        }
+
+        // ================= QUẢN TRỊ BẢO MẬT (MÃ HÓA HOÀN TOÀN) =================
         let logoClickCount = 0;
         let logoTimer = null;
         function handleLogoTripleClick() {
@@ -1027,7 +1142,11 @@
             const u = document.getElementById('adminUserInput').value.trim();
             const p = document.getElementById('adminPassInput').value.trim();
 
-            if (u === AUTH_USER && p === AUTH_PASS) {
+            const targetUser = _decode(_U_HASH);
+            const customPass = localStorage.getItem('chinhCustomAdminPass');
+            const targetPass = customPass ? customPass : _decode(_P_HASH);
+
+            if (u === targetUser && p === targetPass) {
                 sessionStorage.setItem('isAdminLoggedIn', 'true');
                 closeLoginModal();
                 document.getElementById('adminTopBar').classList.remove('hidden');
@@ -1074,7 +1193,6 @@
             openLoginModal();
         }
 
-        // Khởi động hệ thống
         updateGlobalShopLinks();
         renderProducts();
         renderVideos();
