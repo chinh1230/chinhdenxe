@@ -9,45 +9,39 @@
     <!-- Google Fonts: Oswald & Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #07090e; color: #f3f4f6; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #f8fafc; color: #1e293b; }
         h1, h2, h3, .font-heading { font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; }
         
-        .hero-bg {
-            background: linear-gradient(to bottom, rgba(7, 9, 14, 0.7), rgba(7, 9, 14, 0.95)), url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .amber-glow {
-            text-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+        .hero-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
         
         .product-card {
-            background: #0d121f;
-            border: 1px solid #1e293b;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
         }
         .product-card:hover {
             border-color: #f59e0b;
-            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.15);
             transform: translateY(-4px);
         }
     </style>
 </head>
-<body class="bg-[#07090e] text-gray-100 selection:bg-amber-500 selection:text-gray-900">
+<body class="bg-slate-50 text-slate-800 selection:bg-amber-500 selection:text-white">
 
     <!-- Thanh Điều Hướng (Navbar) -->
-    <nav class="bg-[#07090e]/90 backdrop-blur-md border-b border-gray-800/80 fixed top-0 left-0 right-0 z-50">
+    <nav class="bg-white/95 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 right-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold font-heading text-amber-500 tracking-wider flex items-center gap-2">
-                <span>⚡ CHINH</span><span class="text-white">DENXE</span>
+            <a href="#" class="text-3xl font-bold font-heading text-slate-900 tracking-wider flex items-center gap-2">
+                <span class="text-amber-500">⚡ CHINH</span><span>DENXE</span>
             </a>
             
             <div class="flex items-center gap-4">
-                <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="hidden sm:flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-gray-300 px-4 py-2 rounded-xl border border-gray-800 text-sm font-medium transition">
-                    <span class="text-amber-500 font-bold">TikTok</span> @chinh0966
+                <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="hidden sm:flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium transition">
+                    <span class="text-amber-600 font-bold">TikTok</span> @chinh0966
                 </a>
-                <button id="toggleViewBtn" onclick="toggleView()" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold font-heading px-5 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 transition active:scale-95 text-sm uppercase">
+                <button id="toggleViewBtn" onclick="toggleView()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-heading px-5 py-2.5 rounded-xl shadow-md transition active:scale-95 text-sm uppercase">
                     ⚙️ Quản Trị
                 </button>
             </div>
@@ -57,23 +51,23 @@
     <!-- ================= GIAO DIỆN KHÁCH HÀNG ================= -->
     <main id="storeView" class="block pt-20">
         
-        <!-- Hero Section Cinematic -->
-        <header class="hero-bg py-28 md:py-36 px-6 text-center border-b border-gray-800 relative">
+        <!-- Hero Section Sáng sủa, Nổi bật -->
+        <header class="hero-banner py-24 md:py-32 px-6 text-center text-white border-b border-slate-800 relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
-                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest inline-block mb-6">
+                <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest inline-block mb-6">
                     Chuyên Gia Độ Đèn & Giải Pháp Điện Ô Tô • Tuyên Quang
                 </span>
                 
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-heading uppercase mb-6 tracking-wide text-white leading-tight">
-                    Nâng Tầm Ánh Sáng <br><span class="text-amber-500 amber-glow">Bứt Phá Mọi Địa Hình</span>
+                    Nâng Tầm Ánh Sáng <br><span class="text-amber-400">Bứt Phá Mọi Địa Hình</span>
                 </h1>
                 
-                <p class="text-base md:text-xl text-gray-300 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p class="text-base md:text-xl text-slate-300 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
                     Độ đèn Future Eyes chính hãng, đi dây rơ-le an toàn tuyệt đối và cung cấp trạm pin Lithium chuyên sâu cho Hilux, Raptor và xe bán tải.
                 </p>
 
                 <div class="flex justify-center gap-4">
-                    <a href="#products" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold font-heading text-lg px-8 py-4 rounded-xl shadow-xl shadow-amber-500/30 transition transform hover:-translate-y-0.5 uppercase tracking-wide">
+                    <a href="#products" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-heading text-lg px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 transition transform hover:-translate-y-0.5 uppercase tracking-wide">
                         🔥 Xem Sản Phẩm Ngay
                     </a>
                 </div>
@@ -81,40 +75,40 @@
         </header>
 
         <!-- Điểm Nhấn Uy Tín (Trust Badges) -->
-        <section class="border-b border-gray-800/80 bg-[#0a0d14] py-8 px-6">
+        <section class="bg-white border-b border-slate-200 py-8 px-6 shadow-sm">
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div class="flex items-center justify-center gap-4 p-4">
                     <div class="text-3xl text-amber-500">🛡️</div>
                     <div class="text-left">
-                        <h4 class="font-heading font-bold text-white text-lg">Hàng Chính Hãng 100%</h4>
-                        <p class="text-gray-400 text-xs">Đèn Future Eyes & linh kiện cao cấp</p>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg">Hàng Chính Hãng 100%</h4>
+                        <p class="text-slate-500 text-xs">Đèn Future Eyes & linh kiện cao cấp</p>
                     </div>
                 </div>
-                <div class="flex items-center justify-center gap-4 p-4 border-y md:border-y-0 md:border-x border-gray-800">
+                <div class="flex items-center justify-center gap-4 p-4 border-y md:border-y-0 md:border-x border-slate-200">
                     <div class="text-3xl text-amber-500">⚡</div>
                     <div class="text-left">
-                        <h4 class="font-heading font-bold text-white text-lg">Kỹ Thuật Đấu Nối Chuẩn</h4>
-                        <p class="text-gray-400 text-xs">Đi dây gọn gàng, an toàn điện tuyệt đối</p>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg">Kỹ Thuật Đấu Nối Chuẩn</h4>
+                        <p class="text-slate-500 text-xs">Đi dây gọn gàng, an toàn điện tuyệt đối</p>
                     </div>
                 </div>
                 <div class="flex items-center justify-center gap-4 p-4">
                     <div class="text-3xl text-amber-500">🤝</div>
                     <div class="text-left">
-                        <h4 class="font-heading font-bold text-white text-lg">Hỗ Trợ Tận Tâm</h4>
-                        <p class="text-gray-400 text-xs">Tư vấn kỹ thuật trực tiếp qua Zalo</p>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg">Hỗ Trợ Tận Tâm</h4>
+                        <p class="text-slate-500 text-xs">Tư vấn kỹ thuật trực tiếp qua Zalo</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- DANH SÁCH SẢN PHẨM CHÍNH -->
+        <!-- DANH SÁCH SẢN PHẨM CHÍNH (Nền sáng, rõ nét) -->
         <section id="products" class="max-w-7xl mx-auto px-6 py-20">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-800 pb-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-200 pb-6">
                 <div>
-                    <span class="text-amber-500 font-bold uppercase tracking-widest text-xs">Sản Phẩm Độc Quyền</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold font-heading uppercase tracking-wide mt-1 text-white">Danh Sách <span class="text-amber-500">Sản Phẩm</span></h2>
+                    <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Sản Phẩm Độc Quyền</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-heading uppercase tracking-wide mt-1 text-slate-900">Danh Sách <span class="text-amber-600">Sản Phẩm</span></h2>
                 </div>
-                <p class="text-gray-400 text-sm mt-2 md:mt-0">Bấm "Đặt Mua Qua Zalo" để gặp trực tiếp kỹ thuật viên chốt đơn.</p>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0">Bấm "Đặt Mua Qua Zalo" để gặp trực tiếp kỹ thuật viên chốt đơn.</p>
             </div>
 
             <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -123,32 +117,32 @@
         </section>
 
         <!-- Khu Vực Trưng Bày Xe Đã Độ -->
-        <section class="bg-[#0a0d14] py-20 px-6 border-t border-b border-gray-800">
+        <section class="bg-slate-100 py-20 px-6 border-t border-b border-slate-200">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-12">
-                    <span class="text-amber-500 font-bold uppercase tracking-widest text-xs">Thực Tế Xưởng Độ</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold font-heading uppercase tracking-wide mt-1 text-white">Dự Án <span class="text-amber-500">Nổi Bật</span></h2>
+                    <span class="text-amber-600 font-bold uppercase tracking-widest text-xs">Thực Tế Xưởng Độ</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-heading uppercase tracking-wide mt-1 text-slate-900">Dự Án <span class="text-amber-600">Nổi Bật</span></h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="group relative rounded-2xl overflow-hidden border border-gray-800 bg-[#0d121f]">
-                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800" alt="Raptor" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500 opacity-80 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090e] via-[#07090e]/40 to-transparent flex flex-col justify-end p-6">
-                            <span class="text-amber-500 font-heading text-xs uppercase font-bold tracking-wider mb-1">Ford Ranger Raptor</span>
+                    <div class="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-md">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800" alt="Raptor" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-amber-400 font-heading text-xs uppercase font-bold tracking-wider mb-1">Ford Ranger Raptor</span>
                             <h3 class="text-xl font-bold font-heading text-white">Độ Thanh Đèn LED Nóc Full Sáng</h3>
                         </div>
                     </div>
-                    <div class="group relative rounded-2xl overflow-hidden border border-gray-800 bg-[#0d121f]">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80&w=800" alt="Hilux" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500 opacity-80 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090e] via-[#07090e]/40 to-transparent flex flex-col justify-end p-6">
-                            <span class="text-amber-500 font-heading text-xs uppercase font-bold tracking-wider mb-1">Toyota Hilux</span>
+                    <div class="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-md">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&q=80&w=800" alt="Hilux" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-amber-400 font-heading text-xs uppercase font-bold tracking-wider mb-1">Toyota Hilux</span>
                             <h3 class="text-xl font-bold font-heading text-white">Bi Cầu Phá Sương & Rơ-le Không Dây</h3>
                         </div>
                     </div>
-                    <div class="group relative rounded-2xl overflow-hidden border border-gray-800 bg-[#0d121f]">
-                        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=800" alt="Battery" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500 opacity-80 group-hover:opacity-100">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#07090e] via-[#07090e]/40 to-transparent flex flex-col justify-end p-6">
-                            <span class="text-amber-500 font-heading text-xs uppercase font-bold tracking-wider mb-1">Trạm Năng Lượng</span>
+                    <div class="group relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-md">
+                        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&q=80&w=800" alt="Battery" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-amber-400 font-heading text-xs uppercase font-bold tracking-wider mb-1">Trạm Năng Lượng</span>
                             <h3 class="text-xl font-bold font-heading text-white">Hộp Pin Lithium 12V 100Ah Cao Cấp</h3>
                         </div>
                     </div>
@@ -157,37 +151,37 @@
         </section>
 
         <!-- Góc TikTok & Kết Nối -->
-        <section class="py-20 px-6 text-center">
-            <div class="max-w-3xl mx-auto bg-[#0d121f] border border-gray-800 p-10 rounded-3xl shadow-2xl">
+        <section class="py-20 px-6 text-center bg-white">
+            <div class="max-w-3xl mx-auto bg-slate-50 border border-slate-200 p-10 rounded-3xl shadow-sm">
                 <span class="text-3xl mb-3 block">🎬</span>
-                <h2 class="text-3xl font-heading uppercase text-white mb-3">Xem Video Thực Tế Trên TikTok</h2>
-                <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                <h2 class="text-3xl font-heading uppercase text-slate-900 mb-3">Xem Video Thực Tế Trên TikTok</h2>
+                <p class="text-slate-600 text-sm mb-8 leading-relaxed">
                     Khám phá chi tiết các video test ánh sáng ban đêm, hướng dẫn đi dây kỹ thuật và đánh giá thực tế từ kênh chính thức của CHINH DENXE.
                 </p>
-                <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="inline-flex items-center gap-2 bg-white hover:bg-gray-200 text-gray-950 font-bold font-heading py-3.5 px-8 rounded-xl transition uppercase text-sm tracking-wide">
+                <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold font-heading py-3.5 px-8 rounded-xl transition uppercase text-sm tracking-wide">
                     Ghé Thêm Kênh TikTok @chinh0966
                 </a>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-[#040508] text-gray-400 py-16 px-6 border-t border-gray-900">
+        <footer class="bg-slate-900 text-slate-400 py-16 px-6 border-t border-slate-800">
             <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
                 <div>
                     <h3 class="text-2xl font-heading text-white mb-4">CHINH <span class="text-amber-500">DENXE</span></h3>
-                    <p class="text-sm leading-relaxed text-gray-400">Đơn vị chuyên độ đèn trợ sáng Future Eyes và cung cấp trạm năng lượng Lithium uy tín hàng đầu cho dòng xe bán tải và off-road.</p>
+                    <p class="text-sm leading-relaxed text-slate-400">Đơn vị chuyên độ đèn trợ sáng Future Eyes và cung cấp trạm năng lượng Lithium uy tín hàng đầu cho dòng xe bán tải và off-road.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-heading text-lg mb-4 uppercase tracking-wider">Thông Tin Liên Hệ</h4>
-                    <p class="text-sm mb-2">📞 Hotline / Zalo: <strong class="text-amber-500">0868 770 966</strong></p>
+                    <p class="text-sm mb-2">📞 Hotline / Zalo: <strong class="text-amber-400">0868 770 966</strong></p>
                     <p class="text-sm mb-2">📍 Địa chỉ: Hồng Sơn, Tuyên Quang</p>
                 </div>
                 <div>
                     <h4 class="text-white font-heading text-lg mb-4 uppercase tracking-wider">Mạng Xã Hội</h4>
-                    <p class="text-sm mb-2">TikTok: <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="text-amber-500 hover:underline">@chinh0966</a></p>
+                    <p class="text-sm mb-2">TikTok: <a href="https://www.tiktok.com/@chinh0966" target="_blank" class="text-amber-400 hover:underline">@chinh0966</a></p>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto pt-6 border-t border-gray-900 text-center text-xs text-gray-600">
+            <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
                 © 2026 CHINH DENXE. All rights reserved.
             </div>
         </footer>
@@ -197,48 +191,48 @@
     <main id="adminView" class="max-w-7xl mx-auto p-6 hidden min-h-screen pt-28 pb-20">
         <div class="mb-8 flex justify-between items-center">
             <div>
-                <h2 class="text-3xl font-heading text-amber-500 mb-1 uppercase tracking-wide">Bảng Quản Trị Sản Phẩm</h2>
-                <p class="text-gray-400 text-sm">Thêm hoặc xóa sản phẩm. Giao diện khách hàng sẽ tự động cập nhật ngay lập tức.</p>
+                <h2 class="text-3xl font-heading text-slate-900 mb-1 uppercase tracking-wide">Bảng Quản Trị Sản Phẩm</h2>
+                <p class="text-slate-500 text-sm">Thêm hoặc xóa sản phẩm. Giao diện khách hàng sẽ tự động cập nhật ngay lập tức.</p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="bg-[#0d121f] p-6 rounded-2xl border border-gray-800 h-fit shadow-xl">
-                <h3 class="text-xl font-heading text-white mb-4 border-b border-gray-800 pb-3 flex items-center gap-2">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 h-fit shadow-md">
+                <h3 class="text-xl font-heading text-slate-900 mb-4 border-b border-slate-100 pb-3 flex items-center gap-2">
                     <span>➕</span> Thêm Sản Phẩm Mới
                 </h3>
                 <form id="addProductForm" onsubmit="addProduct(event)">
                     <div class="mb-4">
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tên Sản Phẩm</label>
-                        <input type="text" id="prodName" required class="w-full bg-[#07090e] border border-gray-800 rounded-xl p-3 text-white focus:outline-none focus:border-amber-500 transition" placeholder="VD: Đèn Nóc Future Eyes">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Tên Sản Phẩm</label>
+                        <input type="text" id="prodName" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-slate-900 focus:outline-none focus:border-amber-500 transition" placeholder="VD: Đèn Nóc Future Eyes">
                     </div>
                     <div class="mb-4">
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Giá Bán (VNĐ)</label>
-                        <input type="number" id="prodPrice" required class="w-full bg-[#07090e] border border-gray-800 rounded-xl p-3 text-white focus:outline-none focus:border-amber-500 transition" placeholder="VD: 4500000">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Giá Bán (VNĐ)</label>
+                        <input type="number" id="prodPrice" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-slate-900 focus:outline-none focus:border-amber-500 transition" placeholder="VD: 4500000">
                     </div>
                     <div class="mb-6">
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Link Hình Ảnh (URL)</label>
-                        <input type="url" id="prodImage" required class="w-full bg-[#07090e] border border-gray-800 rounded-xl p-3 text-white focus:outline-none focus:border-amber-500 transition" placeholder="https://link-anh.jpg">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Link Hình Ảnh (URL)</label>
+                        <input type="url" id="prodImage" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-slate-900 focus:outline-none focus:border-amber-500 transition" placeholder="https://link-anh.jpg">
                     </div>
-                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold font-heading uppercase tracking-wide py-3 px-4 rounded-xl shadow-lg transition">
+                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-heading uppercase tracking-wide py-3 px-4 rounded-xl shadow-md transition">
                         Đăng Sản Phẩm Lên Web
                     </button>
                 </form>
             </div>
 
-            <div class="bg-[#0d121f] p-6 rounded-2xl border border-gray-800 lg:col-span-2 shadow-xl">
-                <h3 class="text-xl font-heading text-white mb-4 border-b border-gray-800 pb-3">📦 Danh Sách Sản Phẩm Đang Hiển Thị</h3>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 lg:col-span-2 shadow-md">
+                <h3 class="text-xl font-heading text-slate-900 mb-4 border-b border-slate-100 pb-3">📦 Danh Sách Sản Phẩm Đang Hiển Thị</h3>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead>
-                            <tr class="bg-[#07090e] text-gray-400 text-xs uppercase tracking-wider">
+                            <tr class="bg-slate-100 text-slate-600 text-xs uppercase tracking-wider">
                                 <th class="p-3 rounded-l-lg">Hình Ảnh</th>
                                 <th class="p-3">Tên Sản Phẩm</th>
                                 <th class="p-3">Giá Bán</th>
                                 <th class="p-3 text-right rounded-r-lg">Thao Tác</th>
                             </tr>
                         </thead>
-                        <tbody id="adminProductTable" class="divide-y divide-gray-800/60">
+                        <tbody id="adminProductTable" class="divide-y divide-slate-100">
                             <!-- Javascript điền dữ liệu -->
                         </tbody>
                     </table>
@@ -293,7 +287,7 @@
             grid.innerHTML = '';
             
             if (products.length === 0) {
-                grid.innerHTML = '<p class="text-gray-400 col-span-full text-center py-10">Cửa hàng đang cập nhật sản phẩm mới...</p>';
+                grid.innerHTML = '<p class="text-slate-500 col-span-full text-center py-10">Cửa hàng đang cập nhật sản phẩm mới...</p>';
                 return;
             }
 
@@ -303,18 +297,18 @@
 
                 grid.innerHTML += `
                     <div class="product-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="relative overflow-hidden h-56 bg-[#07090e]">
-                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100">
-                            <div class="absolute top-3 right-3 bg-amber-500 text-gray-950 font-bold font-heading text-xs px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
+                        <div class="relative overflow-hidden h-56 bg-slate-100">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-amber-500 text-slate-950 font-bold font-heading text-xs px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
                                 Chính Hãng
                             </div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between">
                             <div>
-                                <h3 class="text-lg font-bold font-heading text-white mb-2 line-clamp-1 group-hover:text-amber-500 transition">${p.name}</h3>
-                                <p class="text-amber-500 font-extrabold font-heading text-xl mb-6">${formatMoney(p.price)}</p>
+                                <h3 class="text-lg font-bold font-heading text-slate-900 mb-2 line-clamp-1 group-hover:text-amber-600 transition">${p.name}</h3>
+                                <p class="text-amber-600 font-extrabold font-heading text-xl mb-6">${formatMoney(p.price)}</p>
                             </div>
-                            <a href="${zaloLink}" target="_blank" class="w-full bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold font-heading uppercase tracking-wide py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 text-sm active:scale-95">
+                            <a href="${zaloLink}" target="_blank" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-heading uppercase tracking-wide py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-md text-sm active:scale-95">
                                 💬 Đặt Mua Qua Zalo
                             </a>
                         </div>
@@ -330,12 +324,12 @@
             
             products.forEach(p => {
                 table.innerHTML += `
-                    <tr class="hover:bg-[#07090e]/50 transition">
-                        <td class="p-3"><img src="${p.image}" class="w-14 h-14 object-cover rounded-xl border border-gray-800"></td>
-                        <td class="p-3 font-medium text-white">${p.name}</td>
-                        <td class="p-3 text-amber-500 font-bold">${formatMoney(p.price)}</td>
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-3"><img src="${p.image}" class="w-14 h-14 object-cover rounded-xl border border-slate-200"></td>
+                        <td class="p-3 font-medium text-slate-900">${p.name}</td>
+                        <td class="p-3 text-amber-600 font-bold">${formatMoney(p.price)}</td>
                         <td class="p-3 text-right">
-                            <button onclick="deleteProduct(${p.id})" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 font-semibold px-3 py-1.5 rounded-lg border border-red-500/20 transition text-sm">
+                            <button onclick="deleteProduct(${p.id})" class="bg-red-50 hover:bg-red-100 text-red-600 font-semibold px-3 py-1.5 rounded-lg border border-red-200 transition text-sm">
                                 🗑️ Xóa
                             </button>
                         </td>
@@ -385,14 +379,14 @@
                 storeView.classList.add('hidden');
                 adminView.classList.remove('hidden');
                 btn.innerHTML = "👀 Xem Cửa Hàng";
-                btn.classList.replace('bg-amber-500', 'bg-gray-800');
-                btn.classList.replace('text-gray-950', 'text-white');
+                btn.classList.replace('bg-amber-500', 'bg-slate-800');
+                btn.classList.replace('text-slate-950', 'text-white');
             } else {
                 storeView.classList.remove('hidden');
                 adminView.classList.add('hidden');
                 btn.innerHTML = "⚙️ Quản Trị";
-                btn.classList.replace('bg-gray-800', 'bg-amber-500');
-                btn.classList.replace('text-white', 'text-gray-950');
+                btn.classList.replace('bg-slate-800', 'bg-amber-500');
+                btn.classList.replace('text-white', 'text-slate-950');
             }
         }
 
