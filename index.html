@@ -117,14 +117,14 @@
     <!-- GIAO DIỆN KHÁCH HÀNG -->
     <main id="mainPublicView">
         
-        <!-- PHẦN NỀN VIDEO XE CHẠY CHUYỂN ĐỘNG (ĐÃ SỬA LINK CDN TỐC ĐỘ CAO + TỰ ĐỘNG CHẠY 100%) -->
+        <!-- PHẦN NỀN VIDEO XE CHẠY CHUYỂN ĐỘNG -->
         <header class="relative min-h-[580px] md:min-h-[640px] flex items-center justify-center overflow-hidden border-b border-borderSubtle py-20 px-4 sm:px-6 bg-black">
-            <!-- Video nền xe chạy ban đêm -->
-            <video id="heroBgVideo" autoplay loop muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1920" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none">
-                <source src="https://cdn.pixabay.com/video/2020/04/16/36024-411327178_large.mp4" type="video/mp4">
+            <!-- Video nền chạy mượt mà bằng CDN Google -->
+            <video id="heroBgVideo" autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
             </video>
 
-            <!-- Lớp phủ màu tối Obsidian đảm bảo chữ luôn nổi bật, sắc nét -->
+            <!-- Lớp phủ màu tối Obsidian đảm bảo chữ nổi bật sắc nét -->
             <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/75 to-obsidian/60 z-10"></div>
 
             <!-- Nội dung chữ và nút bấm đè lên video -->
@@ -649,7 +649,7 @@
                         <td class="py-3 text-xs text-slate-400 font-heading">${catName}</td>
                         <td class="py-3 text-right space-x-1">
                             <button onclick="editCard(${p.id})" class="bg-amberGold/20 text-amberGold hover:bg-amberGold/30 px-2.5 py-1 rounded text-xs font-bold">Sửa</button>
-                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2.5 py-1 rounded text-xs">Xóa</button>
+                            <button onclick="deleteCard(${p.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500/30 px-2 py-1 rounded text-xs">Xóa</button>
                         </td>
                     </tr>
                 `;
@@ -697,13 +697,13 @@
             {
                 id: 1,
                 title: "Test Bi Cầu Mini 2 Màu Xe Máy (Cos Vàng Pha Trắng)",
-                videoUrl: "https://cdn.pixabay.com/video/2020/04/16/36024-411327178_large.mp4",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
                 thumbnail: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800"
             },
             {
                 id: 2,
                 title: "Đèn Nóc Future Eyes Laser Gom Xa 800m",
-                videoUrl: "https://cdn.pixabay.com/video/2020/04/16/36024-411327178_large.mp4",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
                 thumbnail: "https://images.unsplash.com/photo-1549646849-c12b1c7fc017?auto=format&fit=crop&q=80&w=800"
             }
         ];
@@ -744,14 +744,11 @@
             const bgVid = document.getElementById('heroBgVideo');
             if (bgVid) {
                 bgVid.muted = true;
-                const playPromise = bgVid.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(() => {
-                        // Nếu trình duyệt chặn, ép phát lại khi người dùng chạm màn hình
-                        document.addEventListener('touchstart', () => bgVid.play(), { once: true });
-                        document.addEventListener('click', () => bgVid.play(), { once: true });
-                    });
-                }
+                bgVid.play().catch(() => {
+                    document.addEventListener('touchstart', () => bgVid.play(), { once: true });
+                    document.addEventListener('click', () => bgVid.play(), { once: true });
+                    document.addEventListener('scroll', () => bgVid.play(), { once: true });
+                });
             }
         }
 
